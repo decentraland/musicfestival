@@ -1,12 +1,13 @@
-import { Box, Typography } from "decentraland-ui2"
+import React from "react"
+import Hero from "./components/Hero"
+
+import "./css/global.css"
 
 const App = () => {
   return (
-    <Box>
-      <Typography variant="h4">
-        This is a Decentraland dApps template
-      </Typography>
-    </Box>
+    <main>
+      <Hero />
+    </main>
   )
 }
 
