@@ -1,7 +1,4 @@
 import styled from "styled-components"
-// import Button from "./Button"
-// import { Container } from "./Container"
-// import dclLogo from "../../images/music-festival/decentraland-logo.png"
 import DCLLogoPath from "../../public/dcl-logo-new.svg"
 import { breakpoints } from "../../utils/theme"
 import bgHero from "../images/bg-hero.png"
@@ -15,10 +12,10 @@ const Hero = () => {
     <StyledHero>
       <HeroContainer>
         <IconContainer>
-          <img src={icon1} alt="Icon 1" />
+          {/* <img src={icon1} alt="Icon 1" />
           <img src={icon2} alt="Icon 2" />
           <img src={icon3} alt="Icon 3" />
-          <img src={icon4} alt="Icon 4" />
+          <img src={icon4} alt="Icon 4" /> */}
         </IconContainer>
         {/* Main Title */}
         <SaveTheDate>Save the Date</SaveTheDate> {/* New Text */}
@@ -69,16 +66,12 @@ const HeroContainer = styled.div`
   width: 100%;
   padding: 20px;
   border: 1.5px solid transparent;
-  border-radius: 16px;
-  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1; /* Gradient border */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.9
-  ); /* Black background with slight transparency */
+
+  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional shadow for more depth */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 `
 
 const IconContainer = styled.div`
@@ -90,32 +83,6 @@ const IconContainer = styled.div`
     width: 50px;
     height: 50px;
   }
-`
-
-const MainTitle = styled.h1`
-  font-family: "Nasalization", sans-serif;
-  font-size: 48px; /* This is the size used for spacing */
-  font-weight: 900;
-  line-height: 1.2;
-  color: white;
-  margin-top: 48px; /* Adding space equal to the font size */
-`
-
-const GradientText = styled.span`
-  font-family: "Nasalization", sans-serif;
-  font-size: 48px; /* This is the size used for spacing */
-  font-weight: 900;
-  background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block; /* Ensure block-level element for proper spacing */
-  margin-top: 0px; /* Adding space equal to the font size above the subtitle */
-  margin-bottom: 48px; /* Adding bottom margin as well */
-`
-
-const EventDetails = styled.div`
-  margin-top: 30px;
-  font-size: 18px;
 `
 
 const EventDate = styled.p`
@@ -142,9 +109,6 @@ const EventDate = styled.p`
   /* Radios de las esquinas inferiores */
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-`
-const EventLocation = styled.p`
-  font-size: 24px;
 `
 
 const BottomSection = styled.div`
@@ -186,9 +150,7 @@ const RSVPButton = styled.a`
   letter-spacing: 2px;
   font-weight: 700;
   color: white;
-  background: transparent; /* Fondo transparente */
   border: 1.5px solid; /* Ancho del borde */
-  border-radius: 30px;
   border-image: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
   border-image-slice: 1; /* Permite que el gradiente cubra todo el borde */
   transition: all 0.4s ease;

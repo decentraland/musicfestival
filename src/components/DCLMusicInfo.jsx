@@ -12,8 +12,8 @@ const DCLMusicInfo = () => {
   return (
     <StyledHero>
       <HeroContainer>
-        <img src={logo} alt="Decentraland Music Festival" />
         <InfoContainer>
+          <img src={logo} alt="Decentraland Music Festival" />
           <p>
             Save the Date: Jump into <b>Decentraland</b> November 20-23 for the
             4th edition of the virtual <b>Decentraland Music Festival</b> &
@@ -98,10 +98,6 @@ const HeroContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  > img {
-    width: 100%;
-    margin-bottom: 80px;
-  }
 `
 
 const InfoContainer = styled.div`
@@ -111,6 +107,22 @@ const InfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  > img {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
+
+  /* Radio de borde solo en las esquinas inferiores */
+  border-radius: 8px;
+  background-clip: padding-box;
+
+  /* Color de fondo con transparencia */
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 24px;
+
   > p {
     letter-spacing: 1.5px;
     line-height: 1.25;
@@ -156,7 +168,7 @@ const NewsletterButton = styled.a`
   padding: 12px 24px;
   text-decoration: none;
   cursor: pointer;
-  min-width: 60px; /* Ensure a minimum width for proper button size */
+  min-width: 60px;
 
   > img {
     width: 100%;

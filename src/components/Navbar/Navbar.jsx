@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import theme, { breakpoints } from "../../utils/theme";
-import { Twitter } from "../components/icons/Vector-Twitter.js";
-import { Discord } from "../components/icons/Vector-Discord.js";
-import { Instagram } from "../components/icons/Vector-Instagram.js";
-import border from "../images/navbar-border.png";
-import Logo from "../images/DMF24-Logo.svg"; // Import the logo here
+import React, { useState } from "react"
+import styled from "styled-components"
+import theme, { breakpoints } from "../../../utils/theme.js"
+import Logo from "../../images/DMF24-Logo.svg" // Import the logo here
+import border from "../../images/navbar-border.png"
+import { Discord } from "../icons/Vector-Discord.jsx"
+import { Instagram } from "../icons/Vector-Instagram.jsx"
+import { Twitter } from "../icons/Vector-Twitter.jsx"
 
 const Navbar = (props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -39,14 +39,14 @@ const Navbar = (props) => {
     //   label: 'SPONSORS',
     //   targetId: 'sponsors'
     // },
-  ];
+  ]
 
   const scrollTo = (targetId) => {
-    const target = document.getElementById(targetId);
+    const target = document.getElementById(targetId)
     if (target) {
-      target.scrollIntoView();
+      target.scrollIntoView()
     }
-  };
+  }
 
   return (
     <Header>
@@ -101,8 +101,8 @@ const Navbar = (props) => {
       </StyledNavbar>
       <StyledBorder src={border} />
     </Header>
-  );
-};
+  )
+}
 
 const Header = styled.header`
   position: fixed;
@@ -122,7 +122,7 @@ const StyledNavbar = styled.section`
 
   /* Adding the gradient border at the bottom */
   border-image: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff) 1; /* Gradient applied to the border */
-`;
+`
 
 const SocialIcon = styled.a`
   margin-left: 24px;
@@ -130,10 +130,13 @@ const SocialIcon = styled.a`
   display: inline-block;
   padding: 8px;
   border-radius: 50%; /* Make it circular like the icons */
+  transition: transform 0.4s ease; /* Smooth animation */
 
   /* Apply gradient on hover behind the icon */
   :hover {
-    background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
+    transform: scale(1.1); /* Scale the icon on hover */
+    transition: transform 0.4s ease; /* Smooth animation */
+    will-change: transform; /* Optimize the animation */
   }
 
   svg {
@@ -141,15 +144,15 @@ const SocialIcon = styled.a`
     height: 24px;
 
     path {
-      fill: white;  /* Default color */
+      fill: white; /* Default color */
       transition: fill 0.4s ease;
     }
 
     :hover path {
-      fill: black;  /* Change icon color on hover */
+      fill: black; /* Change icon color on hover */
     }
   }
-`;
+`
 
 const Nav = styled.nav`
   width: 100%;
@@ -160,19 +163,19 @@ const Nav = styled.nav`
   @media screen and (min-width: ${breakpoints.md}) {
     padding: 18px 62px;
   }
-`;
+`
 
 const LogoContainer = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
   /* Removed the rotation animation */
-`;
+`
 
 const LogoImage = styled.img`
-  height: 60px;  /* Adjust this size as needed */
+  height: 60px; /* Adjust this size as needed */
   width: auto;
-`;
+`
 
 const MenuItem = styled.li`
   font-family: "Gothic";
@@ -188,11 +191,16 @@ const MenuItem = styled.li`
 
   /* Gradient hover effect */
   a:hover {
-    background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff); /* Gradient applied */
+    background: linear-gradient(
+      90deg,
+      #3effa3,
+      #56a7ff,
+      #fb01ff
+    ); /* Gradient applied */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; /* Gradient fills the text */
   }
-`;
+`
 
 const MenuList = styled.ul`
   display: none;
@@ -200,7 +208,7 @@ const MenuList = styled.ul`
   @media screen and (min-width: ${breakpoints.md}) {
     display: flex;
   }
-`;
+`
 
 const StyledBorder = styled.div`
   width: 100%;
@@ -211,7 +219,13 @@ const StyledBorder = styled.div`
   z-index: 101;
 
   /* Adding the gradient border at the bottom */
-  background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff); /* Gradient applied */
-`;
+  background: linear-gradient(
+    90deg,
+    #3effa3,
+    #56a7ff,
+    #fb01ff
+  ); /* Gradient applied */
+`
 
-export default Navbar;
+// eslint-disable-next-line import/no-default-export
+export default Navbar
