@@ -1,6 +1,5 @@
 // Styles
 import styled, { keyframes } from "styled-components"
-
 // Assets
 import MusicFestivalLogo from "./MusicFestivalLogo.js"
 import herobg from "../../public/images/hero/bg1-web.png"
