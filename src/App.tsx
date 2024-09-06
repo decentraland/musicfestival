@@ -1,13 +1,16 @@
 import React from "react"
-import Hero from "./components/Hero"
-
+import DCLMusicInfo from "./components/DCLMusicInfo.jsx"
+import Hero from "./components/Hero.jsx"
+import BannerMarquee from "./components/Marquee.jsx"
 import "./css/global.css"
 
 const App = () => {
   return (
     <main>
-      <h1>ahsdjkashjkdahshjkasd</h1>
       <Hero />
+      <BannerMarquee />
+      <DCLMusicInfo />
+      <BannerMarquee />
     </main>
   )
 }

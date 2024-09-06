@@ -16,9 +16,7 @@ const Hero = () => {
         <img src={barTop} alt="hero background" />
         <Content>
           <h4>Save The Date</h4>
-          <div className="logo">
-            <MusicFestivalLogo />
-          </div>
+          <div className="logo">{/* <MusicFestivalLogo /> */}</div>
           <div className="wiggle">
             <img src={wiggle} alt="hero background" />
           </div>
