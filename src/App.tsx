@@ -6,6 +6,7 @@ import "./css/global.css"
 const App = () => {
   return (
     <main>
+      <h2>asdsdadassdasdasd</h2>
       <Hero />
     </main>
   )
