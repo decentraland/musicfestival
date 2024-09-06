@@ -2,21 +2,15 @@ import styled from "styled-components"
 import DCLLogoPath from "../../public/dcl-logo-new.svg"
 import { breakpoints } from "../../utils/theme"
 import bgHero from "../images/bg-hero.png"
-import icon1 from "../images/icon-1.png"
-import icon2 from "../images/icon-2.png"
-import icon3 from "../images/icon-3.png"
-import icon4 from "../images/icon-4.png"
+import header from "../images/header-dcl-music.svg"
 
 const Hero = () => {
   return (
     <StyledHero>
       <HeroContainer>
-        <IconContainer>
-          {/* <img src={icon1} alt="Icon 1" />
-          <img src={icon2} alt="Icon 2" />
-          <img src={icon3} alt="Icon 3" />
-          <img src={icon4} alt="Icon 4" /> */}
-        </IconContainer>
+        <Header>
+          <img src={header} alt="Icon 1" />
+        </Header>
         {/* Main Title */}
         <SaveTheDate>Save the Date</SaveTheDate> {/* New Text */}
         <Line />
@@ -45,7 +39,7 @@ const SaveTheDate = styled.p`
   color: white;
   text-transform: none;
   margin-bottom: 24px; /* Add space between this text and the line below */
-  margin-top: 0; /* Reset margin on top */
+  margin-top: 48px; /* Reset margin on top */
 `
 
 const StyledHero = styled.div`
@@ -59,6 +53,7 @@ const StyledHero = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden; /* Hide overflow content */
 `
 
 const HeroContainer = styled.div`
@@ -66,22 +61,25 @@ const HeroContainer = styled.div`
   width: 100%;
   padding: 20px;
   border: 1.5px solid transparent;
+  position: relative;
 
   border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
   background-clip: padding-box;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Hide overflow content */
 `
 
-const IconContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+const Header = styled.div`
+  position: absolute;
+  width: 100%;
+  top: -5px;
+  left: 0;
+  transform: scale(1.01); /* Scale the image */
 
-  img {
-    width: 50px;
-    height: 50px;
+  > img {
+    width: 100%;
   }
 `
 
