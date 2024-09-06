@@ -14,11 +14,14 @@
   box-sizing: border-box;
 }
 
+.react-multi-carousel-list {}
+
 .react-multi-carousel-list {
   position: unset !important;
 }
 
 *::selection {
+  background: transparent;
   background: transparent;
 }
 
@@ -31,6 +34,10 @@ html {
 
 #root {
   overflow-x: hidden;
+}
+
+#root {
+  overflow: hidden;
   color: white;
   background: var(--main-bg-color);
 }
@@ -69,4 +76,12 @@ html {
     width: 100% !important;
     padding: 0 16px;
   }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3EFFA3 0%, #56A7FF 50%, #FB01FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

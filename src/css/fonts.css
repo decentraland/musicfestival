@@ -13,3 +13,73 @@
   src: url(../../public/fonts/nasalization-rg.otf) format('opentype');
   font-weight: 400;
 }
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Gothic.ttf);
+}
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/GothicB.ttf);
+}
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/GothicB.ttf);
+}
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/GothicB.ttf);
+}
+
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/GothicB.ttf);
+}
+
+@font-face {
+  font-family: "SaintRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SaintRegular.ttf);
+}
+
+@font-face {
+  font-family: "NumerinoPixel";
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/Numerino-PixelItalic.otf);
+}
+
+@font-face {
+  font-family: "InterBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: "InterMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Nasalization";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/nasalization-rg.otf);
+}
