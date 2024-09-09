@@ -2,6 +2,7 @@ import styled from "styled-components"
 import DCLLogoPath from "../../public/dcl-logo-new.svg"
 import { breakpoints } from "../../utils/theme"
 import bgHero from "../images/bg-hero.png"
+import frameDate from "../images/frames-music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
 import header from "../images/header-dcl-music.svg"
 
 const Hero = () => {
@@ -25,7 +26,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            RSVP
+            <h3>RSVP</h3>
           </RSVPButton>
         </BottomSection>
       </HeroContainer>
@@ -60,7 +61,7 @@ const HeroContainer = styled.div`
   max-width: 600px;
   width: 100%;
   padding: 20px;
-  border: 1.5px solid transparent;
+  border: 2.5px solid transparent;
   position: relative;
 
   border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
@@ -84,6 +85,8 @@ const Header = styled.div`
 `
 
 const EventDate = styled.p`
+  position: relative;
+  top: -2px;
   font-family: "InterMedium", sans-serif;
   font-size: 20px;
   color: white;
@@ -91,22 +94,12 @@ const EventDate = styled.p`
   width: fit-content;
   margin: 0 auto; /* Alinea al centro */
   padding: 12px 24px; /* Añade padding para dar espacio al contenido */
-
-  /* Solo bordes izquierdo, derecho y abajo */
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-
-  /* Bordes con gradiente */
-  border-image: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
-  border-image-slice: 1;
-
-  /* Borde superior inexistente */
-  border-top: none;
-
-  /* Radios de las esquinas inferiores */
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  background-image: url(${frameDate});
+  background-size: cover;
+  background-size: contain;
+  background-position: top center;
+  margin-bottom: 24px;
+  background-repeat: no-repeat;
 `
 
 const BottomSection = styled.div`
@@ -132,12 +125,13 @@ const DCLLogoItem = styled.img`
 const Line = styled.div`
   position: relative;
   width: calc(100% + 40px); /* Extend the line slightly beyond the container */
-  height: 1.5px;
+  height: 2px;
   background: linear-gradient(90deg, #ff00ff, #00ffcc); /* Gradient */
   margin: 0 -20px; /* Shift it left and right by the padding size */
 `
 
 const RSVPButton = styled.a`
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -148,22 +142,51 @@ const RSVPButton = styled.a`
   letter-spacing: 2px;
   font-weight: 700;
   color: white;
-  border: 1.5px solid; /* Ancho del borde */
-  border-image: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
-  border-image-slice: 1; /* Permite que el gradiente cubra todo el borde */
-  transition: all 0.4s ease;
+  background-color: black; /* Fondo del botón */
+  border-radius: 12px; /* Bordes curvados */
+  padding: 10px;
+  z-index: 1;
   text-decoration: none;
   cursor: pointer;
-  min-width: 60px; /* Asegura un ancho mínimo para un tamaño adecuado del botón */
-  height: 15px; /* Altura fija */
   text-align: center;
-  line-height: 20px; /* Ajusta el line-height para centrar el texto verticalmente */
+  line-height: 20px;
+  transition: all 0.4s ease;
+
+  > h3 {
+    z-index: 2;
+  }
 
   &:hover {
     box-shadow:
       0 0 20px rgba(255, 255, 255, 0.4),
       0 0 10px violet,
       0 0 5px blue;
+  }
+
+  &::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: -1.5px;
+    bottom: -1.5px;
+    left: -1.5px;
+    right: -1.5px;
+    background: black;
+    border-radius: 12px; /* Bordes curvados del botón */
+  }
+
+  /* Pseudo-elemento ::after para crear el borde con gradiente */
+  &::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    content: "";
+    background: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
+    z-index: -1;
+    border-radius: 16px; /* Bordes curvados del borde (más grande que el botón) */
+    padding: 2px; /* Control del grosor del borde */
   }
 
   @media screen and (min-width: ${breakpoints.md}) {
