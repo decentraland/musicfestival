@@ -65,6 +65,7 @@ const DCLMusicInfo = () => {
           <NewsletterButton
             href="https://decentraland.beehiiv.com/subscribe?utm_source=musicfestival.decentraland.org&utm_medium=organic&utm_campaign=DCLMF24"
             target="_blank"
+            rel="noopener"
           >
             <img
               src={signUpNasa}

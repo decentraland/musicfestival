@@ -24,7 +24,7 @@ const Hero = () => {
           <RSVPButton
             href="https://decentraland.org/events/event/?id=9831c4be-4f94-4bb2-a828-8f48d28a1520"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
             <h3>RSVP</h3>
           </RSVPButton>
