@@ -1,12 +1,20 @@
-import { Box, Typography } from "decentraland-ui2"
+import { DCLMusicInfo } from "./components/DCLMusicInfo/DCLMusicInfo.tsx"
+import Hero from "./components/Hero/Hero.tsx"
+import { BannerMarquee } from "./components/Marquee/Marquee.tsx"
+import Navbar from "./components/Navbar/Navbar.tsx"
 
+import "./css/global.css"
 const App = () => {
   return (
-    <Box>
-      <Typography variant="h4">
-        This is a Decentraland dApps template
-      </Typography>
-    </Box>
+    <>
+      <main>
+        <Navbar />
+        <Hero />
+        <BannerMarquee />
+        <DCLMusicInfo />
+        <BannerMarquee />
+      </main>
+    </>
   )
 }
 
