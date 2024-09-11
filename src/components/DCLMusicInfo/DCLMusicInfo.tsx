@@ -1,14 +1,9 @@
 // eslint-disable-next-line import/no-named-as-default
 import styled from "styled-components"
-// import Button from "./Button"
-// import { Container } from "./Container"
-// import dclLogo from "../../images/music-festival/decentraland-logo.png"
-import DclBullet from "../../../public/img/music-festival/dcl-bullet.png"
-import logo from "../../../public/img/music-festival/info-dcl-logo.png"
-// import DclBullet from "../images/dcl-bullet.png"
-import bgHero from "../../../public/img/music-festival/music-info-bg.png"
-import signUpNasa from "../../../public/img/music-festival/sign-u-nasa.png"
-// import { breakpoints } from "../../utils/theme.js"
+import DclBullet from "../../img/music-festival/dcl-bullet.png"
+import logo from "../../img/music-festival/info-dcl-logo.png"
+import bgHero from "../../img/music-festival/music-info-bg.png"
+import signUpNasa from "../../img/music-festival/sign-u-nasa.png"
 
 const DCLMusicInfo = () => {
   return (

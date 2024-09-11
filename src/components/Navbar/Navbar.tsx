@@ -1,8 +1,9 @@
 import styled from "styled-components"
-import { breakpoints } from "../../utils/theme.js"
-import { Discord } from "../icons/Vector-Discord.jsx"
-import { Instagram } from "../icons/Vector-Instagram.jsx"
-import { Twitter } from "../icons/Vector-Twitter.jsx"
+import dmf24Logo from "../../img/music-festival/DMF24-Logo.svg"
+import { breakpoints } from "../../utils/theme"
+import { Discord } from "../icons/Vector-Discord"
+import { Instagram } from "../icons/Vector-Instagram"
+import { Twitter } from "../icons/Vector-Twitter"
 
 const Navbar = () => {
   return (
@@ -10,10 +11,7 @@ const Navbar = () => {
       <StyledNavbar className="navbar">
         <Nav>
           <LogoContainer href="#">
-            <LogoImage
-              src={"../../../public/img/music-festival/DMF24-Logo.svg"}
-              alt="DMF 2024 Logo"
-            />
+            <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
           </LogoContainer>
 
           <div>
@@ -41,9 +39,6 @@ const Navbar = () => {
           </div>
         </Nav>
       </StyledNavbar>
-      {/* <StyledBorder
-        src={"../../../public/img/music-festival/navbar-border.png"}
-      /> */}
     </Header>
   )
 }

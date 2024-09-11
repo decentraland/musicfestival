@@ -1,32 +1,27 @@
 import styled from "styled-components"
-import bgHero from "../../../public/img/music-festival/bg-hero.png"
-import frameDate from "../../../public/img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
-import { breakpoints } from "../../utils/theme.js"
+import bgHero from "../../img/music-festival/bg-hero.png"
+import headerDclLogo from "../../img/music-festival/dcl-logo-new.svg"
+import frameDate from "../../img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
+import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
+import headerImage from "../../img/music-festival/header-dcl-music.svg"
+import { breakpoints } from "../../utils/theme"
 
 const Hero = () => {
   return (
     <StyledHero>
       <HeroContainer>
         <Header>
-          <img
-            src={"../../../public/img/music-festival/header-dcl-music.svg"}
-            alt="header icon"
-            rel="noopener"
-          />
+          <img src={headerImage} alt="header icon" rel="noopener" />
         </Header>
         {/* Main Title */}
         <SaveTheDate>Save the Date</SaveTheDate> {/* New Text */}
         <Line />
-        <StyledLogo
-          src={"../../../public/img/music-festival/dcl-logo-new.svg"}
-        />
+        <StyledLogo src={headerDclLogo} />
         <Line />
         <EventDate>November 20-23</EventDate>
         {/* Bottom Section */}
         <BottomSection>
-          <DCLLogoItem
-            src={"../../../public/img/music-festival/decentraland-logo.png"}
-          />
+          <DCLLogoItem src={bottomDclLogo} />
           <RSVPButton
             href="https://decentraland.org/events/event/?id=9831c4be-4f94-4bb2-a828-8f48d28a1520"
             target="_blank"
