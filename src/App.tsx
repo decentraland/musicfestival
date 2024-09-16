@@ -7,10 +7,9 @@ import "./css/global.css"
 const App = () => {
   return (
     <>
-      <main>
-        <Navbar />
+      <Navbar />
+      <main style={{ position: "relative" }}>
         <Hero />
-        <BannerMarquee />
         <DCLMusicInfo />
         <BannerMarquee />
       </main>

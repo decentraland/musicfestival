@@ -76,6 +76,7 @@ const HeroContainer = styled.div`
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   overflow: hidden; /* Hide overflow content */
+  margin-inline: 12px;
 `
 
 const Header = styled.div`
