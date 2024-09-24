@@ -1,4 +1,4 @@
-import { darken, lighten, transparentize } from "polished"
+import { lighten, transparentize } from "polished"
 
 const themeConfig = {
   accent: "#f37877",
@@ -22,8 +22,6 @@ const expandedPalette = {
   grey400: () => lighten(0.35, basicPalette.black),
   grey300: () => lighten(0.5, basicPalette.black),
   grey100: () => lighten(0.1, basicPalette.black),
-  blue500: () => darken(0.4, basicPalette.blue),
-  purple500: () => darken(0.4, basicPalette.purple),
 }
 
 const theme = {

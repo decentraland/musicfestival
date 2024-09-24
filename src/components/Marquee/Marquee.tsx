@@ -41,12 +41,10 @@ const BannerMarquee = ({
   )
 }
 
-/* Add gradient to the top and bottom borders */
-// border-top: ${(noBorderTop) => (!noBorderTop ? `3px solid` : "none")};
-// border-bottom: ${(noBorderBottom) =>
-//   !noBorderBottom ? `3px solid` : "none"};
-
-const StyledBannerMarquee = styled.div`
+const StyledBannerMarquee = styled.div<{
+  noBorderTop: number
+  noBorderBottom: number
+}>`
   background: black;
   font-size: 12px;
   position: relative;
@@ -55,7 +53,11 @@ const StyledBannerMarquee = styled.div`
   border-top: 1.5px solid transparent;
   border-image: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
 
-  border-image: linear-gradient(to right, #3effa3, #56a7ff, #fb01ff) 1;
+  /* Add gradient to the top and bottom borders */
+  border-top: ${(props) => (!props.noBorderTop ? `3px solid` : "none")};
+  border-bottom: ${(props) => (!props.noBorderBottom ? `3px solid` : "none")};
+
+  border-image: linear-gradient(to right, #3effa3, #56a7ff, #fb01ff) 1; /* Updated gradient */
   line-height: 24px;
 
   .marquee-container {
