@@ -65,16 +65,35 @@ const HeroContainer = styled.div`
   max-width: 600px;
   width: 100%;
   padding: 20px;
-  border: 2.5px solid transparent;
   position: relative;
-
-  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
-  background-clip: padding-box;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   overflow: hidden; /* Hide overflow content */
   margin-inline: 12px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  /* Pseudo-element for the gradient border */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Ensure it is behind the content */
+    border-radius: inherit; /* Inherit border-radius from the container */
+    padding: 2px; /* Same width as the border you want */
+    background: linear-gradient(90deg, #ff00ff, #00ffcc);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0); /* Mask to clip background */
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
 `
 
 const Header = styled.div`
