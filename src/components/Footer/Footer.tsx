@@ -11,7 +11,7 @@ const Footer = () => {
         <FooterLeft>
           <LogoContainer href="#">
             <LogoImage
-              src={"../../../public/img/music-festival/decentraland-logo.png"}
+              src={"../../../src/img/music-festival/decentraland-logo.png"}
               alt="DMF 2024 Logo"
             />
           </LogoContainer>

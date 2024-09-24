@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import bgHero from "../../img/music-festival/bg-hero.png"
+import bgHero from "../../img/music-festival/bg-mf-new.png"
 import headerDclLogo from "../../img/music-festival/dcl-logo-new.svg"
 import frameDate from "../../img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
 // import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
