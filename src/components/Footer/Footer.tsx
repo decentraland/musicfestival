@@ -15,8 +15,20 @@ const Footer = () => {
               alt="DMF 2024 Logo"
             />
           </LogoContainer>
-          <FooterText>Terms & Services</FooterText>
-          <FooterText>Privacy Policy</FooterText>
+          <FooterText
+            href="https://decentraland.org/terms/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terms & Services
+          </FooterText>
+          <FooterText
+            href="https://decentraland.org/privacy/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy Policy
+          </FooterText>
         </FooterLeft>
 
         <div>
