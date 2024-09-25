@@ -10,10 +10,12 @@ const Footer = () => {
       <Nav>
         <FooterLeft>
           <LogoContainer href="#">
-            <LogoImage
-              src={"../../../src/img/music-festival/decentraland-logo.png"}
-              alt="DMF 2024 Logo"
-            />
+            <a href="https://decentraland.org" target="_blank" rel="noreferrer">
+              <LogoImage
+                src={"/src/img/music-festival/decentraland-logo.png"}
+                alt="DMF 2024 Logo"
+              />
+            </a>
           </LogoContainer>
           <FooterText
             href="https://decentraland.org/terms/"

@@ -42,6 +42,7 @@ const SaveTheDate = styled.p`
   font-size: 32px;
   color: white;
   text-transform: none;
+  font-weight: 600;
   margin-bottom: 24px; /* Add space between this text and the line below */
   margin-top: 48px; /* Reset margin on top */
 `
@@ -113,6 +114,7 @@ const EventDate = styled.p`
   top: -2px;
   font-family: "InterMedium", sans-serif;
   font-size: 20px;
+  font-weight: 600;
   color: white;
   text-align: center;
   width: fit-content;
@@ -131,7 +133,7 @@ const BottomSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 40px;
+  margin-block: 16px;
   padding: 0 20px;
 `
 
