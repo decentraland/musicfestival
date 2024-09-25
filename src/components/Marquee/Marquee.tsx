@@ -11,13 +11,13 @@ interface BannerMarqueeProps {
 const BannerMarquee = ({
   direction,
   delay,
-  noBorderBottom,
-  noBorderTop,
+  // noBorderBottom,
+  // noBorderTop,
 }: BannerMarqueeProps) => {
   return (
     <StyledBannerMarquee
-      noBorderBottom={noBorderBottom ? 1 : 0}
-      noBorderTop={noBorderTop ? 1 : 0}
+    // noBorderBottom={noBorderBottom ? 1 : 0}
+    // noBorderTop={noBorderTop ? 1 : 0}
     >
       <Marquee
         direction={direction}
@@ -42,16 +42,20 @@ const BannerMarquee = ({
 }
 
 const StyledBannerMarquee = styled.div<{
-  noBorderTop: number
-  noBorderBottom: number
+  noBorderTop?: number
+  noBorderBottom?: number
 }>`
   background: black;
   font-size: 12px;
   position: relative;
+  padding-block: 12px;
+  border-bottom: 1.5px solid transparent;
+  border-top: 1.5px solid transparent;
+  border-image: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
 
   /* Add gradient to the top and bottom borders */
-  border-top: ${(props) => (!props.noBorderTop ? `3px solid` : "none")};
-  border-bottom: ${(props) => (!props.noBorderBottom ? `3px solid` : "none")};
+  border-top: ${(props) => (!props.noBorderTop ? `1.5px solid` : "none")};
+  border-bottom: ${(props) => (!props.noBorderBottom ? `1.5px solid` : "none")};
 
   border-image: linear-gradient(to right, #3effa3, #56a7ff, #fb01ff) 1; /* Updated gradient */
   line-height: 24px;
@@ -70,7 +74,7 @@ const StyledBannerMarquee = styled.div<{
       font-family: "InterMedium", sans-serif !important; /* Apply globally to all elements */
       font-size: 12px !important; /* Adjust size if necessary */
       letter-spacing: 3px;
-      font-weight: 700;
+      font-weight: 400;
       color: white; /* Ensure the text color is visible */
     }
   }

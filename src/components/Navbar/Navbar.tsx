@@ -100,7 +100,7 @@ const Nav = styled.nav`
   align-items: center;
   padding: 24px 24px;
   @media screen and (min-width: ${breakpoints.md}) {
-    padding: 18px 62px;
+    padding: 0px 62px;
   }
 `
 

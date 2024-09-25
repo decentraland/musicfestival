@@ -4,10 +4,14 @@ import DclBullet from "../../img/music-festival/dcl-bullet.png"
 import logo from "../../img/music-festival/info-dcl-logo.png"
 import bgHero from "../../img/music-festival/music-info-bg.png"
 import signUpNasa from "../../img/music-festival/sign-u-nasa.png"
+import { BannerMarquee } from "../Marquee/Marquee"
 
 const DCLMusicInfo = () => {
   return (
     <StyledHero>
+      <MarqueeContainer>
+        <BannerMarquee />
+      </MarqueeContainer>
       <HeroContainer>
         <InfoContainer>
           <img src={logo} alt="Decentraland Music Festival" />
@@ -75,6 +79,14 @@ const DCLMusicInfo = () => {
   )
 }
 
+const MarqueeContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const StyledHero = styled.div`
   position: relative;
   height: 100vh;
@@ -108,7 +120,11 @@ const InfoContainer = styled.div`
 
   > img {
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 24px;
+    }
   }
 
   border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;

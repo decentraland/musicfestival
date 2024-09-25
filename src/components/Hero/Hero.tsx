@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import bgHero from "../../img/music-festival/bg-hero.png"
+import bgHero from "../../img/music-festival/bg-mf-new.png"
 import headerDclLogo from "../../img/music-festival/dcl-logo-new.svg"
 import frameDate from "../../img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
-import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
+// import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
 import headerImage from "../../img/music-festival/header-dcl-music.svg"
-import { breakpoints } from "../../utils/theme"
+// import { breakpoints } from "../../utils/theme"
 
 const Hero = () => {
   return (
@@ -21,7 +21,9 @@ const Hero = () => {
         <EventDate>November 20-23</EventDate>
         {/* Bottom Section */}
         <BottomSection>
-          <DCLLogoItem src={bottomDclLogo} />
+          {/* <DCLLogoItem
+            src={"../../../public/img/music-festival/decentraland-logo.png"}
+          /> */}
           <RSVPButton
             href="https://decentraland.org/events/event/?id=9831c4be-4f94-4bb2-a828-8f48d28a1520"
             target="_blank"
@@ -37,7 +39,7 @@ const Hero = () => {
 
 const SaveTheDate = styled.p`
   font-family: "InterMedium", sans-serif;
-  font-size: 20px;
+  font-size: 32px;
   color: white;
   text-transform: none;
   margin-bottom: 24px; /* Add space between this text and the line below */
@@ -46,7 +48,8 @@ const SaveTheDate = styled.p`
 
 const StyledHero = styled.div`
   position: relative;
-  height: 100vh;
+  height: 100%;
+  min-height: calc(100vh - 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,15 +65,35 @@ const HeroContainer = styled.div`
   max-width: 600px;
   width: 100%;
   padding: 20px;
-  border: 2.5px solid transparent;
   position: relative;
-
-  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
-  background-clip: padding-box;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   overflow: hidden; /* Hide overflow content */
+  margin-inline: 12px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  /* Pseudo-element for the gradient border */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Ensure it is behind the content */
+    border-radius: inherit; /* Inherit border-radius from the container */
+    padding: 2px; /* Same width as the border you want */
+    background: linear-gradient(90deg, #ff00ff, #00ffcc);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0); /* Mask to clip background */
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
 `
 
 const Header = styled.div`
@@ -106,7 +129,7 @@ const EventDate = styled.p`
 const BottomSection = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   margin-top: 40px;
   padding: 0 20px;
@@ -119,9 +142,9 @@ const StyledLogo = styled.img`
   height: auto;
 `
 
-const DCLLogoItem = styled.img`
-  max-width: 100px;
-`
+// const DCLLogoItem = styled.img`
+//   max-width: 100px;
+// `
 
 const Line = styled.div`
   position: relative;
@@ -137,24 +160,31 @@ const RSVPButton = styled.a`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  padding: 12px 24px !important;
   font-family: "InterMedium", sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   letter-spacing: 2px;
   font-weight: 700;
-  color: white;
-  background-color: black; /* Fondo del botón */
-  border-radius: 12px; /* Bordes curvados */
+  color: black !important;
+  border-radius: 32px; /* Bordes curvados */
   padding: 10px;
   z-index: 1;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   line-height: 20px;
-  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 180px;
+
+  background: linear-gradient(
+    -90deg,
+    #3effa3 2.3%,
+    #56a7ff 51.15%,
+    #fb01ff 100%
+  );
 
   > h3 {
     z-index: 2;
+    color: black;
   }
 
   &:hover {
@@ -162,40 +192,6 @@ const RSVPButton = styled.a`
       0 0 20px rgba(255, 255, 255, 0.4),
       0 0 10px violet,
       0 0 5px blue;
-  }
-
-  &::before {
-    z-index: 1;
-    content: "";
-    position: absolute;
-    top: -1.5px;
-    bottom: -1.5px;
-    left: -1.5px;
-    right: -1.5px;
-    background: black;
-    border-radius: 12px; /* Bordes curvados del botón */
-  }
-
-  /* Pseudo-elemento ::after para crear el borde con gradiente */
-  &::after {
-    position: absolute;
-    top: -4px;
-    bottom: -4px;
-    left: -4px;
-    right: -4px;
-    content: "";
-    background: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
-    z-index: -1;
-    border-radius: 16px; /* Bordes curvados del borde (más grande que el botón) */
-    padding: 2px; /* Control del grosor del borde */
-  }
-
-  @media screen and (min-width: ${breakpoints.md}) {
-    font-size: 16px;
-    padding: 12px 24px;
-    height: 36px;
-    margin-top: 0; /* Ajusta márgenes en pantallas más grandes */
-    margin-bottom: 8px;
   }
 `
 
