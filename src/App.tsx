@@ -11,7 +11,6 @@ const App = () => {
       <Navbar />
       <main style={{ position: "relative" }}>
         <Hero />
-        {/* <DCLMusicInfo /> */}
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <Footer />
       </main>
