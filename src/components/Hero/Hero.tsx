@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import bgHero from "../../img/music-festival/bg-mf-new.png"
-import headerDclLogo from "../../img/music-festival/dcl-logo-new.svg"
 import frameDate from "../../img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
+import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
 // import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
 import headerImage from "../../img/music-festival/header-dcl-music.svg"
+import { breakpoints } from "../../utils/theme"
 // import { breakpoints } from "../../utils/theme"
 
 const Hero = () => {
@@ -21,9 +22,6 @@ const Hero = () => {
         <EventDate>November 20-23</EventDate>
         {/* Bottom Section */}
         <BottomSection>
-          {/* <DCLLogoItem
-            src={"../../../public/img/music-festival/decentraland-logo.png"}
-          /> */}
           <RSVPButton
             href="https://decentraland.org/events/event/?id=9831c4be-4f94-4bb2-a828-8f48d28a1520"
             target="_blank"
@@ -59,7 +57,7 @@ const StyledHero = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden; /* Hide overflow content */
+  overflow: hidden;
 `
 
 const HeroContainer = styled.div`
@@ -70,10 +68,19 @@ const HeroContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  overflow: hidden; /* Hide overflow content */
+  overflow: hidden;
   margin-inline: 12px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  margin-top: 180px;
+
+  @media (min-width: ${breakpoints.s}) {
+    margin-top: 120px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    margin-top: 80px;
+  }
 
   /* Pseudo-element for the gradient border */
   &::before {
@@ -100,12 +107,15 @@ const HeroContainer = styled.div`
 const Header = styled.div`
   position: absolute;
   width: 100%;
-  top: -5px;
+  height: auto;
+  top: -3px;
   left: 0;
   transform: scale(1.01); /* Scale the image */
 
   > img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `
 
