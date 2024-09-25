@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import dmf24Logo from "../../img/music-festival/DMF24-Logo.svg"
+import dmf24Logo from "../../img/music-festival/DMF24-Logo.png"
 import { breakpoints } from "../../utils/theme"
 import { Discord } from "../icons/Vector-Discord"
 import { Instagram } from "../icons/Vector-Instagram"
@@ -11,7 +11,9 @@ const Navbar = () => {
       <StyledNavbar className="navbar">
         <Nav>
           <LogoContainer href="#">
-            <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
+            <a href="https://decentraland.org" target="_blank" rel="noreferrer">
+              <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
+            </a>
           </LogoContainer>
 
           <div>
