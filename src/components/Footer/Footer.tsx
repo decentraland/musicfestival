@@ -1,9 +1,9 @@
 import styled from "styled-components"
+import decentralandLogo from "../../img/music-festival/decentraland-logo.png"
 import { breakpoints } from "../../utils/theme.js"
 import { Discord } from "../icons/Vector-Discord.jsx"
 import { Instagram } from "../icons/Vector-Instagram.jsx"
 import { Twitter } from "../icons/Vector-Twitter.jsx"
-
 const Footer = () => {
   return (
     <StyledFooter className="Footer">
@@ -11,10 +11,7 @@ const Footer = () => {
         <FooterLeft>
           <LogoContainer href="#">
             <a href="https://decentraland.org" target="_blank" rel="noreferrer">
-              <LogoImage
-                src={"/src/img/music-festival/decentraland-logo.png"}
-                alt="DMF 2024 Logo"
-              />
+              <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
             </a>
           </LogoContainer>
           <FooterText
