@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import decentralandLogo from "../../img/music-festival/decentraland-logo.png"
+import decentralandLogo from "../../img/music-festival/logo.png"
 import { breakpoints } from "../../utils/theme.js"
 import { Discord } from "../icons/Vector-Discord.jsx"
 import { Instagram } from "../icons/Vector-Instagram.jsx"
