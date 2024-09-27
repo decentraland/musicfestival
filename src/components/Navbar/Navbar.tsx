@@ -10,10 +10,12 @@ const Navbar = () => {
     <Header>
       <StyledNavbar className="navbar">
         <Nav>
-          <LogoContainer href="#">
-            <a href="https://decentraland.org" target="_blank" rel="noreferrer">
-              <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
-            </a>
+          <LogoContainer
+            href="https://decentraland.org"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
           </LogoContainer>
 
           <div>

@@ -9,10 +9,12 @@ const Footer = () => {
     <StyledFooter className="Footer">
       <Nav>
         <FooterLeft>
-          <LogoContainer href="#">
-            <a href="https://decentraland.org" target="_blank" rel="noreferrer">
-              <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
-            </a>
+          <LogoContainer
+            href="https://decentraland.org"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
           </LogoContainer>
           <FooterText
             href="https://decentraland.org/terms/"
