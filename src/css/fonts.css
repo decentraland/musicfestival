@@ -64,8 +64,7 @@
 }
 
 @font-face {
-  font-family: "Nasalization";
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/nasalization-rg.otf);
+  font-family: "NASALIZATION" !important;
+  src: url(../fonts/nasalization-free.otf), url(../fonts/nasalization-rg.otf),
+    url(../fonts/nasalization-rg.ttf);
 }

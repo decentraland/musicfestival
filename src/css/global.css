@@ -5,6 +5,7 @@
   --md-bp: 956px;
   --s-bp: 600px;
   --xs-bp: 416px;
+  --nasalization-font: "NASALIZATION";
 }
 
 * {
@@ -12,9 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.react-multi-carousel-list {
 }
 
 .react-multi-carousel-list {
@@ -30,14 +28,10 @@ html {
   background: var(--main-bg-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: "Inter", sans-serif;
 }
 
 #root {
   overflow-x: hidden;
-}
-
-#root {
   overflow: hidden;
   color: white;
   background: var(--main-bg-color);
@@ -85,4 +79,13 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--nasalization-font) !important;
 }
