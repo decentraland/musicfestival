@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import { styled } from "styled-components"
 import dmf24Logo from "../../img/music-festival/DMF24-Logo.png"
 import { breakpoints } from "../../utils/theme"
 import { Discord } from "../icons/Vector-Discord"
@@ -120,22 +120,4 @@ const LogoImage = styled.img`
   width: auto;
 `
 
-// const StyledBorder = styled.div`
-//   width: 100%;
-//   height: 5px;
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   z-index: 101;
-
-//   /* Adding the gradient border at the bottom */
-//   background: linear-gradient(
-//     90deg,
-//     #3effa3,
-//     #56a7ff,
-//     #fb01ff
-//   ); /* Gradient applied */
-// `
-
-// eslint-disable-next-line import/no-default-export
-export default Navbar
+export { Navbar }

@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee"
-import styled from "styled-components"
+import { styled } from "styled-components"
 
 interface BannerMarqueeProps {
   direction?: "left" | "right"

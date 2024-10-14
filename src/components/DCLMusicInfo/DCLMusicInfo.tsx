@@ -1,9 +1,10 @@
-// eslint-disable-next-line import/no-named-as-default
-import styled from "styled-components"
+import { styled } from "styled-components"
+import bgHero2 from "../../img/music-festival/bg-hero-2.png"
 import DclBullet from "../../img/music-festival/dcl-bullet.png"
-import logo from "../../img/music-festival/info-dcl-logo.png"
-import bgHero from "../../img/music-festival/music-info-bg.png"
-import signUpNasa from "../../img/music-festival/sign-u-nasa.png"
+import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
+import { DownloadLink } from "../DownloadButton"
+import { Faq } from "../Faq/Faq"
+import { StyledLogo } from "../Hero/Hero"
 import { BannerMarquee } from "../Marquee/Marquee"
 
 const DCLMusicInfo = () => {
@@ -14,7 +15,7 @@ const DCLMusicInfo = () => {
       </MarqueeContainer>
       <HeroContainer>
         <InfoContainer>
-          <img src={logo} alt="Decentraland Music Festival" />
+          <StyledLogo src={headerDclLogo} />
           <p>
             Save the Date: Jump into <b>Decentraland</b> November 20-23 for the
             4th edition of the virtual <b>Decentraland Music Festival</b> &
@@ -63,17 +64,9 @@ const DCLMusicInfo = () => {
             4th edition of the virtual <b>Decentraland Music Festival</b> &
             embark on a cosmic EDM journey across the galaxy.
           </p>
-          <NewsletterButton
-            href="https://decentraland.beehiiv.com/subscribe?utm_source=musicfestival.decentraland.org&utm_medium=organic&utm_campaign=DCLMF24"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src={signUpNasa}
-              alt="Sign Up for the Decentraland Newsletter"
-            />
-          </NewsletterButton>
         </InfoContainer>
+        <DownloadLink />
+        <Faq />
       </HeroContainer>
     </StyledHero>
   )
@@ -89,19 +82,19 @@ const MarqueeContainer = styled.div`
 
 const StyledHero = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 240vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-image: url(${bgHero});
+  background-image: url(${bgHero2});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 `
 
 const HeroContainer = styled.div`
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -117,6 +110,7 @@ const InfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 50px;
 
   > img {
     width: 100%;
@@ -126,16 +120,6 @@ const InfoContainer = styled.div`
       margin-bottom: 24px;
     }
   }
-
-  border-image: linear-gradient(90deg, #ff00ff, #00ffcc) 1;
-
-  /* Radio de borde solo en las esquinas inferiores */
-  border-radius: 8px;
-  background-clip: padding-box;
-
-  /* Color de fondo con transparencia */
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 24px;
 
   > p {
     letter-spacing: 1.5px;
@@ -164,46 +148,4 @@ const InfoItem = styled.div`
     letter-spacing: 1px;
   }
 `
-
-const NewsletterButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  padding: 12px 24px !important;
-  font-size: 16px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: white;
-  background: linear-gradient(90deg, #3effa3 0%, #56a7ff 50%, #fb01ff 100%);
-  border: none;
-  border-radius: 8px;
-  transition: all 0.4s ease;
-  padding: 12px 24px;
-  text-decoration: none;
-  cursor: pointer;
-  min-width: 60px;
-
-  > img {
-    width: 100%;
-  }
-
-  &:hover {
-    color: black;
-    background-color: #f37877;
-    box-shadow:
-      0 0 20px #fff,
-      0 0 10px violet,
-      0 0 5px blue;
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    padding: 12px 24px;
-    height: 36px;
-    margin-top: px; /* Smaller top margin for larger screens */
-    margin-bottom: 8px; /* Smaller bottom margin for larger screens */
-  }
-`
-
 export { DCLMusicInfo }
