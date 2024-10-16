@@ -55,5 +55,19 @@ const StyledDownloadButton = styled.a`
     height: 31.33px;
     margin-right: 10px;
   }
+
+  @media (max-width: 600px) {
+    width: 90%;
+    height: 50px;
+
+    & > span {
+      font-size: 14px;
+    }
+
+    img {
+      width: 30px;
+      height: 24px;
+    }
+  }
 `
 export { DownloadLink }
