@@ -68,11 +68,26 @@ const DateRow = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 32px;
+
+  @media (max-width: ${breakpoints.md}) {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
 `
 
 const DateImage = styled.img`
   height: 29px;
   width: 361px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 24px;
+    width: 300px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 20px;
+    width: 250px;
+  }
 `
 
 const TextRow = styled.div`
@@ -83,15 +98,34 @@ const TextRow = styled.div`
   gap: 5px;
   margin-bottom: 20px;
   font-size: 19px;
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 16px;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
 `
 
 const TextImage = styled.img`
   height: 9px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 7px;
+  }
 `
 
 const GroupText = styled.p`
   text-transform: uppercase;
   white-space: nowrap;
+
+  @media (max-width: ${breakpoints.s}) {
+    margin: 5px 0;
+  }
 `
 
 const DiamondLine = styled.div`
@@ -105,7 +139,7 @@ const DiamondLine = styled.div`
   &::before {
     content: "";
     position: absolute;
-    top: 44%%;
+    top: 44%;
     left: 0;
     right: 0;
     height: 3px;
@@ -117,20 +151,48 @@ const DiamondLine = styled.div`
     position: relative;
     z-index: 2;
   }
+
+  @media (max-width: ${breakpoints.md}) {
+    margin-bottom: 24px;
+  }
 `
 
 const DiamondImage = styled.img`
   height: 24px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 20px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 16px;
+  }
 `
 
 const GroupImages = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  @media (max-width: ${breakpoints.md}) {
+    gap: 12px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    gap: 8px;
+  }
 `
 
 const GroupImage = styled.img`
   height: 74px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 60px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 50px;
+  }
 `
 
 const StyledHero = styled.div`
@@ -149,7 +211,7 @@ const StyledHero = styled.div`
 `
 
 const HeroContainer = styled.div`
-  height: 600px;
+  height: auto;
   max-width: 800px;
   width: 100%;
   position: relative;
@@ -158,6 +220,7 @@ const HeroContainer = styled.div`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-top: 180px;
+  padding: 20px;
 
   @media (min-width: ${breakpoints.s}) {
     margin-top: 120px;
@@ -165,6 +228,10 @@ const HeroContainer = styled.div`
 
   @media (min-width: ${breakpoints.md}) {
     margin-top: 80px;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 90%;
   }
 `
 
@@ -178,6 +245,14 @@ const GetReadyText = styled.div`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 20px;
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 20px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    font-size: 18px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -185,12 +260,20 @@ const ContentWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   text-align: center;
+
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 90%;
+  }
 `
 
 const StyledLogo = styled.img`
   width: 100%;
   max-width: 700px;
   height: auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 90%;
+  }
 `
 
 export { Hero, StyledLogo }

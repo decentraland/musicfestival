@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 import liveTalksData from "../../data/liveTalks.json"
 import bgHero2 from "../../img/music-festival/bg-hero-2.png"
+import { breakpoints } from "../../utils/theme"
 
 const LiveTalks = () => {
   return (
@@ -12,11 +13,11 @@ const LiveTalks = () => {
             <img src={talk.image} alt={talk.title} />
             <h3>{talk.title}:</h3>
             <p>{talk.description}</p>
-            <div>
+            <TimeInfo>
               <p>{talk.date}</p>
               <p>{talk["time-start"]}</p>
               <p>{talk["time-end"]}</p>
-            </div>
+            </TimeInfo>
           </TalkCard>
         ))}
       </TalksGrid>
@@ -30,17 +31,36 @@ const LiveTalksContainer = styled.div`
   align-items: center;
   background-image: url(${bgHero2});
   background-size: cover;
-  padding: 40px 40px 0 40px;
+  background-position: center;
+  padding: 40px 20px;
   color: white;
+
+  @media (max-width: ${breakpoints.md}) {
+    padding: 30px 15px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    padding: 20px 10px;
+  }
 `
 
 const TalksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+
+  @media (max-width: ${breakpoints.md}) {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 `
 
 const TalkCard = styled.div`
@@ -48,15 +68,22 @@ const TalkCard = styled.div`
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 
   img {
     width: 100%;
     border: 1px solid;
+    border-radius: 4px;
   }
 
   h3 {
-    margin-top: 10px;
-    font-size: 24px;
+    margin-top: 15px;
+    font-size: 22px;
     font-weight: bold;
     background: linear-gradient(90deg, #00bfff, #ff00ff);
     -webkit-background-clip: text;
@@ -64,55 +91,65 @@ const TalkCard = styled.div`
   }
 
   p {
-    margin: 0px 0 15px 0;
-    font-size: 20px;
-    font-weight: 600;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
     color: #ffffff;
+    line-height: 1.4;
   }
 
-  p:last-of-type {
-    font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
-  }
+  @media (max-width: ${breakpoints.md}) {
+    padding: 15px;
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
+    h3 {
+      font-size: 20px;
+    }
 
     p {
-      margin: 0;
-
-      &::after {
-        content: "|";
-        margin: 0 5px;
-        color: #8a2be2;
-        font-size: 20px;
-        font-weight: bold;
-      }
+      font-size: 14px;
     }
+  }
+`
 
-    p:last-child::after {
-      content: "";
+const TimeInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 15px;
+
+  p {
+    margin: 0;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "|";
+      position: absolute;
+      right: -7px;
+      color: #8a2be2;
     }
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 12px;
+    gap: 8px;
   }
 `
 
 const Title = styled.h2`
   font-size: 36px;
-  margin: 60px 0;
+  margin: 40px 0;
   text-transform: uppercase;
   background: linear-gradient(90deg, #00bfff, #ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
   display: inline-block;
-  font-family: "Nasalization";
+  font-family: var(--nasalization-font);
+  text-align: center;
 
   &::before,
   &::after {
@@ -121,12 +158,27 @@ const Title = styled.h2`
     margin-right: 20px;
   }
 
-  &::before {
-    left: -30px;
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 30px;
+    margin: 30px 0;
+
+    &::before,
+    &::after {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 
-  &::after {
-    right: -30px;
+  @media (max-width: ${breakpoints.s}) {
+    font-size: 24px;
+    margin: 20px 0;
+
+    &::before,
+    &::after {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 `
+
 export { LiveTalks, Title }
