@@ -35,6 +35,10 @@ const MapContainer = styled.div`
   background-color: #000;
   padding: 40px;
   gap: 20px;
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -43,6 +47,11 @@ const ContentWrapper = styled.div`
   align-items: stretch;
   justify-content: center;
   gap: 40px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const MapImage = styled.img`
@@ -51,6 +60,9 @@ const MapImage = styled.img`
   max-width: 636px;
   max-height: 636px;
   margin-bottom: 20px;
+  border: 4px solid;
+  border-image: linear-gradient(90deg, #00bfff, #ff00ff) 1;
+  box-shadow: 0 0 15px #c445a0;
 `
 
 const Section = styled.section`
@@ -58,6 +70,13 @@ const Section = styled.section`
   flex-direction: column;
   width: 80%;
   gap: 10px;
+  align-items: center; /* Centrar los elementos */
+  text-align: center; /* Centrar el texto */
+
+  @media (max-width: 600px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 const ZoneArticle = styled.article`
@@ -65,6 +84,13 @@ const ZoneArticle = styled.article`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
+  align-items: center; /* Centrar los elementos */
+  text-align: center; /* Centrar el texto */
+
+  @media (max-width: 600px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 const ZoneHeader = styled.h3<{ color: string }>`
@@ -73,8 +99,13 @@ const ZoneHeader = styled.h3<{ color: string }>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 22px;
+  font-family: var(--nasalization-font);
   white-space: nowrap;
   overflow: hidden;
+
+  @media (max-width: 600px) {
+    font-size: 18px; /* Ajusta el tamaño de fuente para móviles */
+  }
 `
 
 const ZoneList = styled.div`
@@ -83,11 +114,20 @@ const ZoneList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 const ZoneItem = styled.p`
   margin: 0;
   color: white;
   font-size: 16px;
+
+  @media (max-width: 600px) {
+    font-size: 14px; /* Ajusta el tamaño de fuente para móviles */
+  }
 `
 export { MapComponent }
