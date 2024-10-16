@@ -1,10 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
-
-type Artist = {
-  name: string
-  time: string
-}
+import { Modal } from "../Modal/Index"
 
 type Day = {
   name: string
@@ -21,6 +17,8 @@ enum DayHighlight {
 
 function LineUp() {
   const [highlightedDay, setHighlightedDay] = useState(DayHighlight.FULL)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null)
 
   const higlightDay = (day: DayHighlight): void => {
     setHighlightedDay(day)
@@ -30,7 +28,10 @@ function LineUp() {
     return highlightedDay === index + 1
   }
 
-  console.log("highlightedDay", highlightedDay)
+  const handleArtistClick = (artist: Artist) => {
+    setSelectedArtist(artist)
+    setModalOpen(true)
+  }
 
   return (
     <>
@@ -115,7 +116,10 @@ function LineUp() {
                     return (
                       <ArtistColumn key={`${day.name}-${time}`}>
                         {artist ? (
-                          <ArtistCard color={dayColors[index]}>
+                          <ArtistCard
+                            color={dayColors[index]}
+                            onClick={() => handleArtistClick(artist)}
+                          >
                             <ArtistName>{artist.name}</ArtistName>
                             <ArtistTime color={dayColors[index]}>
                               {artist.time}
@@ -137,6 +141,14 @@ function LineUp() {
           </ScheduleContainer>
         </Content>
       </Container>
+      <div>
+        {modalOpen && selectedArtist?.isModalEligible && (
+          <Modal
+            onClose={() => setModalOpen(false)}
+            artist={selectedArtist as Artist}
+          />
+        )}
+      </div>
     </>
   )
 }
@@ -319,6 +331,7 @@ const DayRow = styled.div<{ highlighted: boolean; inactive: boolean }>`
   background-color: ${(props) =>
     props.highlighted ? "rgba(255, 255, 255, 0.4)" : "transparent"};
   opacity: ${(props) => (props.inactive ? 0.5 : 1)};
+  pointer-events: ${(props) => (props.inactive ? "none" : "auto")};
 `
 
 const DayLabel = styled.div<{ color: string }>`
@@ -405,6 +418,15 @@ const ArtistCard = styled.div<{ color: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  }
 `
 
 const ArtistName = styled.div`
@@ -452,23 +474,17 @@ const Title = styled.h2`
 const dayColors = ["#3EFFA3", "#56A7FF", "#A35AFF", "#EF0DFF"]
 const timeSlots = [
   "12:00",
-  "12:40",
-  "13:20",
+  "13:00",
   "14:00",
-  "14:40",
-  "15:20",
+  "15:00",
   "16:00",
-  "16:40",
-  "17:20",
+  "17:00",
   "18:00",
-  "18:40",
-  "19:20",
+  "19:00",
   "20:00",
-  "20:40",
-  "21:20",
+  "21:00",
   "22:00",
-  "22:40",
-  "23:20",
+  "23:00",
   "00:00",
 ]
 
@@ -477,23 +493,30 @@ const schedule: Day[] = [
     name: "DAY ONE",
     artists: [
       { name: "ARTIST", time: "12:00" },
-      { name: "ARTIST", time: "12:40" },
-      { name: "ARTIST", time: "13:20" },
+      { name: "ARTIST", time: "13:00" },
       { name: "ARTIST", time: "14:00" },
-      { name: "DANIEL ALLAN", time: "14:40" },
-      { name: "LYRAH", time: "15:20" },
-      { name: "ARTIST", time: "16:00" },
-      { name: "ARTIST", time: "16:40" },
-      { name: "Baby.", time: "17:20" },
-      { name: "ARTIST", time: "18:00" },
-      { name: "ARTIST", time: "18:40" },
-      { name: "Syn Cole 1%", time: "19:20" },
-      { name: "ARTIST", time: "20:00" },
-      { name: "ARTIST", time: "20:40" },
-      { name: "ARTIST", time: "21:20" },
+      {
+        name: "DANIEL ALLAN",
+        time: "15:00",
+        subtitle: "DAY 1 · NOV. 20 · 21:00 UTC (14:00PST)",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas ligula, pellentesque in condimentum at, placerat eget dui. Sed ut diam ipsum.",
+        image: "../src/img/artists/Daniel-Allan.png",
+        isModalEligible: true,
+        socials: {
+          twitter: "https://twitter.com/danielallan",
+          instagram: "https://instagram.com/danielallan",
+          discord: "https://discord.gg/danielallan",
+        },
+      },
+      { name: "LYRAH", time: "16:00" },
+      { name: "ARTIST", time: "17:00" },
+      { name: "Baby.", time: "18:00" },
+      { name: "ARTIST", time: "19:00" },
+      { name: "Syn Cole 1%", time: "20:00" },
+      { name: "ARTIST", time: "21:00" },
       { name: "ARTIST", time: "22:00" },
-      { name: "ARTIST", time: "22:40" },
-      { name: "ARTIST", time: "23:20" },
+      { name: "ARTIST", time: "23:00" },
       { name: "ARTIST", time: "00:00" },
     ],
   },
@@ -501,23 +524,17 @@ const schedule: Day[] = [
     name: "DAY TWO",
     artists: [
       { name: "ARTIST", time: "12:00" },
-      { name: "ARTIST", time: "12:40" },
-      { name: "ARTIST", time: "13:20" },
+      { name: "ARTIST", time: "13:00" },
       { name: "ARTIST", time: "14:00" },
-      { name: "ARTIST", time: "14:40" },
-      { name: "ARTIST", time: "15:20" },
+      { name: "ARTIST", time: "15:00" },
       { name: "ARTIST", time: "16:00" },
-      { name: "ARTIST", time: "16:40" },
-      { name: "ARTIST", time: "17:20" },
+      { name: "ARTIST", time: "17:00" },
       { name: "ARTIST", time: "18:00" },
-      { name: "ARTIST", time: "18:40" },
-      { name: "MAT ZO", time: "19:20" },
-      { name: "ARTIST", time: "20:00" },
-      { name: "ARTIST", time: "20:40" },
-      { name: "ARTIST", time: "21:20" },
+      { name: "ARTIST", time: "19:00" },
+      { name: "MAT ZO", time: "20:00" },
+      { name: "ARTIST", time: "21:00" },
       { name: "ARTIST", time: "22:00" },
-      { name: "ARTIST", time: "22:40" },
-      { name: "ARTIST", time: "23:20" },
+      { name: "ARTIST", time: "23:00" },
       { name: "ARTIST", time: "00:00" },
     ],
   },
@@ -525,23 +542,17 @@ const schedule: Day[] = [
     name: "DAY THREE",
     artists: [
       { name: "ARTIST", time: "12:00" },
-      { name: "ARTIST", time: "12:40" },
-      { name: "ARTIST", time: "13:20" },
+      { name: "ARTIST", time: "13:00" },
       { name: "ARTIST", time: "14:00" },
-      { name: "ARTIST", time: "14:40" },
-      { name: "ARTIST", time: "15:20" },
+      { name: "ARTIST", time: "15:00" },
       { name: "ARTIST", time: "16:00" },
-      { name: "ARTIST", time: "16:40" },
-      { name: "ARTIST", time: "17:20" },
+      { name: "ARTIST", time: "17:00" },
       { name: "ARTIST", time: "18:00" },
-      { name: "ARTIST", time: "18:40" },
-      { name: "WHIPPED CREAM", time: "19:20" },
-      { name: "ARTIST", time: "20:00" },
-      { name: "ARTIST", time: "20:40" },
-      { name: "ARTIST", time: "21:20" },
+      { name: "ARTIST", time: "19:00" },
+      { name: "WHIPPED CREAM", time: "20:00" },
+      { name: "ARTIST", time: "21:00" },
       { name: "ARTIST", time: "22:00" },
-      { name: "ARTIST", time: "22:40" },
-      { name: "ARTIST", time: "23:20" },
+      { name: "ARTIST", time: "23:00" },
       { name: "ARTIST", time: "00:00" },
     ],
   },
@@ -549,26 +560,35 @@ const schedule: Day[] = [
     name: "DAY FOUR",
     artists: [
       { name: "ARTIST", time: "12:00" },
-      { name: "ARTIST", time: "12:40" },
-      { name: "ARTIST", time: "13:20" },
+      { name: "ARTIST", time: "13:00" },
       { name: "ARTIST", time: "14:00" },
-      { name: "ARTIST", time: "14:40" },
-      { name: "ARTIST", time: "15:20" },
+      { name: "ARTIST", time: "15:00" },
       { name: "ARTIST", time: "16:00" },
-      { name: "ARTIST", time: "16:40" },
-      { name: "ARTIST", time: "17:20" },
+      { name: "ARTIST", time: "17:00" },
       { name: "ARTIST", time: "18:00" },
-      { name: "ARTIST", time: "18:40" },
-      { name: "DJ LAG", time: "19:20" },
-      { name: "ARTIST", time: "20:00" },
-      { name: "ARTIST", time: "20:40" },
-      { name: "ARTIST", time: "21:20" },
+      { name: "ARTIST", time: "19:00" },
+      { name: "DJ LAG", time: "20:00" },
+      { name: "ARTIST", time: "21:00" },
       { name: "ARTIST", time: "22:00" },
-      { name: "ARTIST", time: "22:40" },
-      { name: "ARTIST", time: "23:20" },
+      { name: "ARTIST", time: "23:00" },
       { name: "ARTIST", time: "00:00" },
     ],
   },
 ]
 
 export { LineUp }
+
+export type Artist = {
+  name: string
+  time: string
+  image?: string
+  description?: string
+  subtitle?: string
+
+  socials?: {
+    twitter: string
+    instagram: string
+    discord: string
+  }
+  isModalEligible?: boolean
+}
