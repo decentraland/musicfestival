@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import onlyLogo from "../img/music-festival/only-logo.png"
+import onlyLogo from "../img/music-festival/Download-button-logo.png"
 
 const DownloadLink = () => {
   return (
@@ -7,10 +7,12 @@ const DownloadLink = () => {
       href="https://decentraland.org/download"
       target="_blank"
     >
-      <span>
+      <LogoContainer>
         <img src={onlyLogo} alt="Decentraland" />
+      </LogoContainer>
+      <TextContainer>
         <p>Download Decentraland</p>
-      </span>
+      </TextContainer>
     </StyledDownloadButton>
   )
 }
@@ -23,10 +25,8 @@ const StyledDownloadButton = styled.a`
   text-decoration: none;
   border-radius: 30px;
   transition: background-color 0.3s;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   background: linear-gradient(90deg, #56a7ff, #fb01ff);
   box-shadow:
     0px 0px 20px 5px rgba(144, 0, 255, 0.75),
@@ -41,28 +41,29 @@ const StyledDownloadButton = styled.a`
     background: linear-gradient(90deg, #3effa3, #fb01ff);
   }
 
-  & > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    font-size: 22px;
-    text-transform: uppercase;
+  @media (max-width: 600px) {
+    margin-top: 0px;
+    width: 90%;
+    height: 50px;
   }
+`
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 100%;
+  padding-left: 10px;
 
   img {
     width: 39.83px;
-    height: 31.33px;
-    margin-right: 10px;
+    height: 39.82px;
   }
 
   @media (max-width: 600px) {
-    width: 90%;
-    height: 50px;
-
-    & > span {
-      font-size: 14px;
-    }
+    width: 40px;
+    padding-left: 5px;
 
     img {
       width: 30px;
@@ -70,4 +71,24 @@ const StyledDownloadButton = styled.a`
     }
   }
 `
+
+const TextContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    p {
+      font-size: 14px;
+    }
+  }
+`
+
 export { DownloadLink }

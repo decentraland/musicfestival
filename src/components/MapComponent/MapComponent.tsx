@@ -6,7 +6,7 @@ import { Title } from "../LiveTalks/LiveTalks"
 
 const MapComponent = () => {
   return (
-    <MapContainer>
+    <MapContainer id="map">
       <Title>MAP</Title>
       <ContentWrapper>
         <MapImage src={mapImage} alt="Map" />

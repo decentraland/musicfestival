@@ -14,7 +14,7 @@ const Faq = () => {
   }
 
   return (
-    <FaqContainer>
+    <FaqContainer id="faq">
       <Title>Frequently Asked Questions</Title>
       {faqData.map((item, index) => (
         <QuestionContainer key={index}>

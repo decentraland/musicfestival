@@ -1,11 +1,13 @@
 import { styled } from "styled-components"
 import liveTalksData from "../../data/liveTalks.json"
 import bgHero2 from "../../img/music-festival/bg-hero-2.png"
+import leftDiamond from "../../img/music-festival/left-diamond.png"
+import rightDiamond from "../../img/music-festival/right-diamond.png"
 import { breakpoints } from "../../utils/theme"
 
 const LiveTalks = () => {
   return (
-    <LiveTalksContainer>
+    <LiveTalksContainer id="livetalks">
       <Title>LIVE TALKS</Title>
       <TalksGrid>
         {liveTalksData.map((talk, index) => (
@@ -140,22 +142,37 @@ const TimeInfo = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 60px;
   margin: 40px 0;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #00bfff, #ff00ff);
+  background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  display: inline-block;
+  display: flex;
   font-family: var(--nasalization-font);
   text-align: center;
+  letter-spacing: 4px;
+  align-items: center;
 
   &::before,
   &::after {
-    content: "♦";
-    margin-left: 20px;
-    margin-right: 20px;
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0 20px 0 10px;
+  }
+
+  &::before {
+    background-image: url(${leftDiamond});
+  }
+
+  &::after {
+    background-image: url(${rightDiamond});
   }
 
   @media (max-width: ${breakpoints.md}) {
@@ -164,8 +181,9 @@ const Title = styled.h2`
 
     &::before,
     &::after {
-      margin-left: 10px;
-      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+      margin: 0 10px;
     }
   }
 
@@ -175,8 +193,9 @@ const Title = styled.h2`
 
     &::before,
     &::after {
-      margin-left: 5px;
-      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
     }
   }
 `

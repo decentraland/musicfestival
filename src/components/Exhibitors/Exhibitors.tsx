@@ -4,7 +4,7 @@ import { Title } from "../LiveTalks/LiveTalks"
 
 const Exhibitors = () => {
   return (
-    <ExhibitorsContainer>
+    <ExhibitorsContainer id="exhibitors">
       <Title>EXHIBITORS</Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (

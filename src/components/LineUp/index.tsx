@@ -35,7 +35,7 @@ function LineUp() {
 
   return (
     <>
-      <Title>Line Up</Title>
+      <Title id="lineup">Line Up</Title>
       <DaysContainer>
         <FullLineUp
           onClick={() => higlightDay(DayHighlight.FULL)}

@@ -18,7 +18,16 @@ const Navbar = () => {
             <LogoImage src={dmf24Logo} alt="DMF 2024 Logo" />
           </LogoContainer>
 
-          <div>
+          <NavLinks>
+            <NavLink href="#about">ABOUT</NavLink>
+            <NavLink href="#lineup">LINEUP</NavLink>
+            <NavLink href="#livetalks">LIVETALKS</NavLink>
+            <NavLink href="#map">MAP</NavLink>
+            <NavLink href="#exhibitors">EXHIBITORS</NavLink>
+            <NavLink href="#faq">FAQ</NavLink>
+          </NavLinks>
+
+          <SocialIconsContainer>
             <SocialIcon
               href="https://twitter.com/decentraland"
               target="_blank"
@@ -40,7 +49,7 @@ const Navbar = () => {
             >
               <Discord />
             </SocialIcon>
-          </div>
+          </SocialIconsContainer>
         </Nav>
       </StyledNavbar>
     </Header>
@@ -62,39 +71,7 @@ const StyledNavbar = styled.section`
   display: flex;
   justify-content: space-between;
   background-color: black;
-
-  /* Adding the gradient border at the bottom */
-  border-image: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff) 1; /* Gradient applied to the border */
-`
-
-const SocialIcon = styled.a`
-  margin-left: 24px;
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px;
-  border-radius: 50%; /* Make it circular like the icons */
-  transition: transform 0.4s ease; /* Smooth animation */
-
-  /* Apply gradient on hover behind the icon */
-  :hover {
-    transform: scale(1.1); /* Scale the icon on hover */
-    transition: transform 0.4s ease; /* Smooth animation */
-    will-change: transform; /* Optimize the animation */
-  }
-
-  svg {
-    width: 24px;
-    height: 24px;
-
-    path {
-      fill: white; /* Default color */
-      transition: fill 0.4s ease;
-    }
-
-    :hover path {
-      fill: black; /* Change icon color on hover */
-    }
-  }
+  border-image: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff) 1;
 `
 
 const Nav = styled.nav`
@@ -102,7 +79,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 24px;
+  padding: 12px 24px;
+
   @media screen and (min-width: ${breakpoints.md}) {
     padding: 0px 62px;
   }
@@ -112,12 +90,75 @@ const LogoContainer = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
-  /* Removed the rotation animation */
 `
 
 const LogoImage = styled.img`
-  height: 60px; /* Adjust this size as needed */
+  height: 40px;
   width: auto;
+
+  @media screen and (min-width: ${breakpoints.md}) {
+    height: 60px;
+  }
+`
+
+const NavLinks = styled.div`
+  display: none;
+
+  @media screen and (min-width: ${breakpoints.md}) {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+`
+
+const NavLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  letter-spacing: 3%;
+
+  &:hover {
+    color: #3effa3;
+  }
+`
+
+const SocialIconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const SocialIcon = styled.a`
+  margin-left: 16px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    @media screen and (min-width: ${breakpoints.md}) {
+      width: 24px;
+      height: 24px;
+    }
+
+    path {
+      fill: white;
+      transition: fill 0.4s ease;
+    }
+
+    &:hover path {
+      fill: #3effa3;
+    }
+  }
 `
 
 export { Navbar }
