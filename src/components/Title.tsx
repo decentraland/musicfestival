@@ -21,8 +21,8 @@ const StyledTitle = styled.h2`
   &::after {
     content: "";
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
