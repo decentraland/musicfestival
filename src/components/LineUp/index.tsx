@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Modal } from "../Modal/Index"
+import { Title } from "../Title"
 
 type Day = {
   name: string
@@ -35,7 +36,7 @@ function LineUp() {
 
   return (
     <>
-      <Title id="lineup">Line Up</Title>
+      <Title>Line Up</Title>
       <DaysContainer>
         <FullLineUp
           onClick={() => higlightDay(DayHighlight.FULL)}
@@ -443,32 +444,6 @@ const EmptySlot = styled.div`
   width: 100%;
   height: 100%;
   min-height: 30px;
-`
-
-const Title = styled.h2`
-  font-size: 36px;
-  margin-block: 32px 24px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #00bfff, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  font-family: "Nasalization";
-  text-align: center;
-  &::before,
-  &::after {
-    content: "♦";
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  &::before {
-    left: -30px;
-  }
-
-  &::after {
-    right: -30px;
-  }
 `
 
 const dayColors = ["#3EFFA3", "#56A7FF", "#A35AFF", "#EF0DFF"]

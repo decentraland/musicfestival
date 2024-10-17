@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 import mapData from "../../data/mapData.json"
 import mapImage from "../../img/music-festival/map.png"
 import { DownloadLink } from "../DownloadButton"
-import { Title } from "../LiveTalks/LiveTalks"
+import { Title } from "../Title"
 
 const MapComponent = () => {
   return (

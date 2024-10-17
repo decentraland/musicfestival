@@ -150,11 +150,10 @@ const Title = styled.h2`
   -webkit-text-fill-color: transparent;
   position: relative;
   display: flex;
-  font-family: var(--nasalization-font);
   text-align: center;
   letter-spacing: 4px;
   align-items: center;
-
+  font-family: "NASALIZATION";
   &::before,
   &::after {
     content: "";

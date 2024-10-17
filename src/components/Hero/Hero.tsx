@@ -156,8 +156,8 @@ const DiamondLine = styled.div`
     top: 44%;
     left: 0;
     right: 0;
-    height: 3px;
-    background-color: #8a2be2;
+    height: 2.5px;
+    background-color: #926bff;
     z-index: 1;
     @media (max-width: ${breakpoints.s}) {
       height: 1px;
@@ -175,7 +175,7 @@ const DiamondLine = styled.div`
 `
 
 const DiamondImage = styled.img`
-  height: 24px;
+  height: 20px;
 
   @media (max-width: ${breakpoints.md}) {
     height: 20px;
