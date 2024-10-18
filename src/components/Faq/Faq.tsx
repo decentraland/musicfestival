@@ -8,9 +8,7 @@ const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const toggleAnswer = (index: number) => {
-    console.log("Clicked question index:", index)
     setActiveIndex(activeIndex === index ? null : index)
-    console.log("Active index after toggle:", activeIndex)
   }
 
   return (
@@ -23,9 +21,10 @@ const Faq = () => {
             <Arrow
               src={activeIndex === index ? arrowUp : arrowDown}
               alt="arrow"
+              $isActive={activeIndex === index}
             />
           </Question>
-          {activeIndex === index && <Answer>{item.answer}</Answer>}
+          <Answer $isActive={activeIndex === index}>{item.answer}</Answer>
         </QuestionContainer>
       ))}
     </FaqContainer>
@@ -57,20 +56,28 @@ const Question = styled.div`
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   font-size: 18px;
   color: white;
 `
 
-const Answer = styled.div`
-  padding: 20px;
-  background-color: #333;
+const Answer = styled.div<{ $isActive: boolean }>`
+  max-height: ${(props) => (props.$isActive ? "1000px" : "0")};
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
   color: white;
+  text-align: justify;
+  padding: ${(props) => (props.$isActive ? "24px" : "0")};
   font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
 `
 
-const Arrow = styled.img`
-  width: 20px;
-  height: 62px;
+const Arrow = styled.img<{ $isActive: boolean }>`
+  transition: transform 0.3s ease-in-out;
+  transform: ${(props) => (props.$isActive ? "rotate(180deg)" : "rotate(0)")};
 `
+
 export { Faq }

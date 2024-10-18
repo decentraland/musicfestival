@@ -50,6 +50,7 @@ function LineUp() {
           onClick={() => higlightDay(DayHighlight.ONE)}
           gradientTo={dayColors[1]}
           isActive={highlightedDay === DayHighlight.ONE}
+          className="nasalization"
         >
           <span>DAY ONE</span>
           <span>Nov. 20</span>
@@ -178,7 +179,7 @@ const Day = styled.div<{ gradientTo?: string; isActive?: boolean }>`
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  font-family: "Nasalization";
+  font-family: var(--nasalization-font) !important;
   display: flex;
   flex-direction: column;
   align-items: center;

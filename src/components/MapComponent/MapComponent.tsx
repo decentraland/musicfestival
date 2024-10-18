@@ -48,7 +48,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
   gap: 40px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -73,7 +73,7 @@ const Section = styled.section`
   align-items: center; /* Centrar los elementos */
   text-align: center; /* Centrar el texto */
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     align-items: center;
     text-align: center;
   }
@@ -105,7 +105,7 @@ const ZoneHeader = styled.h3<{ color: string }>`
   margin-block: 12px;
   text-align: left;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     text-align: center;
     font-size: 18px; /* Ajusta el tamaño de fuente para móviles */
   }
@@ -118,7 +118,7 @@ const ZoneList = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     align-items: center;
     text-align: center;
   }
