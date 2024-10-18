@@ -106,19 +106,18 @@ const ExhibitorsContainer = styled.div`
 
 const ExhibitorsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
   max-width: 1200px;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (min-width: 568px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 
