@@ -100,10 +100,13 @@ const ZoneHeader = styled.h3<{ color: string }>`
   -webkit-text-fill-color: transparent;
   font-size: 22px;
   font-family: var(--nasalization-font);
-  white-space: nowrap;
   overflow: hidden;
+  overflow: hidden;
+  margin-block: 12px;
+  text-align: left;
 
   @media (max-width: 600px) {
+    text-align: center;
     font-size: 18px; /* Ajusta el tamaño de fuente para móviles */
   }
 `

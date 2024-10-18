@@ -64,20 +64,6 @@ const ExhibitorCard = styled.div`
     object-fit: cover;
     margin-bottom: 10px;
   }
-
-  @media (max-width: 768px) {
-    img {
-      height: 150px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    padding: 5px;
-
-    img {
-      height: 100px;
-    }
-  }
 `
 
 const ExhibitorInfo = styled.div`

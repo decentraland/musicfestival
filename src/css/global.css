@@ -86,6 +86,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.nasalization {
   font-family: var(--nasalization-font) !important;
+}
+
+p,
+span,
+div {
+  font-family: "Inter", sans-serif;
 }

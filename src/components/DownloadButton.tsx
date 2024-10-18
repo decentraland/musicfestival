@@ -36,8 +36,12 @@ const StyledDownloadButton = styled.a`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 30px;
+  transition: background 0.3s;
+  will-change: background;
 
   &:hover {
+    transition: background 0.3s;
+    will-change: background;
     background: linear-gradient(90deg, #3effa3, #fb01ff);
   }
 

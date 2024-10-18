@@ -33,10 +33,8 @@ const Faq = () => {
 }
 
 const FaqContainer = styled.div`
-  margin-top: 150px;
-  height: 100vh;
+  margin-top: 120px;
   width: 100%;
-  padding: 40px;
   color: white;
 `
 
@@ -46,6 +44,7 @@ const Title = styled.h2`
   margin-bottom: 40px;
   text-transform: uppercase;
   font-weight: bold;
+  font-family: "Inter", sans-serif !important;
 `
 
 const QuestionContainer = styled.div`

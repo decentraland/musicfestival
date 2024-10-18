@@ -4,6 +4,7 @@ import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
 import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
 import groupImage4 from "../../img/music-festival/dj-lag-icon.png"
 import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
+import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
 import bgHero from "../../img/music-festival/hero-background1.png"
 import diamondImageLeft from "../../img/music-festival/left-diamond.png"
 import groupImage2 from "../../img/music-festival/matzo-icon.png"
@@ -232,6 +233,10 @@ const StyledHero = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @media (max-width: ${breakpoints.md}) {
+    background-image: url(${bgHeroMobile});
+  }
 `
 
 const HeroContainer = styled.div`

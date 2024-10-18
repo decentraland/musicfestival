@@ -136,10 +136,14 @@ const InfoItem = styled.div`
   gap: 8px;
   font-weight: 300;
 
+  > p {
+    font-family: "Inter", sans-serif !important;
+  }
+
   > img {
-    width: 20px;
+    width: 12px;
     position: relative;
-    top: -4px;
+    bottom: -4px;
   }
 
   > h5 {
