@@ -49,6 +49,7 @@ const MarqueeContent = styled.div`
   display: flex;
   align-items: center;
   gap: 46px;
+  padding-inline: 10px;
 `
 
 const BoldText = styled.span`
@@ -68,8 +69,8 @@ const GradientDiamond = styled.div`
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  width: 33px;
-  height: 33px;
+  width: 22px;
+  height: 22px;
 `
 
 export { BannerMarquee }
