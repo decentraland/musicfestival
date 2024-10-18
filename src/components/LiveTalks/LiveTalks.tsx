@@ -10,7 +10,7 @@ const LiveTalks = () => {
       <TalksGrid>
         {liveTalksData.map((talk, index) => (
           <TalkCard key={index}>
-            <img src={`../../${talk.image}`} alt={talk.title} />
+            <img src={`../..${talk.image}`} alt={talk.title} />
             <h3>{talk.title}:</h3>
             <p>{talk.description}</p>
             <TimeInfo>
