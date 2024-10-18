@@ -11,7 +11,7 @@ const LiveTalks = () => {
         {liveTalksData.map((talk, index) => (
           <TalkCard key={index}>
             <img
-              src={`$../../src/img/music-festival/${talk.image}`}
+              src={`../../src/img/music-festival/${talk.image}`}
               alt={talk.title}
             />
             <h3>{talk.title}:</h3>
