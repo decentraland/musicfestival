@@ -1,6 +1,6 @@
 [
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Emotes & wearables",
     "description": "Discovering virtual assets for music experience",
     "date": "WEDNESDAY NOV 20",
@@ -8,7 +8,7 @@
     "time-end": "9:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Label round-table",
     "description": "Increasing authentic engagement in EDM",
     "date": "WEDNESDAY NOV 20",
@@ -16,7 +16,7 @@
     "time-end": "14:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Tech-driven fan economies",
     "description": "Tools and strategies for independent artists",
     "date": "THURSDAY NOV 21",
@@ -24,7 +24,7 @@
     "time-end": "9:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Label round-table",
     "description": "New approaches to promoting EDM globally",
     "date": "THURSDAY NOV 21",
@@ -32,7 +32,7 @@
     "time-end": "14:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Beyong the algorithms",
     "description": "Increasing discoverability trough digital community",
     "date": "FRIDAY NOV 22",
@@ -40,7 +40,7 @@
     "time-end": "9:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Ai for edm",
     "description": "Shaping tomorrow's intelligent soundscapes",
     "date": "FRIDAY NOV 22",
@@ -48,7 +48,7 @@
     "time-end": "14:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Final day wrap",
     "description": "Festival highlights with the featured artists (x space)",
     "date": "SATURDAY NOV 23",
@@ -56,7 +56,7 @@
     "time-end": "9:00 PST"
   },
   {
-    "image": "src/img/music-festival/livetalks.png",
+    "image": "/img/music-festival/livetalks.png",
     "title": "Play to the music",
     "description": "Emote raid and parkour rave",
     "date": "SATURDAY NOV 23",
