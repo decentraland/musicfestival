@@ -26,6 +26,9 @@ const Hero = () => {
         </DateRow>
         <StyledLogo src={headerDclLogo} />
         <ContentWrapper>
+          <MobileDiamondLine>
+            <DiamondImage src={diamondImage} alt="diamond" />
+          </MobileDiamondLine>
           <TextRow>
             <GroupText>
               <b>FREE</b> ENTRY
@@ -55,8 +58,8 @@ const Hero = () => {
         </ContentWrapper>
         <GetReadyContainer>
           <GetReadyText>↓GET READY↓</GetReadyText>
+          <DownloadLink />
         </GetReadyContainer>
-        <DownloadLink />
       </HeroContainer>
     </StyledHero>
   )
@@ -71,7 +74,7 @@ const DateRow = styled.div`
 
   @media (max-width: ${breakpoints.md}) {
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 `
 
@@ -98,16 +101,23 @@ const TextRow = styled.div`
   gap: 5px;
   margin-bottom: 20px;
   font-size: 19px;
+  white-space: nowrap;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 16px;
     gap: 3px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 14px;
-    flex-wrap: wrap;
+    font-size: 12px;
+    gap: 2px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 10px;
+    gap: 1px;
   }
 `
 
@@ -117,15 +127,19 @@ const TextImage = styled.img`
   @media (max-width: ${breakpoints.md}) {
     height: 7px;
   }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 5px;
+  }
+
+  @media (max-width: 400px) {
+    height: 4px;
+  }
 `
 
 const GroupText = styled.p`
   text-transform: uppercase;
   white-space: nowrap;
-
-  @media (max-width: ${breakpoints.s}) {
-    margin: 5px 0;
-  }
 `
 
 const DiamondLine = styled.div`
@@ -142,9 +156,12 @@ const DiamondLine = styled.div`
     top: 44%;
     left: 0;
     right: 0;
-    height: 3px;
-    background-color: #8a2be2;
+    height: 2.5px;
+    background-color: #926bff;
     z-index: 1;
+    @media (max-width: ${breakpoints.s}) {
+      height: 1px;
+    }
   }
 
   & > img {
@@ -153,12 +170,12 @@ const DiamondLine = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}) {
-    margin-bottom: 24px;
+    margin-bottom: 5px;
   }
 `
 
 const DiamondImage = styled.img`
-  height: 24px;
+  height: 20px;
 
   @media (max-width: ${breakpoints.md}) {
     height: 20px;
@@ -179,12 +196,17 @@ const GroupImages = styled.div`
   }
 
   @media (max-width: ${breakpoints.s}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 8px;
+    justify-items: center;
   }
 `
 
 const GroupImage = styled.img`
   height: 74px;
+  mix-blend-mode: screen;
 
   @media (max-width: ${breakpoints.md}) {
     height: 60px;
@@ -192,6 +214,8 @@ const GroupImage = styled.img`
 
   @media (max-width: ${breakpoints.s}) {
     height: 50px;
+    width: 100%;
+    object-fit: contain;
   }
 `
 
@@ -231,12 +255,21 @@ const HeroContainer = styled.div`
   }
 
   @media (max-width: ${breakpoints.md}) {
-    max-width: 90%;
+    max-width: 100%;
   }
 `
 
 const GetReadyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
+  width: 100%;
+  gap: 20px;
+
+  @media (max-width: ${breakpoints.s}) {
+    gap: 10px;
+  }
 `
 
 const GetReadyText = styled.div`
@@ -245,13 +278,15 @@ const GetReadyText = styled.div`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 20px;
+  margin-bottom: 20px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 20px;
   }
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 18px;
+    font-size: 10px;
+    margin-bottom: 0;
   }
 `
 
@@ -260,6 +295,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  align-items: center;
 
   @media (max-width: ${breakpoints.md}) {
     max-width: 90%;
@@ -276,4 +312,14 @@ const StyledLogo = styled.img`
   }
 `
 
-export { Hero, StyledLogo }
+const MobileDiamondLine = styled(DiamondLine)`
+  display: none;
+  margin-bottom: 20px;
+
+  @media (max-width: ${breakpoints.md}) {
+    display: flex;
+    margin-bottom: 5px;
+  }
+`
+
+export { Hero, StyledLogo, DiamondImage }

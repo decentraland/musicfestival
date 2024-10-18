@@ -9,7 +9,7 @@ import { BannerMarquee } from "../Marquee/Marquee"
 
 const DCLMusicInfo = () => {
   return (
-    <StyledHero>
+    <StyledHero id="about">
       <MarqueeContainer>
         <BannerMarquee />
       </MarqueeContainer>

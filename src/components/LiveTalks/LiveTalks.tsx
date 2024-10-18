@@ -2,10 +2,10 @@ import { styled } from "styled-components"
 import liveTalksData from "../../data/liveTalks.json"
 import bgHero2 from "../../img/music-festival/bg-hero-2.png"
 import { breakpoints } from "../../utils/theme"
-
+import { Title } from "../Title"
 const LiveTalks = () => {
   return (
-    <LiveTalksContainer>
+    <LiveTalksContainer id="livetalks">
       <Title>LIVE TALKS</Title>
       <TalksGrid>
         {liveTalksData.map((talk, index) => (
@@ -139,46 +139,4 @@ const TimeInfo = styled.div`
   }
 `
 
-const Title = styled.h2`
-  font-size: 36px;
-  margin: 40px 0;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #00bfff, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  display: inline-block;
-  font-family: var(--nasalization-font);
-  text-align: center;
-
-  &::before,
-  &::after {
-    content: "♦";
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  @media (max-width: ${breakpoints.md}) {
-    font-size: 30px;
-    margin: 30px 0;
-
-    &::before,
-    &::after {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    font-size: 24px;
-    margin: 20px 0;
-
-    &::before,
-    &::after {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-  }
-`
-
-export { LiveTalks, Title }
+export { LiveTalks }

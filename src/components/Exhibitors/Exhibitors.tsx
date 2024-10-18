@@ -1,10 +1,10 @@
 import { styled } from "styled-components"
 import exhibitorsData from "../../data/exhibitors.json"
-import { Title } from "../LiveTalks/LiveTalks"
+import { Title } from "../Title"
 
 const Exhibitors = () => {
   return (
-    <ExhibitorsContainer>
+    <ExhibitorsContainer id="exhibitors">
       <Title>EXHIBITORS</Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (
