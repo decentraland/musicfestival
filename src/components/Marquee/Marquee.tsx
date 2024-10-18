@@ -52,7 +52,7 @@ const MarqueeContent = styled.div`
 `
 
 const BoldText = styled.span`
-  font-family: "InterMedium", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 3px;
