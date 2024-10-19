@@ -12,7 +12,7 @@ const Exhibitors = () => {
             <img src={exhibitor.image} alt={exhibitor.title} />
             <ExhibitorInfo>
               <h3>{exhibitor.title}</h3>
-              <p>[{exhibitor.location}]</p>
+              {/* <p>[{exhibitor.location}]</p> */}
             </ExhibitorInfo>
           </ExhibitorCard>
         ))}
@@ -68,11 +68,13 @@ const ExhibitorCard = styled.div`
 const ExhibitorInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
 
   h3 {
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif !important;
     font-weight: 700;
     font-size: 15.48px;
     line-height: 18.74px;

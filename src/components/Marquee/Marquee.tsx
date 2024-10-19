@@ -9,14 +9,17 @@ interface BannerMarqueeProps {
   noBorderBottom?: boolean
 }
 const BannerMarquee = ({ direction, delay }: BannerMarqueeProps) => {
+  const isLargeScreen = window.innerWidth > 1024
+
   return (
     <StyledBannerMarquee>
       <Marquee
         direction={direction}
-        speed={100}
+        speed={50}
         delay={delay}
         gradient={false}
         className="marquee"
+        autoFill={isLargeScreen}
       >
         <MarqueeContent>
           <GradientDiamond />
@@ -48,8 +51,9 @@ const StyledBannerMarquee = styled.div`
 const MarqueeContent = styled.div`
   display: flex;
   align-items: center;
-  gap: 46px;
+  gap: 24px;
   padding-inline: 10px;
+  width: max-content;
 `
 
 const BoldText = styled.span`

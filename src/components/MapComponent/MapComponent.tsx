@@ -98,11 +98,11 @@ const ZoneHeader = styled.h3<{ color: string }>`
   background: linear-gradient(90deg, #00bfff, #ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 22px;
-  font-family: var(--nasalization-font);
+  font-size: 20px;
+  font-family: "Nasalization" !important;
   overflow: hidden;
   overflow: hidden;
-  margin-block: 12px;
+  margin-block: 12px 8px;
   text-align: left;
 
   @media (max-width: 768px) {

@@ -5,7 +5,6 @@
   --md-bp: 956px;
   --s-bp: 600px;
   --xs-bp: 416px;
-  --nasalization-font: "NASALIZATION";
 }
 
 * {
@@ -78,7 +77,6 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 h1,
@@ -86,13 +84,11 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.nasalization {
-  font-family: var(--nasalization-font) !important;
+h6 {
+  font-family: "Nasalization" !important;
 }
 
 p,
-span,
 div {
   font-family: "Inter", sans-serif;
 }

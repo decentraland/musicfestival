@@ -47,7 +47,7 @@ const LiveTalksContainer = styled.div`
 
 const TalksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   width: 100%;
   max-width: 1200px;
@@ -89,6 +89,7 @@ const TalkCard = styled.div`
     background: linear-gradient(90deg, #00bfff, #ff00ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: "Inter", sans-serif !important;
   }
 
   p {

@@ -4,7 +4,7 @@ import rightDiamond from "../img/music-festival/right-diamond.png"
 import { breakpoints } from "../utils/theme"
 
 const StyledTitle = styled.h2`
-  font-size: 50px;
+  font-size: 40px;
   margin: 40px 0;
   text-transform: uppercase;
   background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
@@ -16,7 +16,9 @@ const StyledTitle = styled.h2`
   letter-spacing: 4px;
   align-items: center;
   justify-content: center;
-  font-family: var(--nasalization-font);
+  font-family: "Nasalization" !important;
+  font-weight: 400;
+
   &::before,
   &::after {
     content: "";

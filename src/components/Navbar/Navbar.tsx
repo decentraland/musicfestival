@@ -107,7 +107,7 @@ const NavLinks = styled.div`
   @media screen and (min-width: ${breakpoints.md}) {
     display: flex;
     align-items: center;
-    gap: 70px;
+    gap: 24px;
   }
 `
 
