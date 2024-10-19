@@ -10,10 +10,8 @@ import { BannerMarquee } from "../Marquee/Marquee"
 const DCLMusicInfo = () => {
   return (
     <StyledHero id="about">
-      <MarqueeContainer>
-        <BannerMarquee />
-      </MarqueeContainer>
       <HeroContainer>
+        <BannerMarquee />
         <InfoContainer>
           <StyledLogo src={headerDclLogo} />
           <p>
@@ -72,14 +70,6 @@ const DCLMusicInfo = () => {
   )
 }
 
-const MarqueeContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`
-
 const StyledHero = styled.div`
   position: relative;
   min-height: 240vh;
@@ -110,6 +100,7 @@ const InfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+  margin-top: 100px;
   margin-bottom: 50px;
 
   > img {
