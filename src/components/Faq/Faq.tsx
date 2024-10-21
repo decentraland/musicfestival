@@ -2,7 +2,6 @@ import { useState } from "react"
 import { styled } from "styled-components"
 import faqData from "../../data/faqData.json"
 import arrowDown from "../../img/music-festival/arrow-down.png"
-import arrowUp from "../../img/music-festival/arrow-up.png"
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -19,7 +18,7 @@ const Faq = () => {
           <Question onClick={() => toggleAnswer(index)}>
             {item.question}
             <Arrow
-              src={activeIndex === index ? arrowUp : arrowDown}
+              src={arrowDown}
               alt="arrow"
               $isActive={activeIndex === index}
             />
@@ -39,8 +38,9 @@ const FaqContainer = styled.div`
 
 const Title = styled.h2`
   width: 30%;
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 40px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Inter", sans-serif !important;
@@ -63,21 +63,25 @@ const Question = styled.div`
 `
 
 const Answer = styled.div<{ $isActive: boolean }>`
-  max-height: ${(props) => (props.$isActive ? "1000px" : "0")};
+  height: ${(props) => (props.$isActive ? "auto" : "0")};
+  display: ${(props) => (props.$isActive ? "block" : "none")};
+  opacity: ${(props) => (props.$isActive ? "1" : "0")};
   overflow: hidden;
   transition:
-    max-height 0.3s ease-in-out,
-    padding 0.3s ease-in-out;
+    height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   color: white;
   text-align: justify;
-  padding: ${(props) => (props.$isActive ? "24px" : "0")};
+  padding: 24px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
 `
 
 const Arrow = styled.img<{ $isActive: boolean }>`
-  transition: transform 0.3s ease-in-out;
-  transform: ${(props) => (props.$isActive ? "rotate(180deg)" : "rotate(0)")};
+  transition: all 0.3s ease-in-out;
+  height: 24px;
+  transform: ${(props) =>
+    props.$isActive ? "rotate(180deg)" : "rotate(0deg)"};
 `
 
 export { Faq }

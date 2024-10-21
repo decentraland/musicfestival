@@ -18,18 +18,20 @@ const BannerMarquee = ({ direction, delay }: BannerMarqueeProps) => {
         gradient={false}
         className="marquee"
       >
-        <MarqueeContent>
-          <GradientDiamond />
-          <BoldText>NOVEMBER 20 - 23</BoldText>
-          <GradientDiamond />
-          <BoldText>FREE ENTRY</BoldText>
-          <GradientDiamond />
-          <BoldText>EXCLUSIVE SETS</BoldText>
-          <GradientDiamond />
-          <BoldText>EPIC GIVEAWAYS</BoldText>
-          <GradientDiamond />
-          <BoldText>LIVE VIP TALKS</BoldText>
-        </MarqueeContent>
+        {Array.from({ length: 10 }).map((_, index) => (
+          <MarqueeContent key={index}>
+            <GradientDiamond />
+            <BoldText>NOVEMBER 20 - 23</BoldText>
+            <GradientDiamond />
+            <BoldText>FREE ENTRY</BoldText>
+            <GradientDiamond />
+            <BoldText>EXCLUSIVE SETS</BoldText>
+            <GradientDiamond />
+            <BoldText>EPIC GIVEAWAYS</BoldText>
+            <GradientDiamond />
+            <BoldText>LIVE VIP TALKS</BoldText>
+          </MarqueeContent>
+        ))}
       </Marquee>
     </StyledBannerMarquee>
   )

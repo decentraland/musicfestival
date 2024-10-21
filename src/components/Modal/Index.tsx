@@ -1,6 +1,6 @@
 // import { Calendar, MessageSquare, X } from "lucide-react"
 import { useEffect } from "react"
-import { FaDiscord, FaInstagramSquare } from "react-icons/fa"
+import { FaDiscord, FaInstagramSquare, FaMusic } from "react-icons/fa"
 import { IoIosClose } from "react-icons/io"
 import { RiTwitterXFill } from "react-icons/ri"
 import styled from "styled-components"
@@ -40,7 +40,7 @@ function Modal({ onClose, artist }: ModalProps) {
             <img src={"src/img/music-festival/plane-ico.svg"} alt="Event" />
           </PlanetIco>
           <Title>{artist.name}</Title>
-          <Subtitle>{artist.subtitle}</Subtitle>
+          {/* <Subtitle>{artist.subtitle}</Subtitle> */}
           <Description>{artist.description}</Description>
           <Bottom>
             <Button>JUMP IN</Button>
@@ -70,6 +70,15 @@ function Modal({ onClose, artist }: ModalProps) {
                   rel="noreferrer"
                 >
                   <FaDiscord size={20} />
+                </a>
+              )}
+              {artist.socials?.music && (
+                <a
+                  href={artist.socials?.music}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaMusic />
                 </a>
               )}
             </IconContainer>
@@ -167,10 +176,10 @@ const PlanetIco = styled.div`
   }
 `
 
-const Subtitle = styled.p`
-  font-size: 14px;
-  font-family: "Inter", sans-serif;
-`
+// const Subtitle = styled.p`
+//   font-size: 14px;
+//   font-family: "Inter", sans-serif;
+// `
 
 const Description = styled.p`
   margin: 12px 0;

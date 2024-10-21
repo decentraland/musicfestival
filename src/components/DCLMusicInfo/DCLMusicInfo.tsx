@@ -11,7 +11,9 @@ const DCLMusicInfo = () => {
   return (
     <StyledHero id="about">
       <HeroContainer>
-        <BannerMarquee />
+        <MarqueeContainer>
+          <BannerMarquee />
+        </MarqueeContainer>
         <InfoContainer>
           <StyledLogo src={headerDclLogo} />
           <p>
@@ -74,7 +76,7 @@ const StyledHero = styled.div`
   position: relative;
   min-height: 240vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   background-image: url(${bgHero2});
@@ -91,6 +93,15 @@ const HeroContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+`
+
+const MarqueeContainer = styled.div`
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 `
 
 const InfoContainer = styled.div`

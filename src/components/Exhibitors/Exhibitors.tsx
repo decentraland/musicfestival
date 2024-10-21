@@ -1,10 +1,11 @@
 import { styled } from "styled-components"
 import { exhibitorsData } from "./data"
+import bg from "../../img/music-festival/exhibitors-bg.png"
 import { Title } from "../Title"
 
 const Exhibitors = () => {
   return (
-    <ExhibitorsContainer id="exhibitors">
+    <ExhibitorsContainer id="exhibitors" bg={bg}>
       <Title>EXHIBITORS</Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (
@@ -21,13 +22,17 @@ const Exhibitors = () => {
   )
 }
 
-const ExhibitorsContainer = styled.div`
+const ExhibitorsContainer = styled.div<{ bg: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   background-color: #000;
   color: white;
+  background-image: ${(props) => `url(${props.bg})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `
 
 const ExhibitorsGrid = styled.div`
