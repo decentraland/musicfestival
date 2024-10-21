@@ -16,8 +16,8 @@ const LiveTalks = () => {
             <p>{talk.description}</p>
             <TimeInfo>
               <p>{talk.date}</p>
-              <p>{talk["time-start"]}</p>
-              <p>{talk["time-end"]}</p>
+              <TalkTime>{talk["time-start"]}</TalkTime>
+              <TalkTime>{talk["time-end"]}</TalkTime>
             </TimeInfo>
           </TalkCard>
         ))}
@@ -35,6 +35,7 @@ const LiveTalksContainer = styled.div`
   background-position: center;
   padding: 40px 20px;
   color: white;
+  mix-blend-mode: screen;
 
   @media (max-width: ${breakpoints.md}) {
     padding: 30px 15px;
@@ -47,20 +48,19 @@ const LiveTalksContainer = styled.div`
 
 const TalksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   margin-bottom: 60px;
-
-  @media (max-width: ${breakpoints.md}) {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-  }
 
   @media (max-width: ${breakpoints.s}) {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 20px;
   }
 `
 
@@ -69,17 +69,11 @@ const TalkCard = styled.div`
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
 
   img {
     width: 100%;
     border: 1px solid;
-    border-radius: 4px;
   }
 
   h3 {
@@ -93,9 +87,8 @@ const TalkCard = styled.div`
   }
 
   p {
-    margin: 10px 0;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     color: #ffffff;
     line-height: 1.4;
   }
@@ -111,6 +104,10 @@ const TalkCard = styled.div`
       font-size: 14px;
     }
   }
+`
+
+const TalkTime = styled.p`
+  font-weight: 400 !important;
 `
 
 const TimeInfo = styled.div`

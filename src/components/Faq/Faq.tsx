@@ -1,7 +1,12 @@
 import { useState } from "react"
 import { styled } from "styled-components"
-import faqData from "../../data/faqData.json"
+import { questions } from "../../data/faqData.jsx"
 import arrowDown from "../../img/music-festival/arrow-down.png"
+
+type Question = {
+  question: string
+  answer: () => React.ReactNode
+}
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -13,17 +18,17 @@ const Faq = () => {
   return (
     <FaqContainer id="faq">
       <Title>Frequently Asked Questions</Title>
-      {faqData.map((item, index) => (
+      {questions.map((item: Question, index: number) => (
         <QuestionContainer key={index}>
           <Question onClick={() => toggleAnswer(index)}>
-            {item.question}
+            <p>{item.question}</p>
             <Arrow
               src={arrowDown}
               alt="arrow"
               $isActive={activeIndex === index}
             />
           </Question>
-          <Answer $isActive={activeIndex === index}>{item.answer}</Answer>
+          <Answer $isActive={activeIndex === index}>{item.answer()}</Answer>
         </QuestionContainer>
       ))}
     </FaqContainer>
@@ -48,6 +53,7 @@ const Title = styled.h2`
 
 const QuestionContainer = styled.div`
   margin-bottom: 20px;
+  padding-block: 50px;
   border-bottom: 1px solid #00bfff;
 `
 
@@ -57,9 +63,18 @@ const Question = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   font-size: 18px;
   color: white;
+
+  p {
+    font-family: "Inter", sans-serif !important;
+    max-width: 500px;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+  }
 `
 
 const Answer = styled.div<{ $isActive: boolean }>`
@@ -72,9 +87,15 @@ const Answer = styled.div<{ $isActive: boolean }>`
     opacity 0.3s ease-in-out;
   color: white;
   text-align: justify;
-  padding: 24px;
+  margin-top: 20px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
+
+  a {
+    background: linear-gradient(90deg, #56a7ff, #fb01ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `
 
 const Arrow = styled.img<{ $isActive: boolean }>`

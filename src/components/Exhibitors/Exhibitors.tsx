@@ -27,7 +27,6 @@ const ExhibitorsContainer = styled.div<{ bg: string }>`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #000;
   color: white;
   background-image: ${(props) => `url(${props.bg})`};
   background-size: cover;
@@ -56,7 +55,6 @@ const ExhibitorCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 10px;
   border-radius: 8px;
@@ -67,6 +65,8 @@ const ExhibitorCard = styled.div`
     height: auto;
     object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 0 8px 0 0;
+    border: 2px solid rgba(219, 219, 219, 1);
   }
 `
 

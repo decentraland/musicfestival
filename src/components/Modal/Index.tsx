@@ -4,8 +4,7 @@ import { FaDiscord, FaInstagramSquare, FaMusic } from "react-icons/fa"
 import { IoIosClose } from "react-icons/io"
 import { RiTwitterXFill } from "react-icons/ri"
 import styled from "styled-components"
-import { Artist } from "../LineUp"
-
+import { Artist } from "../LineUp/data"
 function Modal({ onClose, artist }: ModalProps) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -32,18 +31,21 @@ function Modal({ onClose, artist }: ModalProps) {
           </CloseButton>
         </ModalClose>
         <ModalHeader>
-          <ModalImage src={artist.image} alt="Event" />
+          {artist.image && <ModalImage src={artist.image} alt="Event" />}
           <CloseButton onClick={onClose}>{/* <X size={24} /> */}</CloseButton>
         </ModalHeader>
         <ModalBody>
-          <PlanetIco>
+          {/* <PlanetIco>
             <img src={"src/img/music-festival/plane-ico.svg"} alt="Event" />
-          </PlanetIco>
+          </PlanetIco> */}
           <Title>{artist.name}</Title>
-          {/* <Subtitle>{artist.subtitle}</Subtitle> */}
+          <Subtitle>
+            {artist.subtitle?.one} {artist.subtitle?.two}{" "}
+            {artist.subtitle?.three}
+          </Subtitle>
           <Description>{artist.description}</Description>
           <Bottom>
-            <Button>JUMP IN</Button>
+            {/* <Button>JUMP IN</Button> */}
             <IconContainer>
               {artist.socials?.twitter && (
                 <a
@@ -110,8 +112,6 @@ const ModalContent = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  border-top: 1px solid;
-  border-bottom: 1px solid;
   border-image: linear-gradient(90deg, #00bfff, #ff00ff) 1;
 `
 
@@ -131,6 +131,7 @@ const ModalImage = styled.img`
   height: 100%;
   object-fit: cover;
   margin-top: 24px;
+  max-height: 400px;
 `
 
 const ModalClose = styled.div`
@@ -164,22 +165,22 @@ const Title = styled.h2`
   font-family: "Inter", sans-serif !important;
 `
 
-const PlanetIco = styled.div`
-  width: 100%;
-  max-height: 24px;
-  margin-bottom: 12px;
+// const PlanetIco = styled.div`
+//   width: 100%;
+//   max-height: 24px;
+//   margin-bottom: 12px;
 
-  img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-  }
-`
-
-// const Subtitle = styled.p`
-//   font-size: 14px;
-//   font-family: "Inter", sans-serif;
+//   img {
+//     width: 24px;
+//     height: 24px;
+//     object-fit: contain;
+//   }
 // `
+
+const Subtitle = styled.p`
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+`
 
 const Description = styled.p`
   margin: 12px 0;
@@ -196,16 +197,16 @@ const Bottom = styled.div`
   align-items: center;
 `
 
-const Button = styled.button`
-  background: linear-gradient(to right, #ff00ff, #00ffff);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: "Nasalization";
-`
+// const Button = styled.button`
+//   background: linear-gradient(to right, #ff00ff, #00ffff);
+//   color: white;
+//   border: none;
+//   padding: 10px 20px;
+//   border-radius: 20px;
+//   cursor: pointer;
+//   font-weight: bold;
+//   font-family: "Nasalization";
+// `
 
 const IconContainer = styled.div`
   display: flex;

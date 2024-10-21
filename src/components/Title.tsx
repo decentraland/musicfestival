@@ -4,10 +4,10 @@ import rightDiamond from "../img/music-festival/right-diamond.png"
 import { breakpoints } from "../utils/theme"
 
 const StyledTitle = styled.h2`
-  font-size: 40px;
+  font-size: 60px;
   margin: 40px 0;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #3effa3, #56a7ff, #fb01ff);
+  background: linear-gradient(90deg, #56a7ff, #fb01ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -16,7 +16,7 @@ const StyledTitle = styled.h2`
   letter-spacing: 4px;
   align-items: center;
   justify-content: center;
-  font-family: "Nasalization" !important;
+  font-family: "Nasalization Rg", sans-serif !important;
   font-weight: 400;
 
   &::before,
@@ -28,7 +28,7 @@ const StyledTitle = styled.h2`
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
-    margin: 0 20px 0 10px;
+    margin-inline: 20px;
   }
 
   &::before {

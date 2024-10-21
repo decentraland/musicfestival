@@ -47,6 +47,7 @@ const ContentWrapper = styled.div`
   align-items: stretch;
   justify-content: center;
   gap: 40px;
+  max-width: 1040px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -57,8 +58,6 @@ const ContentWrapper = styled.div`
 const MapImage = styled.img`
   width: 100%;
   height: 100%;
-  max-width: 636px;
-  max-height: 636px;
   margin-bottom: 20px;
   border: 4px solid;
   border-image: linear-gradient(90deg, #00bfff, #ff00ff) 1;
@@ -99,7 +98,7 @@ const ZoneHeader = styled.h3<{ color: string }>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
-  font-family: "Nasalization" !important;
+  font-family: "Nasalization Rg", sans-serif !important;
   overflow: hidden;
   overflow: hidden;
   margin-block: 12px 8px;

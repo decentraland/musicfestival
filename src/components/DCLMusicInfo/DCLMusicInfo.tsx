@@ -17,52 +17,38 @@ const DCLMusicInfo = () => {
         <InfoContainer>
           <StyledLogo src={headerDclLogo} />
           <p>
-            Save the Date: Jump into <b>Decentraland</b> November 20-23 for the
-            4th edition of the virtual <b>Decentraland Music Festival</b> &
-            embark on a cosmic EDM journey across the galaxy.
+            Enter Decentraland on 20-23 November and teleport to <b>EDM</b>{" "}
+            <b>festival</b> like no other:
           </p>
 
           <InfoItem>
             <img src={DclBullet} alt="Decentraland Bullet" />
             <h5>
-              Dance across <b>4 days of exclusive</b> sets from international
-              DJs.
+              {/* Dance across <b>4 days of exclusive</b> sets from international
+              DJs. */}
+              Experience <b>4 days of exclusive sets</b> from international DJs
             </h5>
           </InfoItem>
 
           <InfoItem>
             <img src={DclBullet} alt="Decentraland Bullet" />
             <h5>
-              Connect with <b>EDM innovators & fans</b> from around the world.
+              Discover <b>the future of electronic music</b> with immersive
+              visuals, live VIP talks & virtual expo
             </h5>
           </InfoItem>
 
           <InfoItem>
             <img src={DclBullet} alt="Decentraland Bullet" />
             <h5>
-              Collect <b>10+ free, special edition Wearables & Emotes</b>
+              Collect <b>15+ free special edition Wearables & Emotes</b>
             </h5>
           </InfoItem>
 
-          <InfoItem>
-            <img src={DclBullet} alt="Decentraland Bullet" />
-            <h5>
-              Explore <b>immersive interstellar visuals</b> and two new parkour
-              runs.
-            </h5>
-          </InfoItem>
-
-          <InfoItem>
-            <img src={DclBullet} alt="Decentraland Bullet" />
-            <h5>
-              Discover the <b>latest developments in electronic music</b> at
-              live panel talks & expo booths.
-            </h5>
-          </InfoItem>
           <p>
-            Save the Date: Jump into <b>Decentraland</b> November 20-23 for the
-            4th edition of the virtual <b>Decentraland Music Festival</b> &
-            embark on a cosmic EDM journey across the galaxy.
+            Get ready by downloading the new version of <b>Decentraland—</b> the
+            virtual social world with smooth performance and stunning visuals.
+            Entry is free— jump in from anywhere!
           </p>
         </InfoContainer>
         <DownloadLink />
@@ -127,6 +113,7 @@ const InfoContainer = styled.div`
     letter-spacing: 1.5px;
     line-height: 1.25;
     font-weight: 300;
+    font-size: 21px;
   }
 `
 
@@ -145,13 +132,14 @@ const InfoItem = styled.div`
   > img {
     width: 12px;
     position: relative;
-    bottom: -4px;
   }
 
   > h5 {
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 1px;
+    font-family: "Inter", sans-serif !important;
+    font-size: 21px;
   }
 `
 export { DCLMusicInfo }

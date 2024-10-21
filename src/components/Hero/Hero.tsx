@@ -1,14 +1,15 @@
+import { FiChevronsDown } from "react-icons/fi"
 import { styled } from "styled-components"
 import separatorImage1 from "../../img/music-festival/cruz-separate-1.png"
 import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
 import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
-import groupImage4 from "../../img/music-festival/dj-lag-icon.png"
 import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
 import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
 import bgHero from "../../img/music-festival/hero-background1.png"
 import diamondImageLeft from "../../img/music-festival/left-diamond.png"
 import groupImage2 from "../../img/music-festival/matzo-icon.png"
 import diamondImage from "../../img/music-festival/middle-diamond.png"
+import groupImage4 from "../../img/music-festival/nightmare.png"
 import diamondImageRight from "../../img/music-festival/right-diamond.png"
 import groupImage1 from "../../img/music-festival/sam-holo-icon.png"
 import dateImage from "../../img/music-festival/top-date.png"
@@ -51,15 +52,19 @@ const Hero = () => {
             <DiamondImage src={diamondImage} alt="diamond" />
           </DiamondLine>
           <GroupImages>
+            <GroupImage className="nightmare" src={groupImage4} alt="group 4" />
             <GroupImage src={groupImage1} alt="group 1" />
             <GroupImage src={groupImage2} alt="group 2" />
             <GroupImage src={groupImage3} alt="group 3" />
-            <GroupImage src={groupImage4} alt="group 4" />
           </GroupImages>
         </ContentWrapper>
         <GetReadyContainer>
-          <GetReadyText>↓GET READY↓</GetReadyText>
-          <DownloadLink />
+          <GetReadyText>
+            <FiChevronsDown />
+            GET READY
+            <FiChevronsDown />
+          </GetReadyText>
+          <DownloadLink useJump />
         </GetReadyContainer>
       </HeroContainer>
     </StyledHero>
@@ -190,6 +195,7 @@ const DiamondImage = styled.img`
 const GroupImages = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 16px;
 
   @media (max-width: ${breakpoints.md}) {
@@ -208,6 +214,13 @@ const GroupImages = styled.div`
 const GroupImage = styled.img`
   height: 74px;
   mix-blend-mode: screen;
+  max-width: 100%;
+
+  object-fit: contain;
+
+  &.nightmare {
+    height: 50px;
+  }
 
   @media (max-width: ${breakpoints.md}) {
     height: 60px;
@@ -270,7 +283,6 @@ const GetReadyContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  gap: 20px;
 
   @media (max-width: ${breakpoints.s}) {
     gap: 10px;
@@ -283,7 +295,6 @@ const GetReadyText = styled.div`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 20px;
-  margin-bottom: 20px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 20px;
@@ -292,6 +303,21 @@ const GetReadyText = styled.div`
   @media (max-width: ${breakpoints.s}) {
     font-size: 10px;
     margin-bottom: 0;
+  }
+
+  > svg {
+    animation: bounce 2s linear infinite;
+    position: relative;
+    top: 5px;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 `
 

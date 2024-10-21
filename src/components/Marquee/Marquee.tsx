@@ -42,8 +42,8 @@ const StyledBannerMarquee = styled.div`
   font-size: 12px;
   position: relative;
   padding: 12px 0;
-  border-top: 3.5px solid;
-  border-bottom: 3.5px solid;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
   border-image: linear-gradient(to right, #3effa3, #56a7ff, #fb01ff) 1;
 `
 
@@ -57,7 +57,7 @@ const MarqueeContent = styled.div`
 
 const BoldText = styled.span`
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 900;
   letter-spacing: 3px;
   color: white;
