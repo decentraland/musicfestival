@@ -39,6 +39,7 @@ function LineUp() {
         <FullLineUp
           onClick={() => higlightDay(DayHighlight.FULL)}
           gradientTo={dayColors[1]}
+          color={dayColors[0]}
         >
           <span>FULL</span>
           <span>LINE-UP</span>
