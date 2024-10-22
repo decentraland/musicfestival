@@ -6,11 +6,13 @@ const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
     <StyledDownloadButton
       href="https://decentraland.org/download"
       target="_blank"
+      rel="noopener noreferrer"
+      useJump={useJump}
     >
       <LogoContainer>
         <img src={onlyLogo} alt="Decentraland" />
       </LogoContainer>
-      <TextContainer>
+      <TextContainer useJump={useJump}>
         <p>
           Download {useJump && <br />}
           Decentraland
@@ -20,7 +22,7 @@ const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
   )
 }
 
-const StyledDownloadButton = styled.a`
+const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   margin-top: 20px;
   width: auto;
   color: white;
@@ -56,7 +58,6 @@ const StyledDownloadButton = styled.a`
 
   @media (max-width: 600px) {
     margin-top: 0px;
-    width: 90%;
     height: 50px;
   }
 `
@@ -83,7 +84,7 @@ const LogoContainer = styled.div`
   }
 `
 
-const TextContainer = styled.div`
+const TextContainer = styled.div<{ useJump?: boolean }>`
   flex: 1;
   display: flex;
   align-items: center;
@@ -94,10 +95,13 @@ const TextContainer = styled.div`
     font-size: 22px;
     text-transform: uppercase;
   }
-
   @media (max-width: 600px) {
     p {
       font-size: 14px;
+
+      br {
+        display: none;
+      }
     }
   }
 `

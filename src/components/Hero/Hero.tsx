@@ -194,7 +194,7 @@ const DiamondImage = styled.img`
 
 const GroupImages = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
 
@@ -212,7 +212,6 @@ const GroupImages = styled.div`
 `
 
 const GroupImage = styled.img`
-  height: 74px;
   mix-blend-mode: screen;
   max-width: 100%;
 
@@ -220,9 +219,8 @@ const GroupImage = styled.img`
 
   &.nightmare {
     position: relative;
-    top: -6px;
-    left: -6px;
-    height: 40px;
+    top: -5px;
+    height: 30px;
   }
 
   @media (max-width: ${breakpoints.md}) {
