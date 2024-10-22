@@ -29,7 +29,14 @@ import Dvibe from "../../img/artists/pictures/DayTwo/D-Vibe.jpg"
 import MatZo from "../../img/artists/pictures/DayTwo/MatZo.jpeg"
 import SteveSaiko from "../../img/artists/pictures/DayTwo/Steve-Saiko.jpg"
 import Toro from "../../img/artists/pictures/DayTwo/Toro.jpg"
-// Artists day four
+//Live Talks
+import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.png"
+import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.png"
+import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.png"
+import diaDosCharlaDos from "../../img/liveTalks/Day2charla2.png"
+import diaTresCharlaUno from "../../img/liveTalks/Day3charla1.png"
+import diaTresCharlaDos from "../../img/liveTalks/Day3charla2.png"
+import diaCuatroCharlaUno from "../../img/liveTalks/Day4charla1.png"
 
 export type Artist = {
   name: string
@@ -69,12 +76,8 @@ const schedule: Day[] = [
           three: "18:00 UTC (10:00PST)",
         },
         description:
-          "*Discovering Virtual Assets for Music Experience*. *Bay Backner*, Producer, Decentraland Music Festival (moderator); *Tang Poko*, Partner, LMTLSS",
-        socials: {
-          twitter: "",
-          instagram: "",
-          music: "",
-        },
+          "Discovering Virtual Assets for Music Experience\n\nSpeakers:\nDecentraland, LMTLSS",
+        image: diaUnoCharlaUno,
       },
       {
         name: "FI SULLIVAN",
@@ -103,13 +106,14 @@ const schedule: Day[] = [
           two: "NOV. 20",
           three: "20:00 UTC (12:00PST)",
         },
-        description:
-          "*Increasing Authentic Engagement in EDM*. *Cooper Turley*, Founder, Coop Records; *Latasha*, Artist & Founder, Tash55.xyz; *David Beiner*, Co-Founder & CEO, Hume; *Reo Cragun*, CEO, LNRZ",
+        description: `Increasing Authentic Engagement in EDM
+        Speakers: Coop Records, Tash55.xyz, Hume, LNRZ.`,
         socials: {
           twitter: "",
           instagram: "",
           music: "",
         },
+        image: diaUnoCharlaDos,
       },
       {
         name: "33 BELOW",
@@ -219,12 +223,13 @@ const schedule: Day[] = [
           three: "17:00 UTC (8:00PST)",
         },
         description:
-          "*Tools and Strategies for Independent Artists*. *Niall Doorley*, Client Partner, MIDiA Research & FOunder, Future Music Forum; *Tony Parisi*, Founder, Metatron Studios; *Kim Currier*, Head of Partnerships & Marketing, Decentraland; *Joe Berinato*, Director, Pitch Control Marketing",
+          "Tools and Strategies for Independent Artists. Speakers: MIDiA Research, Future Music Forum, Metatron Studios, Pitch Control Marketing.",
         socials: {
           twitter: "",
           instagram: "",
           music: "",
         },
+        image: diaDosCharlaUno,
       },
       {
         name: "TORO",
@@ -270,13 +275,13 @@ const schedule: Day[] = [
           two: "NOV. 21",
           three: "20:00 UTC (12:00PST)",
         },
-        description:
-          "*New Approaches to Promoting EMD Globally*. *Eric Reithler-Barros*, CEO, Fold Artists; *Stephen Dowler*, Partnerships, Monstercat; *Ed Brew*, Director of Business Development (Music), Beatport; *Chris Goss*, Co-Founder & CEO, Hospital Records",
+        description: `New Approaches to Promoting EMD Globally. Speakers: Monstercat, Beatport, Hospital Records, Fold Artists.`,
         socials: {
           twitter: "",
           instagram: "",
           music: "",
         },
+        image: diaDosCharlaDos,
       },
       {
         name: "AIWASKA",
@@ -379,13 +384,13 @@ const schedule: Day[] = [
           two: "NOV. 22",
           three: "17:00 UTC (9:00PST)",
         },
-        description:
-          "*Increasing Discoverability through Digital Community*. *Rodrick Rahim Chattaika Jr.*, Co-Founder & CEO, Peachz; *Shelley VanWitzenburg*, Co-Founder, Songbird Collective Agency; *Sam Speaight*, CEO, Reality Jam; *Arnau Sabaté*, New Business & Partnerships, Revelator Labs",
+        description: `Increasing Discoverability through Digital Community. Speakers: Peachz, Songbird Collective Agency, RealityJam, Revelator Labs.`,
         socials: {
           twitter: "",
           instagram: "",
           music: "",
         },
+        image: diaTresCharlaUno,
       },
       {
         name: "DAVYD",
@@ -432,13 +437,13 @@ const schedule: Day[] = [
           two: "NOV. 22",
           three: "20:00 UTC (12:00PST)",
         },
-        description:
-          "*Shaping Tomorrow's Intelligent Soundscapes?*. *Fred Ranger*Vice President, Marketing and Communications, LANDR; *David Boyle*, Director, Audience Strategies; *Yadim Katz*, CMO, Session42/HitCraft; *Ryan Gooves*, Co-Founder & CTO, Infinite Album",
+        description: `Shaping Tomorrow’s Intelligent Soundscapes? Speakers: LANDR, Audience Strategies, HitCraft, Infinite Album.`,
         socials: {
           twitter: "",
           instagram: "",
           music: "",
         },
+        image: diaTresCharlaDos,
       },
       {
         name: "PANS",
@@ -556,6 +561,18 @@ const schedule: Day[] = [
         },
       },
       {
+        name: "Final Day Wrap",
+        time: "19:00",
+        subtitle: {
+          one: "DAY 4",
+          two: "NOV. 23",
+          three: "20:00 UTC (12:00PST)",
+        },
+        description:
+          "Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios.",
+        image: diaCuatroCharlaUno,
+      },
+      {
         name: "KIRAMOMO + UNTZ KING",
         time: "18:00",
         logoSrc: Kiramomo,
@@ -582,7 +599,7 @@ const schedule: Day[] = [
           three: "18:00 UTC (10:00PST)",
         },
         description:
-          "*Final Day Wrap.* *Festival Highlights with Featured Artists.**Bay Backner*, Producer, Decentraland Music Festival; *Max Hatchwell*, Founder, Multiz; *Dante Galeazzi*, Founder, GM Studios ",
+          "Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios.",
         socials: {
           twitter: "",
           instagram: "",

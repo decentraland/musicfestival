@@ -128,7 +128,7 @@ function LineUp() {
                             </ArtistTime>
                           </ArtistCard>
                         ) : (
-                          <EmptySlot />
+                          <EmptySlot></EmptySlot>
                         )}
                       </ArtistColumn>
                     )
@@ -268,9 +268,13 @@ const FullLineUp = styled(Day)`
   border: none;
   background: linear-gradient(to right, #3effa3, #56a7ff, #fb01ff);
   span {
-    color: #000;
+    color: #000 !important;
     font-size: 1.25rem;
     font-family: "Nasalization Rg", sans-serif !important;
+  }
+
+  &::after {
+    display: none;
   }
 `
 
@@ -463,7 +467,11 @@ const ArtistTime = styled.div<{ color: string }>`
 const EmptySlot = styled.div`
   width: 100%;
   height: 100%;
-  min-height: 30px;
+  border-radius: 0.25rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  min-height: 50px;
 `
 
 const dayColors = ["#3EFFA3", "#56A7FF", "#A35AFF", "#EF0DFF"]
