@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 import { liveTalksData } from "./data"
-import bgHero2 from "../../img/music-festival/bg-hero-2.png"
+import bgHero2 from "../../img/music-festival/tira-larga-oscura.jpg"
 import { breakpoints } from "../../utils/theme"
 import { Title } from "../Title"
 
@@ -31,11 +31,33 @@ const LiveTalksContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-image: url(${bgHero2});
-  background-size: cover;
-  background-position: center;
-  padding: 40px 20px;
   color: white;
-  mix-blend-mode: screen;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 20px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
 
   @media (max-width: ${breakpoints.md}) {
     padding: 30px 15px;
@@ -74,6 +96,8 @@ const TalkCard = styled.div`
   img {
     width: 100%;
     border: 1px solid;
+    object-fit: cover;
+    height: 200px;
   }
 
   h3 {
@@ -102,6 +126,10 @@ const TalkCard = styled.div`
 
     p {
       font-size: 14px;
+    }
+
+    img {
+      height: unset;
     }
   }
 `
