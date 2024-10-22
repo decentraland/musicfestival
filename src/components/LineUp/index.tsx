@@ -173,21 +173,34 @@ const Container = styled.div`
 
 const DaysContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
-  max-width: 1240px;
+  padding: 0.6rem;
+  max-width: 100%;
   margin: 0 auto;
   gap: 1rem;
   overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (min-width: 1240px) {
     justify-content: center;
     gap: 120px;
+    max-width: 1240px;
   }
 `
 
-const Day = styled.div<{ gradientTo?: string; isActive?: boolean }>`
+const Day = styled.div<{
+  gradientTo?: string
+  isActive?: boolean
+  color: string
+}>`
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -211,7 +224,7 @@ const Day = styled.div<{ gradientTo?: string; isActive?: boolean }>`
   ${(props) =>
     props.isActive &&
     `
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px 0 ${props.color}99;
     transition: box-shadow 0.2s ease-in-out;
     will-change: box-shadow;
   `}
@@ -225,7 +238,7 @@ const Day = styled.div<{ gradientTo?: string; isActive?: boolean }>`
     }
 
     &:last-child {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 
