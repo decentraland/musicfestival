@@ -35,7 +35,7 @@ export const liveTalksData = [
   },
   {
     image: imgLiveTalks,
-    title: "Beyong the Algorithms",
+    title: "Beyond the Algorithms",
     description: "Increasing Discoverability Through Digital Community",
     date: "FRIDAY NOV 22",
     "time-start": "17:00 UTC",

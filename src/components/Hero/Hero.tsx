@@ -219,7 +219,10 @@ const GroupImage = styled.img`
   object-fit: contain;
 
   &.nightmare {
-    height: 50px;
+    position: relative;
+    top: -6px;
+    left: -6px;
+    height: 40px;
   }
 
   @media (max-width: ${breakpoints.md}) {
