@@ -54,8 +54,8 @@ export const liveTalksData = [
     title: "Final Day Wrap",
     description: "Festival Highlights with the Featured Artists (x Space)",
     date: "SATURDAY NOV 23",
-    "time-start": "17:00 UTC",
-    "time-end": "9:00 PST",
+    "time-start": "179:00 UTC",
+    "time-end": "12:00 PST",
   },
   {
     image: imgLiveTalks,
