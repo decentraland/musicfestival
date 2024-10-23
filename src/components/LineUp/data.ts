@@ -30,13 +30,13 @@ import MatZo from "../../img/artists/pictures/DayTwo/MatZo.jpeg"
 import SteveSaiko from "../../img/artists/pictures/DayTwo/Steve-Saiko.jpg"
 import Toro from "../../img/artists/pictures/DayTwo/Toro.jpg"
 //LIVE TALKs
-import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.png"
-import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.png"
-import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.png"
-import diaDosCharlaDos from "../../img/liveTalks/Day2charla2.png"
-import diaTresCharlaUno from "../../img/liveTalks/Day3charla1.png"
-import diaTresCharlaDos from "../../img/liveTalks/Day3charla2.png"
-import diaCuatroCharlaUno from "../../img/liveTalks/Day4charla1.png"
+import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.jpg"
+import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.jpg"
+import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.jpg"
+import diaDosCharlaDos from "../../img/liveTalks/Day2charla2.jpg"
+import diaTresCharlaUno from "../../img/liveTalks/Day3charla1.jpg"
+import diaTresCharlaDos from "../../img/liveTalks/Day3charla2.jpg"
+import diaCuatroCharlaUno from "../../img/liveTalks/Day4charla1.jpg"
 
 export type Artist = {
   name: string
@@ -643,21 +643,22 @@ const schedule: Day[] = [
           music: "https://open.spotify.com/artist/5CMaNobmJYgXcfiT0zYOwi",
         },
       },
-      // {
-      //   name: "BLOND:ISH",
-      //   time: "22:00",
-      //   subtitle: {
-      //     one: "DAY 4",
-      //     two: "NOV. 23",
-      //     three: "22:00 UTC (14:00PST)",
-      //   },
-      //   description: "",
-      //   socials: {
-      //     twitter: "",
-      //     instagram: "",
-      //     music: "",
-      //   },
-      // },
+      {
+        name: "COMING SOON",
+        // name: "BLOND:ISH",
+        time: "22:00",
+        subtitle: {
+          one: "DAY 4",
+          two: "NOV. 23",
+          three: "22:00 UTC (14:00PST)",
+        },
+        description: "",
+        socials: {
+          twitter: "",
+          instagram: "",
+          music: "",
+        },
+      },
       {
         name: "DOME",
         time: "23:00",

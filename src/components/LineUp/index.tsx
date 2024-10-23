@@ -33,7 +33,7 @@ function LineUp() {
   }
 
   return (
-    <SectionWrapper>
+    <SectionWrapper id="lineup">
       <Title>Line Up</Title>
       <DaysContainer>
         <FullLineUp
