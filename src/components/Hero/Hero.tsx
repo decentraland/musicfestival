@@ -214,13 +214,13 @@ const GroupImages = styled.div`
 const GroupImage = styled.img`
   mix-blend-mode: screen;
   max-width: 100%;
-
+  max-height: 70px;
   object-fit: contain;
+  position: relative;
 
   &.nightmare {
-    position: relative;
     top: -5px;
-    height: 30px;
+    height: 32px;
   }
 
   @media (max-width: ${breakpoints.md}) {
@@ -231,6 +231,20 @@ const GroupImage = styled.img`
     height: 50px;
     width: 100%;
     object-fit: contain;
+  }
+
+  &:nth-of-type(2) {
+    right: -14px;
+  }
+
+  &:nth-of-type(3) {
+    right: -10px;
+    top: -4px;
+  }
+
+  &:nth-of-type(4) {
+    top: -4px;
+    right: -10px;
   }
 `
 
@@ -284,6 +298,7 @@ const GetReadyContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
+  margin-top: 32px;
 
   @media (max-width: ${breakpoints.s}) {
     gap: 10px;
