@@ -102,7 +102,7 @@ const TalkCard = styled.div`
 
   h3 {
     margin-top: 15px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     background: linear-gradient(90deg, #00bfff, #ff00ff);
     -webkit-background-clip: text;
@@ -144,11 +144,11 @@ const TimeInfo = styled.div`
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
   margin-top: 15px;
 
   p {
+    color: rgba(255, 255, 255, 1) !important;
+    font-weight: 400 !important;
     margin: 0;
     position: relative;
 
@@ -156,6 +156,7 @@ const TimeInfo = styled.div`
       content: "|";
       position: absolute;
       right: -7px;
+
       color: #8a2be2;
     }
   }

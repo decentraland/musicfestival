@@ -126,7 +126,15 @@ const Faq = () => {
                 #DCLMF24
               </a>{" "}
               hashtag for live updates. You can also subscribe to
-              Decentraland&apos;s weekly newsletter for all of the latest news.
+              Decentraland&apos;s{" "}
+              <a
+                href="https://decentraland.beehiiv.com/?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
+                target="_blank"
+                rel="noreferrer"
+              >
+                weekly newsletter
+              </a>{" "}
+              for all of the latest news.
             </p>
           ),
         },
@@ -138,7 +146,7 @@ const Faq = () => {
               knowhow and endless creative ideas! Everything you need to know to
               start your creative journey can be found at{" "}
               <a
-                href="https://decentraland.org/create"
+                href="https://decentraland.org/create/?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
                 target="_blank"
                 rel="noreferrer"
               >

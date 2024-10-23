@@ -66,10 +66,11 @@ const StyledTitle = styled.h2`
 
 interface TitleProps {
   children: React.ReactNode
+  styles?: React.CSSProperties
 }
 
-const Title = ({ children }: TitleProps) => {
-  return <StyledTitle>{children}</StyledTitle>
+const Title = ({ children, styles }: TitleProps) => {
+  return <StyledTitle style={styles}>{children}</StyledTitle>
 }
 
 export { Title }

@@ -6,7 +6,13 @@ import { Title } from "../Title"
 const Exhibitors = () => {
   return (
     <ExhibitorsContainer id="exhibitors" bg={bg}>
-      <Title>EXHIBITORS</Title>
+      <Title
+        styles={{
+          marginTop: 0,
+        }}
+      >
+        EXHIBITORS
+      </Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (
           <ExhibitorCard key={index}>
@@ -32,6 +38,8 @@ const ExhibitorsContainer = styled.div<{ bg: string }>`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-block: 80px 120px;
+  min-height: 100dvh;
 `
 
 const ExhibitorsGrid = styled.div`

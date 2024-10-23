@@ -17,7 +17,7 @@ const DCLMusicInfo = () => {
         <InfoContainer>
           <StyledLogo src={headerDclLogo} />
           <p>
-            Enter Decentraland on 20-23 November and teleport to <b>EDM</b>{" "}
+            Enter Decentraland on 20-23 November and teleport to an <b>EDM</b>{" "}
             <b>festival</b> like no other:
           </p>
 

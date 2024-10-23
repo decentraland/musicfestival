@@ -292,7 +292,7 @@ const GetReadyContainer = styled.div`
 
 const GetReadyText = styled.div`
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 20px;

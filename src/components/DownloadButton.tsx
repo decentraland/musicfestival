@@ -1,22 +1,20 @@
 import { styled } from "styled-components"
-import onlyLogo from "../img/music-festival/Download-button-logo.png"
+import onlyLogo from "../img/music-festival/logo-button.png"
 
 const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
   return (
     <StyledDownloadButton
-      href="https://decentraland.org/download"
+      href="https://decentraland.org/download?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
       target="_blank"
       rel="noopener noreferrer"
       useJump={useJump}
     >
-      <LogoContainer>
+      <LogoContainer useJump={useJump}>
         <img src={onlyLogo} alt="Decentraland" />
       </LogoContainer>
       <TextContainer useJump={useJump}>
-        <p>
-          Download {useJump && <br />}
-          Decentraland
-        </p>
+        Download {useJump && <br />}
+        Decentraland
       </TextContainer>
     </StyledDownloadButton>
   )
@@ -24,16 +22,16 @@ const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
 
 const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   margin-top: 20px;
-  width: auto;
+  width: max-content;
   color: white;
-  min-width: 300px;
   text-decoration: none;
   border-radius: 44px;
   padding: 10px;
   transition: background-color 0.3s;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  min-width: 300px;
   gap: 10px;
   background: linear-gradient(90deg, #56a7ff, #fb01ff);
   font-weight: 400;
@@ -62,46 +60,37 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   }
 `
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.div<{ useJump?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
   height: 100%;
 
   img {
+    width: ${({ useJump }) => (useJump ? "60px" : "40px")};
     object-fit: contain;
   }
 
   @media (max-width: 600px) {
-    width: 40px;
-    padding-left: 5px;
-
-    img {
-      width: 30px;
-      height: 24px;
-    }
+    width: 50px;
   }
 `
 
 const TextContainer = styled.div<{ useJump?: boolean }>`
-  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${({ useJump }) => (useJump ? "flex-start" : "center")};
   text-align: left;
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+  min-width: ${({ useJump }) => (!useJump ? "350px" : "auto")};
 
-  p {
-    font-size: 22px;
-    text-transform: uppercase;
-  }
   @media (max-width: 600px) {
-    p {
-      font-size: 14px;
+    font-size: 14px;
 
-      br {
-        display: none;
-      }
+    br {
+      display: none;
     }
   }
 `

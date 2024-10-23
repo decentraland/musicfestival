@@ -29,7 +29,7 @@ import Dvibe from "../../img/artists/pictures/DayTwo/D-Vibe.jpg"
 import MatZo from "../../img/artists/pictures/DayTwo/MatZo.jpeg"
 import SteveSaiko from "../../img/artists/pictures/DayTwo/Steve-Saiko.jpg"
 import Toro from "../../img/artists/pictures/DayTwo/Toro.jpg"
-//Live Talks
+//LIVE TALKs
 import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.png"
 import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.png"
 import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.png"
@@ -68,7 +68,7 @@ const schedule: Day[] = [
     name: "DAY ONE",
     artists: [
       {
-        name: "Emotes & Wearables",
+        name: "LIVE TALK",
         time: "18:00",
         subtitle: {
           one: "DAY 1",
@@ -76,7 +76,7 @@ const schedule: Day[] = [
           three: "18:00 UTC (10:00PST)",
         },
         description:
-          "Discovering Virtual Assets for Music Experience\n\nSpeakers:\nDecentraland, LMTLSS",
+          "Emotes & Wearables: Discovering Virtual Assets for Music Experience\n\nSpeakers:\nDecentraland, LMTLSS",
         image: diaUnoCharlaUno,
       },
       {
@@ -99,14 +99,14 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "Label Round-Table",
+        name: "LIVE TALK",
         time: "20:00",
         subtitle: {
           one: "DAY 1",
           two: "NOV. 20",
           three: "20:00 UTC (12:00PST)",
         },
-        description: `Increasing Authentic Engagement in EDM
+        description: `Label Round-Table: Increasing Authentic Engagement in EDM
         Speakers: Coop Records, Tash55.xyz, Hume, LNRZ.`,
         socials: {
           twitter: "",
@@ -215,7 +215,7 @@ const schedule: Day[] = [
     name: "DAY TWO",
     artists: [
       {
-        name: "Tech-Driven Fan Economies",
+        name: "LIVE TALK",
         time: "17:00",
         subtitle: {
           one: "DAY 2",
@@ -223,7 +223,7 @@ const schedule: Day[] = [
           three: "17:00 UTC (8:00PST)",
         },
         description:
-          "Tools and Strategies for Independent Artists. Speakers: MIDiA Research, Future Music Forum, Metatron Studios, Pitch Control Marketing.",
+          "Tech-Driven Fan Economies: Tools and Strategies for Independent Artists. Speakers: MIDiA Research, Future Music Forum, Metatron Studios, Pitch Control Marketing.",
         socials: {
           twitter: "",
           instagram: "",
@@ -268,14 +268,14 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "Label Round-Table",
+        name: "LIVE TALK",
         time: "20:00",
         subtitle: {
           one: "DAY 2",
           two: "NOV. 21",
           three: "20:00 UTC (12:00PST)",
         },
-        description: `New Approaches to Promoting EMD Globally. Speakers: Monstercat, Beatport, Hospital Records, Fold Artists.`,
+        description: `Label Round-Table: New Approaches to Promoting EMD Globally. Speakers: Monstercat, Beatport, Hospital Records, Fold Artists.`,
         socials: {
           twitter: "",
           instagram: "",
@@ -377,14 +377,14 @@ const schedule: Day[] = [
     name: "DAY THREE",
     artists: [
       {
-        name: "Beyond the Algorithms",
+        name: "LIVE TALK",
         time: "17:00",
         subtitle: {
           one: "DAY 3",
           two: "NOV. 22",
           three: "17:00 UTC (9:00PST)",
         },
-        description: `Increasing Discoverability through Digital Community. Speakers: Peachz, Songbird Collective Agency, RealityJam, Revelator Labs.`,
+        description: `Beyond the Algorithms: Increasing Discoverability through Digital Community. Speakers: Peachz, Songbird Collective Agency, RealityJam, Revelator Labs.`,
         socials: {
           twitter: "",
           instagram: "",
@@ -430,14 +430,14 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "AI for EDM",
+        name: "LIVE TALK",
         time: "20:00",
         subtitle: {
           one: "DAY 3",
           two: "NOV. 22",
           three: "20:00 UTC (12:00PST)",
         },
-        description: `Shaping Tomorrow’s Intelligent Soundscapes? Speakers: LANDR, Audience Strategies, HitCraft, Infinite Album.`,
+        description: `AI for EDM: Shaping Tomorrow's Intelligent Soundscapes? Speakers: LANDR, Audience Strategies, HitCraft, Infinite Album.`,
         socials: {
           twitter: "",
           instagram: "",
@@ -561,7 +561,7 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "Final Day Wrap",
+        name: "LIVE TALK",
         time: "19:00",
         subtitle: {
           one: "DAY 4",
@@ -569,7 +569,7 @@ const schedule: Day[] = [
           three: "20:00 UTC (12:00PST)",
         },
         description:
-          "Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios.",
+          "Final Day Wrap: Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios.",
         image: diaCuatroCharlaUno,
       },
       {
@@ -591,7 +591,7 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "LIVE TALKS",
+        name: "LIVE TALK",
         time: "18:00",
         subtitle: {
           one: "DAY 4",
@@ -643,21 +643,21 @@ const schedule: Day[] = [
           music: "https://open.spotify.com/artist/5CMaNobmJYgXcfiT0zYOwi",
         },
       },
-      {
-        name: "BLOND:ISH",
-        time: "22:00",
-        subtitle: {
-          one: "DAY 4",
-          two: "NOV. 23",
-          three: "22:00 UTC (14:00PST)",
-        },
-        description: "",
-        socials: {
-          twitter: "",
-          instagram: "",
-          music: "",
-        },
-      },
+      // {
+      //   name: "BLOND:ISH",
+      //   time: "22:00",
+      //   subtitle: {
+      //     one: "DAY 4",
+      //     two: "NOV. 23",
+      //     three: "22:00 UTC (14:00PST)",
+      //   },
+      //   description: "",
+      //   socials: {
+      //     twitter: "",
+      //     instagram: "",
+      //     music: "",
+      //   },
+      // },
       {
         name: "DOME",
         time: "23:00",
