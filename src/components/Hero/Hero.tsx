@@ -1,5 +1,9 @@
 import { FiChevronsDown } from "react-icons/fi"
 import { styled } from "styled-components"
+import groupImage2 from "../../img/heroLogos/matzo.png"
+import groupImage4 from "../../img/heroLogos/nightmare.png"
+import groupImage1 from "../../img/heroLogos/sanholo.png"
+import groupImage3 from "../../img/heroLogos/whippedcream.png"
 import bgHero from "../../img/music-festival/bg-hero.jpg"
 import separatorImage1 from "../../img/music-festival/cruz-separate-1.png"
 import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
@@ -7,13 +11,9 @@ import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
 import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
 import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
 import diamondImageLeft from "../../img/music-festival/left-diamond.png"
-import groupImage2 from "../../img/music-festival/matzo-icon.png"
 import diamondImage from "../../img/music-festival/middle-diamond.png"
-import groupImage4 from "../../img/music-festival/nightmare.png"
 import diamondImageRight from "../../img/music-festival/right-diamond.png"
-import groupImage1 from "../../img/music-festival/sam-holo-icon.png"
 import dateImage from "../../img/music-festival/top-date.png"
-import groupImage3 from "../../img/music-festival/whipped-cream-icon.png"
 import { breakpoints } from "../../utils/theme"
 import { DownloadLink } from "../DownloadButton"
 
@@ -152,7 +152,7 @@ const DiamondLine = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   position: relative;
   width: 100%;
 
@@ -218,11 +218,6 @@ const GroupImage = styled.img`
   object-fit: contain;
   position: relative;
 
-  &.nightmare {
-    top: -5px;
-    height: 32px;
-  }
-
   @media (max-width: ${breakpoints.md}) {
     height: 60px;
   }
@@ -231,20 +226,6 @@ const GroupImage = styled.img`
     height: 50px;
     width: 100%;
     object-fit: contain;
-  }
-
-  &:nth-of-type(2) {
-    right: -14px;
-  }
-
-  &:nth-of-type(3) {
-    right: -10px;
-    top: -4px;
-  }
-
-  &:nth-of-type(4) {
-    top: -4px;
-    right: -10px;
   }
 `
 
@@ -310,7 +291,7 @@ const GetReadyText = styled.div`
   font-size: 20px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 0px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 20px;

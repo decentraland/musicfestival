@@ -72,7 +72,7 @@ const TalksGrid = styled.div`
   display: grid;
   gap: 30px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1240px;
   margin-bottom: 60px;
 
   @media (max-width: ${breakpoints.s}) {
@@ -97,7 +97,7 @@ const TalkCard = styled.div`
     width: 100%;
     border: 1px solid;
     object-fit: cover;
-    height: 200px;
+    aspect-ratio: 16/9;
   }
 
   h3 {
