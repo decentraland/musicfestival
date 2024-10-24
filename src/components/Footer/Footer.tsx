@@ -9,13 +9,15 @@ const Footer = () => {
     <StyledFooter className="Footer">
       <Nav>
         <FooterLeft>
-          <LogoContainer
-            href="https://decentraland.org"
+          <a
+            href="https://decentraland.org/?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
             target="_blank"
             rel="noreferrer"
           >
-            <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
-          </LogoContainer>
+            <LogoContainer>
+              <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
+            </LogoContainer>
+          </a>
           <FooterText
             href="https://decentraland.org/terms/"
             target="_blank"
@@ -65,8 +67,6 @@ const StyledFooter = styled.section`
   display: flex;
   justify-content: space-between;
   background-color: #131313;
-
-  /* Adding the gradient border at the bottom */
 `
 
 const FooterLeft = styled.div`
@@ -92,14 +92,13 @@ const SocialIcon = styled.a`
   cursor: pointer;
   display: inline-block;
   padding: 8px;
-  border-radius: 50%; /* Make it circular like the icons */
-  transition: transform 0.4s ease; /* Smooth animation */
+  border-radius: 50%;
+  transition: transform 0.4s ease;
 
-  /* Apply gradient on hover behind the icon */
   :hover {
-    transform: scale(1.1); /* Scale the icon on hover */
-    transition: transform 0.4s ease; /* Smooth animation */
-    will-change: transform; /* Optimize the animation */
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+    will-change: transform;
   }
 
   svg {
@@ -107,12 +106,12 @@ const SocialIcon = styled.a`
     height: 24px;
 
     path {
-      fill: white; /* Default color */
+      fill: white;
       transition: fill 0.4s ease;
     }
 
     :hover path {
-      fill: black; /* Change icon color on hover */
+      fill: black;
     }
   }
 `
@@ -138,11 +137,10 @@ const LogoContainer = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
-  /* Removed the rotation animation */
 `
 
 const LogoImage = styled.img`
-  height: 24px; /* Adjust this size as needed */
+  height: 24px;
   width: auto;
 `
 

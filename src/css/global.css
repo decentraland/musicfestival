@@ -15,9 +15,6 @@
 }
 
 .react-multi-carousel-list {
-}
-
-.react-multi-carousel-list {
   position: unset !important;
 }
 
@@ -30,14 +27,10 @@ html {
   background: var(--main-bg-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: "Inter", sans-serif;
 }
 
 #root {
   overflow-x: hidden;
-}
-
-#root {
   overflow: hidden;
   color: white;
   background: var(--main-bg-color);
@@ -84,5 +77,18 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nasalization Rg", sans-serif;
+}
+
+p,
+div {
+  font-family: "Inter", sans-serif;
 }

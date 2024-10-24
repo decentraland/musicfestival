@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@import url("https://fonts.cdnfonts.com/css/nasalization?styles=6717");
+
 @font-face {
   font-family: "Gothic";
   font-style: normal;
@@ -61,11 +63,4 @@
   font-style: normal;
   font-weight: 500;
   src: url(../fonts/Inter-Medium.ttf);
-}
-
-@font-face {
-  font-family: "Nasalization";
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/nasalization-rg.otf);
 }

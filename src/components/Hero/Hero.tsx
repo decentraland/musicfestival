@@ -1,48 +1,232 @@
-import styled from "styled-components"
-import bgHero from "../../img/music-festival/bg-mf-new.png"
-import frameDate from "../../img/music-festival/DCL_MF24_contenedores_desktop 1_transparent.png"
+import { FiChevronsDown } from "react-icons/fi"
+import { styled } from "styled-components"
+import groupImage2 from "../../img/heroLogos/matzo.png"
+import groupImage4 from "../../img/heroLogos/nightmare.png"
+import groupImage1 from "../../img/heroLogos/sanholo.png"
+import groupImage3 from "../../img/heroLogos/whippedcream.png"
+import bgHero from "../../img/music-festival/bg-hero.jpg"
+import separatorImage1 from "../../img/music-festival/cruz-separate-1.png"
+import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
+import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
 import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
-// import bottomDclLogo from "../../img/music-festival/decentraland-logo.png"
-import headerImage from "../../img/music-festival/header-dcl-music.svg"
+import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
+import diamondImageLeft from "../../img/music-festival/left-diamond.png"
+import diamondImage from "../../img/music-festival/middle-diamond.png"
+import diamondImageRight from "../../img/music-festival/right-diamond.png"
+import dateImage from "../../img/music-festival/top-date.png"
 import { breakpoints } from "../../utils/theme"
-// import { breakpoints } from "../../utils/theme"
+import { DownloadLink } from "../DownloadButton"
 
 const Hero = () => {
   return (
     <StyledHero>
       <HeroContainer>
-        <Header>
-          <img src={headerImage} alt="header icon" rel="noopener" />
-        </Header>
-        {/* Main Title */}
-        <SaveTheDate>Save the Date</SaveTheDate> {/* New Text */}
-        <Line />
+        <DateRow>
+          <DiamondImage src={diamondImageLeft} alt="left diamond" />
+          <DateImage src={dateImage} alt="November 20 - 23" />
+          <DiamondImage src={diamondImageRight} alt="right diamond" />
+        </DateRow>
         <StyledLogo src={headerDclLogo} />
-        <Line />
-        <EventDate>November 20-23</EventDate>
-        {/* Bottom Section */}
-        <BottomSection>
-          <RSVPButton
-            href="https://decentraland.org/events/event/?id=9831c4be-4f94-4bb2-a828-8f48d28a1520"
-            target="_blank"
-            rel="noopener"
-          >
-            <h3>RSVP</h3>
-          </RSVPButton>
-        </BottomSection>
+        <ContentWrapper>
+          <MobileDiamondLine>
+            <DiamondImage src={diamondImage} alt="diamond" />
+          </MobileDiamondLine>
+          <TextRow>
+            <GroupText>
+              <b>FREE</b> ENTRY
+            </GroupText>
+            <TextImage src={separatorImage1} alt="separator" />
+            <GroupText>
+              <b>EXCLUSIVE</b> SETS
+            </GroupText>
+            <TextImage src={separatorImage2} alt="separator" />
+            <GroupText>
+              EPIC <b>GIVEAWAYS</b>
+            </GroupText>
+            <TextImage src={separatorImage3} alt="separator" />
+            <GroupText>
+              LIVE <b>VIP</b> TALKS
+            </GroupText>
+          </TextRow>
+          <DiamondLine>
+            <DiamondImage src={diamondImage} alt="diamond" />
+          </DiamondLine>
+          <GroupImages>
+            <GroupImage className="nightmare" src={groupImage4} alt="group 4" />
+            <GroupImage src={groupImage1} alt="group 1" />
+            <GroupImage src={groupImage2} alt="group 2" />
+            <GroupImage src={groupImage3} alt="group 3" />
+          </GroupImages>
+        </ContentWrapper>
+        <GetReadyContainer>
+          <GetReadyText>
+            <FiChevronsDown />
+            GET READY
+            <FiChevronsDown />
+          </GetReadyText>
+          <DownloadLink useJump />
+        </GetReadyContainer>
       </HeroContainer>
     </StyledHero>
   )
 }
 
-const SaveTheDate = styled.p`
-  font-family: "InterMedium", sans-serif;
-  font-size: 32px;
-  color: white;
-  text-transform: none;
-  font-weight: 600;
-  margin-bottom: 24px; /* Add space between this text and the line below */
-  margin-top: 48px; /* Reset margin on top */
+const DateRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+
+  @media (max-width: ${breakpoints.md}) {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+`
+
+const DateImage = styled.img`
+  height: 29px;
+  width: 361px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 24px;
+    width: 300px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 20px;
+    width: 250px;
+  }
+`
+
+const TextRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  font-size: 19px;
+  white-space: nowrap;
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 16px;
+    gap: 3px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    font-size: 12px;
+    gap: 2px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 10px;
+    gap: 1px;
+  }
+`
+
+const TextImage = styled.img`
+  height: 9px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 7px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 5px;
+  }
+
+  @media (max-width: 400px) {
+    height: 4px;
+  }
+`
+
+const GroupText = styled.p`
+  text-transform: uppercase;
+  white-space: nowrap;
+`
+
+const DiamondLine = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 44%;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background-color: #926bff;
+    z-index: 1;
+    @media (max-width: ${breakpoints.s}) {
+      height: 1px;
+    }
+  }
+
+  & > img {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    margin-bottom: 5px;
+  }
+`
+
+const DiamondImage = styled.img`
+  height: 20px;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 20px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 16px;
+  }
+`
+
+const GroupImages = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: ${breakpoints.md}) {
+    gap: 12px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    justify-items: center;
+  }
+`
+
+const GroupImage = styled.img`
+  mix-blend-mode: screen;
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+  position: relative;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 60px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 50px;
+    width: 100%;
+    object-fit: contain;
+  }
 `
 
 const StyledHero = styled.div`
@@ -58,21 +242,23 @@ const StyledHero = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @media (max-width: ${breakpoints.md}) {
+    background-image: url(${bgHeroMobile});
+  }
 `
 
 const HeroContainer = styled.div`
-  max-width: 600px;
+  height: auto;
+  max-width: 800px;
   width: 100%;
-  padding: 20px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  margin-inline: 12px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-top: 180px;
+  padding: 20px;
 
   @media (min-width: ${breakpoints.s}) {
     margin-top: 120px;
@@ -82,130 +268,86 @@ const HeroContainer = styled.div`
     margin-top: 80px;
   }
 
-  /* Pseudo-element for the gradient border */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; /* Ensure it is behind the content */
-    border-radius: inherit; /* Inherit border-radius from the container */
-    padding: 2px; /* Same width as the border you want */
-    background: linear-gradient(90deg, #ff00ff, #00ffcc);
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0); /* Mask to clip background */
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 100%;
   }
 `
 
-const Header = styled.div`
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: -3px;
-  left: 0;
-  transform: scale(1.01); /* Scale the image */
-
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`
-
-const EventDate = styled.p`
-  position: relative;
-  top: -2px;
-  font-family: "InterMedium", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 12px 24px;
-  background-image: url(${frameDate});
-  background-size: cover;
-  background-size: contain;
-  background-position: top center;
-  margin-bottom: 24px;
-  background-repeat: no-repeat;
-`
-
-const BottomSection = styled.div`
+const GetReadyContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
   width: 100%;
-  margin-block: 16px;
-  padding: 0 20px;
+  margin-top: 32px;
+
+  @media (max-width: ${breakpoints.s}) {
+    gap: 10px;
+  }
+`
+
+const GetReadyText = styled.div`
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0px;
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 20px;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+
+  > svg {
+    animation: bounce 2s linear infinite;
+    position: relative;
+    top: 5px;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+`
+
+const ContentWrapper = styled.div`
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 90%;
+  }
 `
 
 const StyledLogo = styled.img`
   width: 100%;
-  padding: 32px;
   max-width: 700px;
   height: auto;
-`
 
-// const DCLLogoItem = styled.img`
-//   max-width: 100px;
-// `
-
-const Line = styled.div`
-  position: relative;
-  width: calc(100% + 40px); /* Extend the line slightly beyond the container */
-  height: 2px;
-  background: linear-gradient(90deg, #ff00ff, #00ffcc); /* Gradient */
-  margin: 0 -20px; /* Shift it left and right by the padding size */
-`
-
-const RSVPButton = styled.a`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-family: "InterMedium", sans-serif;
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: black !important;
-  border-radius: 32px; /* Bordes curvados */
-  padding: 10px;
-  z-index: 1;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  line-height: 20px;
-  width: 100%;
-  max-width: 180px;
-
-  background: linear-gradient(
-    -90deg,
-    #3effa3 2.3%,
-    #56a7ff 51.15%,
-    #fb01ff 100%
-  );
-
-  > h3 {
-    z-index: 2;
-    color: black;
-  }
-
-  &:hover {
-    box-shadow:
-      0 0 20px rgba(255, 255, 255, 0.4),
-      0 0 10px violet,
-      0 0 5px blue;
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 90%;
   }
 `
 
-// eslint-disable-next-line import/no-default-export
-export default Hero
+const MobileDiamondLine = styled(DiamondLine)`
+  display: none;
+  margin-bottom: 20px;
+
+  @media (max-width: ${breakpoints.md}) {
+    display: flex;
+    margin-bottom: 5px;
+  }
+`
+
+export { Hero, StyledLogo, DiamondImage }

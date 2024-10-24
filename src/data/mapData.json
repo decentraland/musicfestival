@@ -1,0 +1,47 @@
+[
+  {
+    "zone": "Blockchain Game Alliance Zone",
+    "games": [
+      "B1 - Blockchain Game Alliance",
+      "B2 - UFORIKA - Ride to Survive",
+      "B3 - The Desolation",
+      "B4 - Clay Nation",
+      "B5 - Aura",
+      "B6 - Synergy Land"
+    ]
+  },
+  {
+    "zone": "Decentraland Games Zone",
+    "games": [
+      "B7 - Vroomway",
+      "B8 - Ratscape",
+      "B9 - Neon Crystal Maze",
+      "B10 - Dialogic",
+      "B11 - Soul Magic",
+      "B12 - The Cavern",
+      "B13 - Racetrack"
+    ]
+  },
+  {
+    "zone": "RPG AND MMO Zone",
+    "games": [
+      "B14 - World of Kogaea",
+      "B15 - DeFi Kingdoms",
+      "B16 - Legions 2029",
+      "B17 - Knights of Antrom",
+      "B18 - AnyMagik",
+      "B19 - Aavegotchi"
+    ]
+  },
+  {
+    "zone": "Speed AND Strategy Zone",
+    "games": [
+      "B20 - Sandstorm",
+      "B21 - LootRush",
+      "B22 - MotoDEX",
+      "B23 - Space Traitor",
+      "B24 - Planet Mojo",
+      "B25 - Chibi Clash"
+    ]
+  }
+]
