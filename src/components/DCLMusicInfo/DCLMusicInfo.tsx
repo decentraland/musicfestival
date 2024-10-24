@@ -3,7 +3,7 @@ import bgHero2 from "../../img/music-festival/bg-hero-2.png"
 import DclBullet from "../../img/music-festival/dcl-bullet.png"
 import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
 import { DownloadLink } from "../DownloadButton"
-import { Faq } from "../Faq/Faq"
+import { Faq } from "../Faq/Faq.styled"
 import { StyledLogo } from "../Hero/Hero"
 import { BannerMarquee } from "../Marquee/Marquee"
 
@@ -24,8 +24,6 @@ const DCLMusicInfo = () => {
           <InfoItem>
             <img src={DclBullet} alt="Decentraland Bullet" />
             <h5>
-              {/* Dance across <b>4 days of exclusive</b> sets from international
-              DJs. */}
               Experience <b>4 days of exclusive sets</b> from international DJs
             </h5>
           </InfoItem>
@@ -123,6 +121,7 @@ const InfoItem = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 8px;
+  align-items: baseline;
   font-weight: 300;
 
   > p {

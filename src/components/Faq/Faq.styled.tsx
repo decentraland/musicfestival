@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { memo, useState } from "react"
 import { styled } from "styled-components"
 import arrowDown from "../../img/music-festival/arrow-down.png"
 
@@ -242,5 +242,5 @@ const Arrow = styled.img<{ $isActive: boolean }>`
   transform: ${(props) =>
     props.$isActive ? "rotate(180deg)" : "rotate(0deg)"};
 `
-
+memo(Faq)
 export { Faq }

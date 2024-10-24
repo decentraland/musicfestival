@@ -2,7 +2,6 @@ import { useState } from "react"
 import styled from "styled-components"
 import { Artist, schedule } from "./data"
 import rightDiamond from "../../img/music-festival/right-diamond.png"
-// import rightDiamond from "../img/music-festival/right-diamond.png"
 import { Modal } from "../Modal/Index"
 import { Title } from "../Title"
 
@@ -19,14 +18,27 @@ function LineUp() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null)
 
+  /**
+   * Sets the highlighted day in the lineup.
+   * @param day - The day to highlight.
+   */
   const higlightDay = (day: DayHighlight): void => {
     setHighlightedDay(day)
   }
 
+  /**
+   * Checks if a specific day is currently highlighted.
+   * @param index - The index of the day to check (0-based).
+   * @returns True if the day is highlighted, false otherwise.
+   */
   const isHighlighted = (index: number): boolean => {
     return highlightedDay === index + 1
   }
 
+  /**
+   * Handles the click event on an artist, opening the modal with artist details.
+   * @param artist - The artist object that was clicked.
+   */
   const handleArtistClick = (artist: Artist) => {
     setSelectedArtist(artist)
     setModalOpen(true)
@@ -91,7 +103,11 @@ function LineUp() {
               <TimeSlot key={time}>
                 <TimeDiamond src={rightDiamond} alt="diamond" />
                 <TimeText>{time} UTC</TimeText>
-                <TimeText>{parseInt(time) - 7}:00 PST</TimeText>
+                {time === "00:00" && <TimeText>17:00 PST</TimeText>}
+                {time === "1:00" && <TimeText>18:00 PST</TimeText>}
+                {time !== "00:00" && time !== "1:00" && (
+                  <TimeText>{parseInt(time) - 7}:00 PST</TimeText>
+                )}
               </TimeSlot>
             ))}
           </Timeline>
@@ -476,11 +492,6 @@ const EmptySlot = styled.div`
 
 const dayColors = ["#3EFFA3", "#56A7FF", "#A35AFF", "#EF0DFF"]
 const timeSlots = [
-  // "12:00",
-  // "13:00",
-  // "14:00",
-  // "15:00",
-  // "16:00",
   "17:00",
   "18:00",
   "19:00",

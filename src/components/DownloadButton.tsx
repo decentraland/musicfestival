@@ -57,6 +57,8 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   @media (max-width: 600px) {
     margin-top: 0px;
     height: 50px;
+    max-width: 200px;
+    justify-content: flex-start;
   }
 `
 
@@ -73,6 +75,10 @@ const LogoContainer = styled.div<{ useJump?: boolean }>`
 
   @media (max-width: 600px) {
     width: 50px;
+
+    img {
+      width: 40px;
+    }
   }
 `
 
@@ -92,6 +98,8 @@ const TextContainer = styled.div<{ useJump?: boolean }>`
     br {
       display: none;
     }
+
+    min-width: unset;
   }
 `
 

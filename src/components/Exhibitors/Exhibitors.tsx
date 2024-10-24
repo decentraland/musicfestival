@@ -19,7 +19,6 @@ const Exhibitors = () => {
             <img src={exhibitor.image} alt={exhibitor.title} />
             <ExhibitorInfo>
               <h3>{exhibitor.title}</h3>
-              {/* <p>[{exhibitor.location}]</p> */}
             </ExhibitorInfo>
           </ExhibitorCard>
         ))}

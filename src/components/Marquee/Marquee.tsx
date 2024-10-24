@@ -18,7 +18,7 @@ const BannerMarquee = ({ direction, delay }: BannerMarqueeProps) => {
         gradient={false}
         className="marquee"
       >
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 5 }).map((_, index) => (
           <MarqueeContent key={index}>
             <GradientDiamond />
             <BoldText>NOVEMBER 20 - 23</BoldText>

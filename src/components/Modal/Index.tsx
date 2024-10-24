@@ -1,4 +1,3 @@
-// import { Calendar, MessageSquare, X } from "lucide-react"
 import { useEffect } from "react"
 import { FaDiscord, FaInstagramSquare, FaMusic } from "react-icons/fa"
 import { IoIosClose } from "react-icons/io"
@@ -165,18 +164,6 @@ const Title = styled.h2`
   font-family: "Inter", sans-serif !important;
 `
 
-// const PlanetIco = styled.div`
-//   width: 100%;
-//   max-height: 24px;
-//   margin-bottom: 12px;
-
-//   img {
-//     width: 24px;
-//     height: 24px;
-//     object-fit: contain;
-//   }
-// `
-
 const Subtitle = styled.p`
   font-size: 14px;
   font-family: "Inter", sans-serif;
@@ -196,17 +183,6 @@ const Bottom = styled.div`
   justify-content: space-between;
   align-items: center;
 `
-
-// const Button = styled.button`
-//   background: linear-gradient(to right, #ff00ff, #00ffff);
-//   color: white;
-//   border: none;
-//   padding: 10px 20px;
-//   border-radius: 20px;
-//   cursor: pointer;
-//   font-weight: bold;
-//   font-family: "Nasalization";
-// `
 
 const IconContainer = styled.div`
   display: flex;
