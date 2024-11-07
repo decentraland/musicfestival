@@ -96,12 +96,10 @@ const Faq = () => {
               <br />
               If you don&apos;t already have one, when you sign up for
               Decentraland with your email or a social account, a digital wallet
-              will be automatically don&apos;t already have one, when you sign
-              up for Decentraland with your email or a social account, a digital
-              wallet will be automatically created for you. It&apos;s part of
-              your account and stores any assets you collect, like free
-              Wearables you might claim in-world or a fun Emote you purchase in
-              the Marketplace. purchase in the Marketplace.
+              will be automatically created for you. It&apos;s part of your
+              account and stores any assets you collect, like free Wearables you
+              might claim in-world or a fun Emote you purchase in the
+              Marketplace.
             </p>
           ),
         },
