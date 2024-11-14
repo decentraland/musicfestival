@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { FiChevronsDown } from "react-icons/fi"
 import { styled } from "styled-components"
 import groupImage2 from "../../img/heroLogos/matzo.png"
@@ -5,6 +6,7 @@ import groupImage4 from "../../img/heroLogos/nightmare.png"
 import groupImage1 from "../../img/heroLogos/sanholo.png"
 import groupImage3 from "../../img/heroLogos/whippedcream.png"
 import bgHero from "../../img/music-festival/bg-hero.jpg"
+import groupImage5 from "../../img/music-festival/blondish.png"
 import separatorImage1 from "../../img/music-festival/cruz-separate-1.png"
 import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
 import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
@@ -18,8 +20,20 @@ import { breakpoints } from "../../utils/theme"
 import { DownloadLink } from "../DownloadButton"
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth <= 768)
+    })
+  }, [])
+
   return (
     <StyledHero>
+      <BackgroundImage
+        src={isMobile ? bgHeroMobile : bgHero}
+        alt="background"
+      />
       <HeroContainer>
         <DateRow>
           <DiamondImage src={diamondImageLeft} alt="left diamond" />
@@ -54,6 +68,7 @@ const Hero = () => {
           <GroupImages>
             <GroupImage className="nightmare" src={groupImage4} alt="group 4" />
             <GroupImage src={groupImage1} alt="group 1" />
+            <GroupImage src={groupImage5} alt="group 5" />
             <GroupImage src={groupImage2} alt="group 2" />
             <GroupImage src={groupImage3} alt="group 3" />
           </GroupImages>
@@ -197,6 +212,7 @@ const GroupImages = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  max-width: 650px;
 
   @media (max-width: ${breakpoints.md}) {
     gap: 12px;
@@ -217,15 +233,24 @@ const GroupImage = styled.img`
   max-height: 70px;
   object-fit: contain;
   position: relative;
+  object-position: center;
+  object-fit: contain;
+  width: 1fr;
+  flex: 1;
+  max-width: 120px;
+
+  @media (max-width: ${breakpoints.l}) {
+    max-height: 60px;
+    max-width: 120px;
+  }
 
   @media (max-width: ${breakpoints.md}) {
     height: 60px;
+    max-width: 80px;
   }
 
   @media (max-width: ${breakpoints.s}) {
-    height: 50px;
-    width: 100%;
-    object-fit: contain;
+    max-width: 160px;
   }
 `
 
@@ -237,15 +262,17 @@ const StyledHero = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-image: url(${bgHero});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
+`
 
-  @media (max-width: ${breakpoints.md}) {
-    background-image: url(${bgHeroMobile});
-  }
+const BackgroundImage = styled.img`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 0;
 `
 
 const HeroContainer = styled.div`

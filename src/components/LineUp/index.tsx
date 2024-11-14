@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Artist, schedule } from "./data"
+import { LineUpList } from "./partials/LineUpList"
 import rightDiamond from "../../img/music-festival/right-diamond.png"
 import { Modal } from "../Modal/Index"
 import { Title } from "../Title"
@@ -138,7 +139,15 @@ function LineUp() {
                             color={dayColors[index]}
                             onClick={() => handleArtistClick(artist)}
                           >
-                            <ArtistName>{artist.name}</ArtistName>
+                            {artist.logoLineUp && (
+                              <ArtistLogo
+                                src={artist.logoLineUp}
+                                alt={artist.name}
+                              />
+                            )}
+                            {!artist.logoLineUp && (
+                              <ArtistName>{artist.name}</ArtistName>
+                            )}
                             <ArtistTime color={dayColors[index]}>
                               {artist.time}
                             </ArtistTime>
@@ -159,6 +168,7 @@ function LineUp() {
           </ScheduleContainer>
         </Content>
       </Container>
+      <LineUpList />
       <div>
         {modalOpen && (
           <Modal
@@ -211,6 +221,15 @@ const DaysContainer = styled.div`
     gap: 120px;
     max-width: 1240px;
   }
+`
+
+const ArtistLogo = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100px;
+  margin-inline: auto;
+  max-height: 40px;
 `
 
 const Day = styled.div<{
@@ -463,6 +482,7 @@ const ArtistCard = styled.div<{ color: string }>`
     transform 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
   will-change: transform, box-shadow;
+  height: 65px;
 
   &:hover {
     transform: scale(1.025);
@@ -476,7 +496,7 @@ const ArtistName = styled.div`
 `
 
 const ArtistTime = styled.div<{ color: string }>`
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   color: ${(props) => props.color};
 `
 

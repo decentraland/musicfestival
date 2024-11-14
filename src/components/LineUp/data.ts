@@ -30,6 +30,9 @@ import MatZo from "../../img/artists/pictures/DayTwo/MatZo.jpeg"
 import SteveSaiko from "../../img/artists/pictures/DayTwo/Steve-Saiko.jpg"
 import Toro from "../../img/artists/pictures/DayTwo/Toro.jpg"
 //LIVE TALKs
+import NghtmareLogoLineup from "../../img/heroLogos/nightmare.png"
+import SanHoloLogoLineup from "../../img/heroLogos/sanholo.png"
+import WhippedCreamLogoLineup from "../../img/heroLogos/whippedcream.png"
 import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.jpg"
 import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.jpg"
 import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.jpg"
@@ -37,7 +40,9 @@ import diaDosCharlaDos from "../../img/liveTalks/Day2charla2.jpg"
 import diaTresCharlaUno from "../../img/liveTalks/Day3charla1.jpg"
 import diaTresCharlaDos from "../../img/liveTalks/Day3charla2.jpg"
 import diaCuatroCharlaUno from "../../img/liveTalks/Day4charla1.jpg"
-
+//Artists with logo
+import Blondish from "../../img/music-festival/blondish.png"
+import MatZoLogoLineup from "../../img/music-festival/matzo.png"
 export type Artist = {
   name: string
   time: string
@@ -49,7 +54,7 @@ export type Artist = {
     two: string
     three: string
   }
-
+  logoLineUp?: string
   socials?: {
     twitter?: string
     instagram?: string
@@ -146,6 +151,7 @@ const schedule: Day[] = [
         description:
           "Internationally recognized DJ/producer known for a guitar-infused, indie & future bass sound. Hits like Light and We Rise garner millions of streams; with sets at Ultra & Tomorrowland.",
         image: SanHolo,
+        logoLineUp: SanHoloLogoLineup,
         socials: {
           twitter: "https://x.com/sanholobeats",
           instagram: "https://www.instagram.com/sanholobeats/",
@@ -310,6 +316,7 @@ const schedule: Day[] = [
           two: "NOV. 21",
           three: "22:00 UTC (14:00PST)",
         },
+        logoLineUp: MatZoLogoLineup,
         description:
           "Grammy-nominated DJ/producer, blending genres from trance to drum & bass. Globally known for hits like 'Easy' and 'Colours', he founded the label Mad Zoo and plays festivals worldwide.",
         image: MatZo,
@@ -493,6 +500,7 @@ const schedule: Day[] = [
         description:
           "NGHTMRE is a renowned EDM producer and DJ known for his dynamic blend of trap, bass, and future bass. He headlines major festivals, and hits like 'GUD VIBRATIONS' garner millions of streams worldwide.",
         image: Nghtmare,
+        logoLineUp: NghtmareLogoLineup,
         socials: {
           twitter: "https://x.com/NGHTMRE",
           instagram: "https://www.instagram.com/nghtmre/",
@@ -634,6 +642,7 @@ const schedule: Day[] = [
           two: "NOV. 23",
           three: "21:00 UTC (13:00PST)",
         },
+        logoLineUp: WhippedCreamLogoLineup,
         description:
           "Toronto-born DJ/producer, fusing hip-hop, cinema, and electronica. Known for cinematic soundscapes, bass riffs, and dynamic live sets at Coachella, Lollapalooza and Tomorrowland.",
         image: WhippedCream,
@@ -644,14 +653,14 @@ const schedule: Day[] = [
         },
       },
       {
-        name: "COMING SOON",
-        // name: "BLOND:ISH",
+        name: "BLOND:ISH",
         time: "22:00",
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
           three: "22:00 UTC (14:00PST)",
         },
+        logoLineUp: Blondish,
         description: "",
         socials: {
           twitter: "",
