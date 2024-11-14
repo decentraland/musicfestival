@@ -13,7 +13,7 @@ const MapComponent = () => {
       <ContentWrapper>
         <MapImage src={mediaQuery > 768 ? mapDesktop : mapMobile} alt="Map" />
       </ContentWrapper>
-      <DownloadLink />
+      <DownloadLink useJump />
     </MapContainer>
   )
 }
