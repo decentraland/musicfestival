@@ -121,7 +121,7 @@ const TextRow = styled.div`
   align-items: center;
   gap: 5px;
   margin-bottom: 20px;
-  font-size: 19px;
+  font-size: 10px;
   white-space: nowrap;
 
   @media (max-width: ${breakpoints.md}) {
@@ -139,6 +139,10 @@ const TextRow = styled.div`
   @media (max-width: 400px) {
     font-size: 10px;
     gap: 1px;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 20px;
   }
 `
 
@@ -221,9 +225,15 @@ const GroupImages = styled.div`
   @media (max-width: ${breakpoints.s}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 8px;
     justify-items: center;
+    place-items: center;
+
+    & > *:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
   }
 `
 
@@ -320,13 +330,13 @@ const GetReadyText = styled.div`
   text-transform: uppercase;
   margin-top: 0px;
 
-  @media (max-width: ${breakpoints.md}) {
-    font-size: 20px;
-  }
-
   @media (max-width: ${breakpoints.s}) {
     font-size: 10px;
     margin-bottom: 0;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 16px;
   }
 
   > svg {
@@ -353,17 +363,21 @@ const ContentWrapper = styled.div`
   align-items: center;
 
   @media (max-width: ${breakpoints.md}) {
-    max-width: 90%;
+    // max-width: 90%;
   }
 `
 
 const StyledLogo = styled.img`
   width: 100%;
-  max-width: 700px;
+
   height: auto;
 
   @media (max-width: ${breakpoints.md}) {
     max-width: 90%;
+  }
+
+  @media (min-width: ${breakpoints.l}) {
+    max-width: 700px;
   }
 `
 
