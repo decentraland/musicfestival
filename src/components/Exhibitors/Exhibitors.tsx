@@ -15,12 +15,19 @@ const Exhibitors = () => {
       </Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (
-          <ExhibitorCard key={index}>
-            <img src={exhibitor.image} alt={exhibitor.title} />
-            <ExhibitorInfo>
-              <h3>{exhibitor.title}</h3>
-            </ExhibitorInfo>
-          </ExhibitorCard>
+          <a
+            key={index}
+            href={exhibitor.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExhibitorCard>
+              <img src={exhibitor.image} alt={exhibitor.title} />
+              <ExhibitorInfo>
+                <h3>{exhibitor.title}</h3>
+              </ExhibitorInfo>
+            </ExhibitorCard>
+          </a>
         ))}
       </ExhibitorsGrid>
     </ExhibitorsContainer>

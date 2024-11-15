@@ -30,6 +30,12 @@ import MatZo from "../../img/artists/pictures/DayTwo/MatZo.jpeg"
 import SteveSaiko from "../../img/artists/pictures/DayTwo/Steve-Saiko.jpg"
 import Toro from "../../img/artists/pictures/DayTwo/Toro.jpg"
 //LIVE TALKs
+import thirtyThreeBellow from "../../img/heroLogos/33below.png"
+import aiwaska from "../../img/heroLogos/aiawaska.png"
+import armina from "../../img/heroLogos/armina.png"
+import danielAllan from "../../img/heroLogos/danielallan.png"
+import djLag from "../../img/heroLogos/djlag.png"
+import lyrah from "../../img/heroLogos/lyrah.png"
 import NghtmareLogoLineup from "../../img/heroLogos/nightmare.png"
 import SanHoloLogoLineup from "../../img/heroLogos/sanholo.png"
 import WhippedCreamLogoLineup from "../../img/heroLogos/whippedcream.png"
@@ -124,6 +130,7 @@ const schedule: Day[] = [
         name: "33 BELOW",
         time: "21:00",
         logoSrc: Bellow33,
+        logoLineUp: thirtyThreeBellow,
         subtitle: {
           one: "DAY 1",
           two: "NOV. 20",
@@ -171,6 +178,7 @@ const schedule: Day[] = [
         description:
           "LA-based innovative producer known for merging pop, electronic, and hip-hop, and pioneering Web3 music distribution. His recent hit 'I Just Need (with Lyrah)' saw millions of streams.",
         image: DanielAllan,
+        logoLineUp: danielAllan,
         socials: {
           twitter: "https://x.com/imdanielallan",
           instagram: "https://www.instagram.com/danielallanmusic/",
@@ -182,6 +190,7 @@ const schedule: Day[] = [
         name: "LYRAH",
         time: "00:00",
         logoSrc: Lyrah,
+        logoLineUp: lyrah,
         subtitle: {
           one: "DAY 1",
           two: "NOV. 20",
@@ -290,7 +299,7 @@ const schedule: Day[] = [
         image: diaDosCharlaDos,
       },
       {
-        name: "AIWASKA",
+        name: "AIAWASKA",
         time: "21:00",
         logoSrc: AiWaska,
         subtitle: {
@@ -298,6 +307,7 @@ const schedule: Day[] = [
           two: "NOV. 21",
           three: "21:00 UTC (13:00PST)",
         },
+        logoLineUp: aiwaska,
         description:
           "Mysterious Argentina-based producer fusing Melodic House with hypnotic vocals and atmospheric bass. Signed by Crosstown Rebels, performances at Burning Man, Tulum, and Ibiza.",
         image: AiWaska,
@@ -330,6 +340,7 @@ const schedule: Day[] = [
         name: "ARMINA",
         time: "23:00",
         logoSrc: Armina,
+        logoLineUp: armina,
         subtitle: {
           one: "DAY 2",
           two: "NOV. 21",
@@ -479,6 +490,7 @@ const schedule: Day[] = [
           two: "NOV. 22",
           three: "22:00 UTC (14:00PST)",
         },
+        logoLineUp: djLag,
         description:
           "Pioneering South African DJ/producer from Durban, DJ Lag is internationally known for creating and popularizing gqom, a raw and minimalistic form of house music with hard-hitting beats.",
         image: DjLag,
