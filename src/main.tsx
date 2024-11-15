@@ -8,8 +8,7 @@ import "./modules/analytics/snippet"
 const analytics = getAnalytics()
 analytics.load(config.get("SEGMENT_API_KEY"))
 analytics.ready(() => {
-  console.log("Ready!")
-  analytics.page()
+  getAnalytics().page()
 })
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
