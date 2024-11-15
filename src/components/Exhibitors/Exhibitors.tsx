@@ -63,6 +63,10 @@ const ExhibitorsGrid = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  a {
+    text-decoration: none !important;
+  }
 `
 
 const ExhibitorCard = styled.div`
@@ -98,6 +102,7 @@ const ExhibitorInfo = styled.div`
     font-size: 15.48px;
     line-height: 18.74px;
     letter-spacing: 10%;
+    text-decoration: none !important;
   }
 
   p {
