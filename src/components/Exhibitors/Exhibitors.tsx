@@ -15,12 +15,19 @@ const Exhibitors = () => {
       </Title>
       <ExhibitorsGrid>
         {exhibitorsData.map((exhibitor, index) => (
-          <ExhibitorCard key={index}>
-            <img src={exhibitor.image} alt={exhibitor.title} />
-            <ExhibitorInfo>
-              <h3>{exhibitor.title}</h3>
-            </ExhibitorInfo>
-          </ExhibitorCard>
+          <a
+            key={index}
+            href={exhibitor.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExhibitorCard>
+              <img src={exhibitor.image} alt={exhibitor.title} />
+              <ExhibitorInfo>
+                <h3>{exhibitor.title}</h3>
+              </ExhibitorInfo>
+            </ExhibitorCard>
+          </a>
         ))}
       </ExhibitorsGrid>
     </ExhibitorsContainer>
@@ -55,6 +62,10 @@ const ExhibitorsGrid = styled.div`
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  a {
+    text-decoration: none !important;
   }
 `
 
@@ -91,6 +102,7 @@ const ExhibitorInfo = styled.div`
     font-size: 15.48px;
     line-height: 18.74px;
     letter-spacing: 10%;
+    text-decoration: none !important;
   }
 
   p {

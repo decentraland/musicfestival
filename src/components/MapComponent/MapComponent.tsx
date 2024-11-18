@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { styled } from "styled-components"
 import mapMobile from "../../img/maps/map-mobile.jpg"
 import mapDesktop from "../../img/maps/map-web.jpg"
@@ -5,13 +6,19 @@ import { DownloadLink } from "../DownloadButton"
 import { Title } from "../Title"
 
 const MapComponent = () => {
-  const mediaQuery = window.innerWidth
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth <= 768)
+    })
+  }, [])
 
   return (
     <MapContainer id="map">
       <Title>MAP</Title>
       <ContentWrapper>
-        <MapImage src={mediaQuery > 768 ? mapDesktop : mapMobile} alt="Map" />
+        <MapImage src={isMobile ? mapMobile : mapDesktop} alt="Map" />
       </ContentWrapper>
       <DownloadLink />
     </MapContainer>

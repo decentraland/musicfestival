@@ -1,10 +1,10 @@
-import diaUnoCharlaUno from "../../img/liveTalks/Day1charla1.jpg"
+import diaUnoCharlaUno from "../../img/liveTalks/day-1fixed.jpg"
 import diaUnoCharlaDos from "../../img/liveTalks/Day1charla2.jpg"
 import diaDosCharlaUno from "../../img/liveTalks/Day2charla1.jpg"
 import diaDosCharlaDos from "../../img/liveTalks/Day2charla2.jpg"
 import diaTresCharlaUno from "../../img/liveTalks/Day3charla1.jpg"
 import diaTresCharlaDos from "../../img/liveTalks/Day3charla2.jpg"
-import diaCuatroCharlaUno from "../../img/liveTalks/Day4charla1.jpg"
+import diaCuatroCharlaUno from "../../img/liveTalks/day4-fixed.jpg"
 
 export const liveTalksData = [
   {
