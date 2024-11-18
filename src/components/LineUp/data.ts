@@ -68,6 +68,7 @@ export type Artist = {
     discord?: string
     music?: string
   }
+  isReplay?: boolean
 }
 
 export type Day = {
@@ -225,8 +226,9 @@ const schedule: Day[] = [
             "https://open.spotify.com/artist/4bnUfGrlUSrYBRajJnAhDX?si=IdjwSBt-RdadpHFr1uJgMA&nd=1&dlsi=0dae91f4c27c4eb9",
         },
       },
+      // new day one
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "03:00",
         subtitle: {
           one: "DAY 1",
@@ -236,6 +238,7 @@ const schedule: Day[] = [
         description:
           "Emotes & Wearables: Discovering Virtual Assets for Music Experience\n\nSpeakers:\nParty with LIFE, ISAmazing, Carlosmu & LMTLSS.",
         image: diaUnoCharlaUno,
+        isReplay: true,
       },
       {
         name: "FI SULLIVAN",
@@ -255,9 +258,10 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/4Wvsgumh32s2wSMTZW7FMa?si=QTNpR2b7Qo6fkTbWhb5U0g&nd=1&dlsi=8f78f281040946fc",
         },
+        isReplay: true,
       },
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "05:00",
         subtitle: {
           one: "DAY 1",
@@ -272,6 +276,7 @@ const schedule: Day[] = [
           music: "",
         },
         image: diaUnoCharlaDos,
+        isReplay: true,
       },
       {
         name: "33 BELOW",
@@ -292,6 +297,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/4tMIsBBR8M0PsorDf0mNEz?si=kHULdTCVRsS6MjkPujFhyQ&nd=1&dlsi=502551a6d5d14423",
         },
+        isReplay: true,
       },
       {
         name: "SAN HOLO",
@@ -312,6 +318,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/0jNDKefhfSbLR9sFvcPLHo?si=dkSRF32lR7WDXOLAYQ5PKQ&nd=1&dlsi=fba2b002adc741d9",
         },
+        isReplay: true,
       },
       {
         name: "DANIEL ALLAN",
@@ -332,6 +339,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/5JQ1XqKJ2Art01rF4tu1Ra?si=fqqfTbNgSgOXNa8i1iMpmQ",
         },
+        isReplay: true,
       },
       {
         name: "LYRAH",
@@ -351,6 +359,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/lyrah/",
           music: "https://open.spotify.com/artist/5JyKQ4MQ2HkU1n1BYiKMWW",
         },
+        isReplay: true,
       },
       {
         name: "TESH",
@@ -370,6 +379,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/4bnUfGrlUSrYBRajJnAhDX?si=IdjwSBt-RdadpHFr1uJgMA&nd=1&dlsi=0dae91f4c27c4eb9",
         },
+        isReplay: true,
       },
     ],
   },
@@ -536,8 +546,9 @@ const schedule: Day[] = [
           music: "https://open.spotify.com/artist/5689fXaoEmJsLSPv3y18An",
         },
       },
+      // New day 2
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "03:00",
         subtitle: {
           one: "DAY 2",
@@ -552,6 +563,7 @@ const schedule: Day[] = [
           music: "",
         },
         image: diaDosCharlaUno,
+        isReplay: true,
       },
       {
         name: "TORO",
@@ -570,6 +582,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/djtorobeatz/",
           music: "https://soundcloud.com/djtorobeatz",
         },
+        isReplay: true,
       },
       {
         name: "D-VIBE",
@@ -588,9 +601,10 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/dvibe.techno/",
           music: "",
         },
+        isReplay: true,
       },
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "06:00",
         subtitle: {
           one: "DAY 2",
@@ -604,6 +618,7 @@ const schedule: Day[] = [
           music: "",
         },
         image: diaDosCharlaDos,
+        isReplay: true,
       },
       {
         name: "AIAWASKA",
@@ -623,6 +638,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/aiwaska/",
           music: "https://open.spotify.com/artist/3VqggSPrC7SFYDSd6DN6DN",
         },
+        isReplay: true,
       },
       {
         name: "MAT ZO",
@@ -642,6 +658,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/mat_zo/",
           music: "https://open.spotify.com/artist/2n7USVO8fO8FF8zq4kG2N1",
         },
+        isReplay: true,
       },
       {
         name: "ARMINA",
@@ -661,6 +678,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/armina.dj/",
           music: "https://open.spotify.com/artist/668LMKafrBrzwSPLQz1OdQ",
         },
+        isReplay: true,
       },
       {
         name: "STEVE SAIKO",
@@ -679,6 +697,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/stevesai_/",
           music: "https://open.spotify.com/artist/0w0gxSSI8bu1YmdOEbr2ca",
         },
+        isReplay: true,
       },
       {
         name: "INVISIBLE REALITY",
@@ -695,6 +714,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/invisiblereality/",
           music: "https://open.spotify.com/artist/5689fXaoEmJsLSPv3y18An",
         },
+        isReplay: true,
       },
     ],
   },
@@ -865,7 +885,7 @@ const schedule: Day[] = [
       },
       // NUEVO DIA 3
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "03:00",
         subtitle: {
           one: "DAY 3",
@@ -879,6 +899,7 @@ const schedule: Day[] = [
           music: "",
         },
         image: diaTresCharlaUno,
+        isReplay: true,
       },
       {
         name: "DAVYD",
@@ -898,6 +919,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/3zIEn6ebv9TgeonB2dd8it?go=1&sp_cid=831a53bff43f93fe1210644921f428e9&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=4f49ac0230384708",
         },
+        isReplay: true,
       },
       {
         name: "GEKO",
@@ -916,9 +938,10 @@ const schedule: Day[] = [
           instagram: "",
           music: "https://soundcloud.com/geko",
         },
+        isReplay: true,
       },
       {
-        name: "LIVE TALK",
+        name: "TALK",
         time: "06:00",
         subtitle: {
           one: "DAY 3",
@@ -932,6 +955,7 @@ const schedule: Day[] = [
           music: "",
         },
         image: diaTresCharlaDos,
+        isReplay: true,
       },
       {
         name: "PANS",
@@ -950,6 +974,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/pansdj/",
           music: "https://soundcloud.com/pansdj",
         },
+        isReplay: true,
       },
       {
         name: "DJ LAG",
@@ -969,6 +994,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/realdjlag/",
           music: "https://open.spotify.com/artist/1svX5cMlY22N60RxwzeJNO",
         },
+        isReplay: true,
       },
       {
         name: "NGHTMRE",
@@ -988,6 +1014,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/nghtmre/",
           music: "https://open.spotify.com/artist/76M2Ekj8bG8W7X2nbx2CpF",
         },
+        isReplay: true,
       },
       {
         name: "BUFALO",
@@ -1007,6 +1034,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/5TJ3ovuFQ2vRUye5280kQ8?si=uFNYzYd4R8W__fjjRPzT-A&nd=1&dlsi=054652d043544070",
         },
+        isReplay: true,
       },
       {
         name: "STONEY EYE & SOULTRY",
@@ -1025,6 +1053,7 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/stoneyeyestudios/",
           music: "https://open.spotify.com/artist/0qs98NuHMkM1NKyPpzhSjc",
         },
+        isReplay: true,
       },
     ],
   },
@@ -1192,12 +1221,12 @@ const schedule: Day[] = [
       // Nuevo dia 4
       {
         name: "NATCHEO",
-        time: "02:00",
+        time: "03:00",
         logoSrc: Nactcheo,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "02:00 UTC (18:00PST)",
+          three: "03:00 UTC (19:00PST)",
         },
         description:
           "Rising Argentinean DJ and producer blending live jazz instrumentals with smooth house beats.",
@@ -1208,15 +1237,16 @@ const schedule: Day[] = [
           music:
             "https://soundcloud.com/user-369947237?ref=clipboard&p=i&c=1&si=5AD55646261B40758032D7686F1664BA&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
         },
+        isReplay: true,
       },
       {
         name: "KIRAMOMO + UNTZ KING",
-        time: "03:00",
+        time: "04:00",
         logoSrc: Kiramomo,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "03:00 UTC (19:00PST)",
+          three: "04:00 UTC (20:00PST)",
         },
         description:
           "Emerging synthetic DJ/producers blending house with diverse sounds. Known for high-energy performances and web3 communities, they explore subgenres like hyperpop and dreamwave.",
@@ -1226,28 +1256,30 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/kiramomodotcom/",
           music: "https://www.youtube.com/channel/UCiatrGkEjlkToFwk7BRnUnA",
         },
+        isReplay: true,
       },
       {
-        name: "LIVE TALK",
-        time: "04:00",
-        subtitle: {
-          one: "DAY 4",
-          two: "NOV. 23",
-          three: "04:00 UTC (20:00PST)",
-        },
-        description:
-          "Final Day Wrap: Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios & ENO Network.",
-        image: diaCuatroCharlaUno,
-      },
-
-      {
-        name: "NONCITIZENS",
+        name: "TALK",
         time: "05:00",
-        logoSrc: Noncitizens,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
           three: "05:00 UTC (21:00PST)",
+        },
+        description:
+          "Final Day Wrap: Festival Highlights with Featured Artists. Speakers: Decentraland, Multiz, GM Studios & ENO Network.",
+        image: diaCuatroCharlaUno,
+        isReplay: true,
+      },
+
+      {
+        name: "NONCITIZENS",
+        time: "06:00",
+        logoSrc: Noncitizens,
+        subtitle: {
+          one: "DAY 4",
+          two: "NOV. 23",
+          three: "06:00 UTC (22:00PST)",
         },
         description:
           "NonCitizens, an Argentinean duo, captivate with deep grooves and soundscapes. With residencies at Void Mykonos and Rumors Ibiza, their hit 'Lost Trumpet In Space' gained global support, including BBC Radio 1.",
@@ -1258,15 +1290,16 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/73KWbbG4ZspCHvI0aDcfl1?si=vLdUfMZERHaLOBaL1Lak5Q&utm_medium=share&utm_source=linktree&nd=1&dlsi=e9e051145b3f4048",
         },
+        isReplay: true,
       },
       {
         name: "WHIPPED CREAM",
-        time: "06:00",
+        time: "07:00",
         logoSrc: WhippedCream,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "06:00 UTC (22:00PST)",
+          three: "07:00 UTC (23:00PST)",
         },
         logoLineUp: WhippedCreamLogoLineup,
         description:
@@ -1277,14 +1310,15 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/whippedcream/",
           music: "https://open.spotify.com/artist/5CMaNobmJYgXcfiT0zYOwi",
         },
+        isReplay: true,
       },
       {
         name: "BLOND:ISH",
-        time: "07:00",
+        time: "08:00",
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "07:00 UTC (23:00PST)",
+          three: "08:00 UTC (00:00PST)",
         },
         image: Blondish,
         logoLineUp: BlondishLogoLineup,
@@ -1294,15 +1328,16 @@ const schedule: Day[] = [
           instagram: "",
           music: "",
         },
+        isReplay: true,
       },
       {
         name: "DOME",
-        time: "08:00",
+        time: "09:00",
         logoSrc: Dome,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "08:00 UTC (00:00PST)",
+          three: "09:00 UTC (01:00PST)",
         },
         description:
           "Santiago Domenech (DOME) a rising DJ/producer from Buenos Aires, has played major events like The Bow and Porto Seguro. With 2.5M+ streams, he blends Latin and electronic sounds, focusing on Melodic Techno.",
@@ -1312,15 +1347,16 @@ const schedule: Day[] = [
           instagram: "https://www.instagram.com/santidomee/",
           music: "https://soundcloud.com/santidomee",
         },
+        isReplay: true,
       },
       {
         name: "GUEVA",
-        time: "09:00",
+        time: "10:00",
         logoSrc: Gueva,
         subtitle: {
           one: "DAY 4",
           two: "NOV. 23",
-          three: "09:00 UTC (01:00PST)",
+          three: "10:00 UTC (02:00PST)",
         },
         description:
           "Gueva, an underground melodic techno DJ, fuses indie dance with melodic techno, blending futuristic harmonies, emotional melodies, and an '80s groove",
@@ -1331,6 +1367,7 @@ const schedule: Day[] = [
           music:
             "https://open.spotify.com/artist/05Pn4YBKlafyqay7CrSS17?si=kLVRX0qkRoiQBoEkHU0CQQ&nd=1&dlsi=2ea53d637cb04170",
         },
+        isReplay: true,
       },
     ],
   },

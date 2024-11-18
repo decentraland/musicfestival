@@ -154,7 +154,9 @@ function LineUp() {
                               <ArtistName>{artist.name}</ArtistName>
                             )}
                             <ArtistTime color={dayColors[index]}>
-                              {artist.time}
+                              {artist.isReplay
+                                ? `${artist.time} - REPLAY`
+                                : artist.time}
                             </ArtistTime>
                           </ArtistCard>
                         ) : (
