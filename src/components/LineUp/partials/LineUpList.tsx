@@ -4,6 +4,7 @@ import styled from "styled-components"
 import bgLineUp from "../../../img/lineup/bg.png"
 import imgDesktop from "../../../img/lineup/lineup-desktop.png"
 import imgMobile from "../../../img/lineup/lineup-mobile.png"
+import { DownloadLink } from "../../DownloadButton"
 
 const LineUpList = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
@@ -21,6 +22,7 @@ const LineUpList = () => {
         src={isMobile ? imgMobile : imgDesktop}
         alt="lineup"
       />
+      <DownloadLink />
     </ListContainer>
   )
 }

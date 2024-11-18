@@ -107,7 +107,12 @@ function LineUp() {
                 {time === "00:00" && <TimeText>17:00 PST</TimeText>}
                 {time === "1:00" && <TimeText>18:00 PST</TimeText>}
                 {time !== "00:00" && time !== "1:00" && (
-                  <TimeText>{parseInt(time) - 7}:00 PST</TimeText>
+                  <TimeText>
+                    {parseInt(time) >= 7
+                      ? parseInt(time) - 7
+                      : parseInt(time) + 17}
+                    :00 PST
+                  </TimeText>
                 )}
               </TimeSlot>
             ))}
@@ -520,7 +525,17 @@ const timeSlots = [
   "22:00",
   "23:00",
   "00:00",
-  "1:00",
+  "01:00",
+  "02:00",
+  "03:00",
+  "04:00",
+  "05:00",
+  "06:00",
+  "07:00",
+  "08:00",
+  "09:00",
+  "10:00",
+  "11:00",
 ]
 
 export { LineUp }
