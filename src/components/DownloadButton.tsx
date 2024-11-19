@@ -48,6 +48,8 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   line-height: 30px;
   transition: background 0.3s;
   will-change: background;
+  margin-top: 42px;
+  max-width: 270px;
 
   &:hover {
     transition: background 0.3s;
@@ -59,6 +61,7 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
     margin-top: 0px;
     height: 50px;
     max-width: 200px;
+    min-width: unset;
     justify-content: flex-start;
   }
 `
@@ -96,7 +99,8 @@ const TextContainer = styled.div<{ useJump?: boolean }>`
   min-width: ${({ useJump }) => (!useJump ? "350px" : "auto")};
 
   @media (max-width: 600px) {
-    font-size: 14px;
+    font-size: 18px;
+    margin-right: 20px;
 
     br {
       display: none;
