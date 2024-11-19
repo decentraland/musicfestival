@@ -20,7 +20,7 @@ const MapComponent = () => {
       <ContentWrapper>
         <MapImage src={isMobile ? mapMobile : mapDesktop} alt="Map" />
       </ContentWrapper>
-      <DownloadLink />
+      <DownloadLink useJump />
     </MapContainer>
   )
 }

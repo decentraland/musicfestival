@@ -13,8 +13,9 @@ const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
         <img src={onlyLogo} alt="Decentraland" />
       </LogoContainer>
       <TextContainer useJump={useJump}>
-        Download {useJump && <br />}
-        Decentraland
+        JUMP IN
+        {/* Download {useJump && <br />}
+        Decentraland */}
       </TextContainer>
     </StyledDownloadButton>
   )
@@ -31,7 +32,7 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-width: 300px;
+  min-width: 270px;
   gap: 10px;
   background: linear-gradient(90deg, #56a7ff, #fb01ff);
   font-weight: 400;
@@ -87,8 +88,10 @@ const TextContainer = styled.div<{ useJump?: boolean }>`
   align-items: center;
   justify-content: ${({ useJump }) => (useJump ? "flex-start" : "center")};
   text-align: left;
-  font-size: 22px;
+  font-size: 32px;
   line-height: 26px;
+  margin: 0 auto;
+  margin-right: 40px;
   text-transform: uppercase;
   min-width: ${({ useJump }) => (!useJump ? "350px" : "auto")};
 
