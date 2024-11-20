@@ -22,7 +22,7 @@ const LineUpList = () => {
         src={isMobile ? imgMobile : imgDesktop}
         alt="lineup"
       />
-      <DownloadLink />
+      <DownloadLink useJump />
     </ListContainer>
   )
 }

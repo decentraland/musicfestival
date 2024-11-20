@@ -1,9 +1,9 @@
 import { styled } from "styled-components"
 import onlyLogo from "../img/music-festival/logo-button.png"
 
-const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
+const JumpInButton = ({ useJump = false }: { useJump?: boolean }) => {
   return (
-    <StyledDownloadButton
+    <StyledJumpIn
       href="https://decentraland.org/download?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
       target="_blank"
       rel="noopener noreferrer"
@@ -17,11 +17,11 @@ const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
         {/* Download {useJump && <br />}
         Decentraland */}
       </TextContainer>
-    </StyledDownloadButton>
+    </StyledJumpIn>
   )
 }
 
-const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
+const StyledJumpIn = styled.a<{ useJump?: boolean }>`
   margin-top: 20px;
   width: max-content;
   color: white;
@@ -59,7 +59,6 @@ const StyledDownloadButton = styled.a<{ useJump?: boolean }>`
 
   @media (max-width: 600px) {
     margin-top: 0px;
-    height: 50px;
     max-width: 200px;
     min-width: unset;
     justify-content: flex-start;
@@ -110,4 +109,4 @@ const TextContainer = styled.div<{ useJump?: boolean }>`
   }
 `
 
-export { DownloadLink }
+export { JumpInButton }

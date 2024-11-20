@@ -49,7 +49,7 @@ const DCLMusicInfo = () => {
             Entry is free— jump in from anywhere!
           </p>
         </InfoContainer>
-        <DownloadLink />
+        <DownloadLink useJump />
         <Faq />
       </HeroContainer>
     </StyledHero>
