@@ -1,22 +1,43 @@
+import { useCallback } from "react"
 import { styled } from "styled-components"
 import onlyLogo from "../img/music-festival/logo-button.png"
+import { getAnalytics } from "../modules/analytics/segment"
+import { launchDesktopApp } from "../modules/desktop"
 
 const DownloadLink = ({ useJump = false }: { useJump?: boolean }) => {
+  const handleClick = useCallback(async function (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) {
+    const analytics = getAnalytics()
+    e.stopPropagation()
+    e.preventDefault()
+    const hasDecentralandLauncher = await launchDesktopApp({
+      position: "-61,-71",
+    })
+    console.log("hasDecentralandLauncher: ", hasDecentralandLauncher)
+
+    if (!hasDecentralandLauncher) {
+      const downloadURL =
+        "https://decentraland.org/download?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
+      window.open(downloadURL, "_blank", "noopener,noreferrer")
+    }
+
+    analytics.track("JumpIn", {
+      has_laucher: !!hasDecentralandLauncher,
+    })
+  }, [])
+
   return (
     <StyledDownloadButton
       href="https://decentraland.org/download?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
       target="_blank"
       rel="noopener noreferrer"
-      useJump={useJump}
+      onClick={handleClick}
     >
       <LogoContainer useJump={useJump}>
         <img src={onlyLogo} alt="Decentraland" />
       </LogoContainer>
-      <TextContainer useJump={useJump}>
-        JUMP IN
-        {/* Download {useJump && <br />}
-        Decentraland */}
-      </TextContainer>
+      <TextContainer useJump={useJump}>Jump in</TextContainer>
     </StyledDownloadButton>
   )
 }

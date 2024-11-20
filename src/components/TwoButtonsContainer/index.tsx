@@ -1,11 +1,9 @@
 import { styled } from "styled-components"
 import { DownloadLink } from "../DownloadButton"
-import { JumpInButton } from "../JumpInButton"
 
 const TwoButtonsContainer = () => {
   return (
     <Container>
-      <JumpInButton useJump />
       <DownloadLink />
     </Container>
   )
