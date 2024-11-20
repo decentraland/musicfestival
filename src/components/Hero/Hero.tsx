@@ -76,7 +76,7 @@ const Hero = () => {
         <GetReadyContainer>
           <GetReadyText>
             <FiChevronsDown />
-            GET READY
+            ENTER NOW
             <FiChevronsDown />
           </GetReadyText>
           <DownloadLink useJump />
