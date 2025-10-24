@@ -1,3 +1,4 @@
 {
-  "SEGMENT_API_KEY": "f0S2L1sWumT8BPjBmIBDTN5gIWjhrRHG"
+  "SEGMENT_API_KEY": "f0S2L1sWumT8BPjBmIBDTN5gIWjhrRHG",
+  "BUILDER_SERVER_URL": "https://builder-api.decentraland.org"
 }

@@ -20,6 +20,7 @@
 
 *::selection {
   background: transparent;
+  backdrop-filter: blur(20px);
   background: transparent;
 }
 
@@ -27,13 +28,47 @@ html {
   background: var(--main-bg-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+body {
+  background-image: url("../img/hero/bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile-safe fixed background using a pseudo-element (iOS/Android compatible) */
+@media (max-width: 768px) {
+  body {
+    background-image: none !important; /* avoid double painting */
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../img/hero/bg.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
 
 #root {
   overflow-x: hidden;
   overflow: hidden;
   color: white;
-  background: var(--main-bg-color);
+  background: transparent;
 }
 
 .full-width {
@@ -86,7 +121,7 @@ h4,
 h5,
 h6 {
   text-decoration: none !important;
-  font-family: "Nasalization Rg", sans-serif;
+  font-family: "Ethnocentric", sans-serif;
 }
 
 p,
@@ -96,4 +131,13 @@ div {
 
 a {
   text-decoration: none !important;
+}
+
+[data-sonner-toast] {
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(8px);
+  border: none !important;
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 600;
+  color: white;
 }

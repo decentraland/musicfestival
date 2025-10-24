@@ -1,394 +1,194 @@
 import { useEffect, useState } from "react"
-import { FiChevronsDown } from "react-icons/fi"
-import { styled } from "styled-components"
-import groupImage2 from "../../img/heroLogos/matzo.png"
-import groupImage4 from "../../img/heroLogos/nightmare.png"
-import groupImage1 from "../../img/heroLogos/sanholo.png"
-import groupImage3 from "../../img/heroLogos/whippedcream.png"
-import bgHero from "../../img/music-festival/bg-hero.jpg"
-import groupImage5 from "../../img/music-festival/blondish.png"
-import separatorImage1 from "../../img/music-festival/cruz-separate-1.png"
-import separatorImage2 from "../../img/music-festival/cruz-separate-2.png"
-import separatorImage3 from "../../img/music-festival/cruz-separate-3.png"
-import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
-import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
-import diamondImageLeft from "../../img/music-festival/left-diamond.png"
-import diamondImage from "../../img/music-festival/middle-diamond.png"
-import diamondImageRight from "../../img/music-festival/right-diamond.png"
-import dateImage from "../../img/music-festival/top-date.png"
-import { breakpoints } from "../../utils/theme"
-import { DownloadLink } from "../DownloadButton"
+import { toast } from "sonner"
+import {
+  ArrowBox,
+  BottomSection,
+  CharacterImage,
+  DateBadge,
+  DateBox,
+  Description,
+  DiamondImage,
+  FeatureItem,
+  FeatureRow,
+  FeaturesList,
+  HeroBackdropMasked,
+  HeroBlurOne,
+  HeroBlurTwo,
+  HeroContainer,
+  InlineSignup,
+  LeftColumn,
+  LogoWrapper,
+  MainContentRow,
+  RightColumn,
+  SeparatorIcon,
+  SignupInput,
+  StyledHero,
+  StyledLogo,
+  SubscribeButton,
+  Tagline,
+} from "./styles"
+import heroBlurTwoImage from "../../img/hero/blur-2.png"
+import heroBlurOneImage from "../../img/hero/blur.png"
+import cyanArrowLeft from "../../img/hero/cyan-arrow-left.png"
+import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
+import dateArrow from "../../img/hero/date-arrow.svg"
+import lightstickImage from "../../img/hero/lightstick.png"
+import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
+import { subscribeToNewsletter } from "../../modules/newsletter"
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [scrollY, setScrollY] = useState(0)
+  const [email, setEmail] = useState("")
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 768)
-    })
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) {
+      toast.error("Email is required")
+      return
+    }
+    // Basic email regex; adequate for client-side validation
+    const emailRegex =
+      /^(?:[a-zA-Z0-9_'^&+-])+(?:\.(?:[a-zA-Z0-9_'^&+-])+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/
+    if (!emailRegex.test(trimmed)) {
+      toast.error("Please enter a valid email", {
+        duration: 10000,
+      })
+      return
+    }
+    try {
+      setSubmitting(true)
+      await subscribeToNewsletter(trimmed)
+      toast.success(
+        "Almost done! Check your inbox to confirm your subscription."
+      )
+      setEmail("")
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Subscription failed"
+      toast.error(message)
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   return (
     <StyledHero>
-      <BackgroundImage
-        src={isMobile ? bgHeroMobile : bgHero}
-        alt="background"
+      {/* Backdrop blur applied only where the blur PNGs have alpha */}
+      <HeroBackdropMasked $mask={heroBlurOneImage} aria-hidden="true" />
+      <HeroBlurOne src={heroBlurOneImage} alt="" aria-hidden="true" />
+      <HeroBlurTwo src={heroBlurTwoImage} alt="" aria-hidden="true" />
+      <CharacterImage
+        src={lightstickImage}
+        alt="Festival Character"
+        initial={{ opacity: 0, y: 100, scale: 0.9 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: scrollY * 0.2,
+        }}
+        transition={{
+          opacity: { duration: 1, delay: 0.5 },
+          y: { duration: 1, delay: 0 },
+          scale: { duration: 1, delay: 0.5 },
+        }}
       />
       <HeroContainer>
-        <DateRow>
-          <DiamondImage src={diamondImageLeft} alt="left diamond" />
-          <DateImage src={dateImage} alt="November 20 - 23" />
-          <DiamondImage src={diamondImageRight} alt="right diamond" />
-        </DateRow>
-        <StyledLogo src={headerDclLogo} />
-        <ContentWrapper>
-          <MobileDiamondLine>
-            <DiamondImage src={diamondImage} alt="diamond" />
-          </MobileDiamondLine>
-          <TextRow>
-            <GroupText>
-              <b>FREE</b> ENTRY
-            </GroupText>
-            <TextImage src={separatorImage1} alt="separator" />
-            <GroupText>
-              <b>EXCLUSIVE</b> SETS
-            </GroupText>
-            <TextImage src={separatorImage2} alt="separator" />
-            <GroupText>
-              EPIC <b>GIVEAWAYS</b>
-            </GroupText>
-            <TextImage src={separatorImage3} alt="separator" />
-            <GroupText>
-              LIVE <b>VIP</b> TALKS
-            </GroupText>
-          </TextRow>
-          <DiamondLine>
-            <DiamondImage src={diamondImage} alt="diamond" />
-          </DiamondLine>
-          <GroupImages>
-            <GroupImage className="nightmare" src={groupImage4} alt="group 4" />
-            <GroupImage src={groupImage1} alt="group 1" />
-            <GroupImage src={groupImage5} alt="group 5" />
-            <GroupImage src={groupImage2} alt="group 2" />
-            <GroupImage src={groupImage3} alt="group 3" />
-          </GroupImages>
-        </ContentWrapper>
-        <GetReadyContainer>
-          <GetReadyText>
-            <FiChevronsDown />
-            ENTER NOW
-            <FiChevronsDown />
-          </GetReadyText>
-          <DownloadLink useJump />
-        </GetReadyContainer>
+        {/* Main Content Row - Two Columns */}
+        <MainContentRow>
+          {/* Left Column */}
+          <LeftColumn>
+            <LogoWrapper
+              initial={{ opacity: 0, scale: 0.9, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <StyledLogo src={DMF25Logo} alt="Decentraland Music Festival" />
+              <Tagline>WHERE THE STREAM HITS THE MAIN STAGE</Tagline>
+              <Description>
+                A four-day festival where fans and performers redefine
+                &ldquo;going live.&rdquo;
+              </Description>
+            </LogoWrapper>
+
+            <BottomSection
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+            >
+              <InlineSignup
+                onSubmit={handleSubscribe}
+                aria-label="Notify signup"
+              >
+                <SignupInput
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  required
+                  disabled={submitting}
+                />
+                <SubscribeButton type="submit" disabled={submitting}>
+                  {submitting ? "Subscribing..." : "Subscribe"}
+                </SubscribeButton>
+              </InlineSignup>
+              <FeaturesList>
+                <FeatureRow>
+                  <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
+                  <SeparatorIcon src={cyanArrowLeft} alt="" />
+                  <FeatureItem>ICONIC STAGES</FeatureItem>
+                  <SeparatorIcon src={cyanArrowRight} alt="" />
+                  <FeatureItem>NO HEADSET NEEDED</FeatureItem>
+                </FeatureRow>
+              </FeaturesList>
+            </BottomSection>
+          </LeftColumn>
+
+          {/* Right Column */}
+          <RightColumn>
+            <DateBadge
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+            >
+              <ArrowBox
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 1.3,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+              >
+                <img src={dateArrow} alt="arrow" />
+              </ArrowBox>
+              <DateBox>DEC 3-6</DateBox>
+              <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
+            </DateBadge>
+          </RightColumn>
+        </MainContentRow>
       </HeroContainer>
     </StyledHero>
   )
 }
-
-const DateRow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
-
-  @media (max-width: ${breakpoints.md}) {
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-`
-
-const DateImage = styled.img`
-  height: 29px;
-  width: 361px;
-
-  @media (max-width: ${breakpoints.md}) {
-    height: 24px;
-    width: 300px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    height: 20px;
-    width: 250px;
-  }
-`
-
-const TextRow = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 20px;
-  font-size: 10px;
-  white-space: nowrap;
-
-  @media (max-width: ${breakpoints.md}) {
-    font-size: 16px;
-    gap: 3px;
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    font-size: 12px;
-    gap: 2px;
-    margin-bottom: 5px;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 10px;
-    gap: 1px;
-  }
-
-  @media (min-width: ${breakpoints.md}) {
-    font-size: 20px;
-  }
-`
-
-const TextImage = styled.img`
-  height: 9px;
-
-  @media (max-width: ${breakpoints.md}) {
-    height: 7px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    height: 5px;
-  }
-
-  @media (max-width: 400px) {
-    height: 4px;
-  }
-`
-
-const GroupText = styled.p`
-  text-transform: uppercase;
-  white-space: nowrap;
-`
-
-const DiamondLine = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-  position: relative;
-  width: 100%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 44%;
-    left: 0;
-    right: 0;
-    height: 2.5px;
-    background-color: #926bff;
-    z-index: 1;
-    @media (max-width: ${breakpoints.s}) {
-      height: 1px;
-    }
-  }
-
-  & > img {
-    position: relative;
-    z-index: 2;
-  }
-
-  @media (max-width: ${breakpoints.md}) {
-    margin-bottom: 5px;
-  }
-`
-
-const DiamondImage = styled.img`
-  height: 20px;
-
-  @media (max-width: ${breakpoints.md}) {
-    height: 20px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    height: 16px;
-  }
-`
-
-const GroupImages = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  max-width: 650px;
-
-  @media (max-width: ${breakpoints.md}) {
-    gap: 12px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-    justify-items: center;
-    place-items: center;
-
-    & > *:last-child {
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
-  }
-`
-
-const GroupImage = styled.img`
-  mix-blend-mode: screen;
-  max-width: 100%;
-  max-height: 70px;
-  object-fit: contain;
-  position: relative;
-  object-position: center;
-  object-fit: contain;
-  width: 1fr;
-  flex: 1;
-  max-width: 120px;
-
-  @media (max-width: ${breakpoints.l}) {
-    max-height: 60px;
-    max-width: 120px;
-  }
-
-  @media (max-width: ${breakpoints.md}) {
-    height: 60px;
-    max-width: 80px;
-  }
-
-  @media (max-width: ${breakpoints.s}) {
-    max-width: 160px;
-  }
-`
-
-const StyledHero = styled.div`
-  position: relative;
-  height: 100%;
-  min-height: calc(100vh - 48px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  overflow: hidden;
-`
-
-const BackgroundImage = styled.img`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  z-index: 0;
-`
-
-const HeroContainer = styled.div`
-  height: auto;
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin-top: 180px;
-  padding: 20px;
-
-  @media (min-width: ${breakpoints.s}) {
-    margin-top: 120px;
-  }
-
-  @media (min-width: ${breakpoints.md}) {
-    margin-top: 80px;
-  }
-
-  @media (max-width: ${breakpoints.md}) {
-    max-width: 100%;
-  }
-`
-
-const GetReadyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-  margin-top: 32px;
-
-  @media (max-width: ${breakpoints.s}) {
-    gap: 10px;
-  }
-`
-
-const GetReadyText = styled.div`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0px;
-
-  @media (max-width: ${breakpoints.s}) {
-    font-size: 10px;
-    margin-bottom: 0;
-  }
-
-  @media (max-width: ${breakpoints.md}) {
-    font-size: 16px;
-  }
-
-  > svg {
-    animation: bounce 2s linear infinite;
-    position: relative;
-    top: 5px;
-  }
-
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-`
-
-const ContentWrapper = styled.div`
-  max-width: 650px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-
-  @media (max-width: ${breakpoints.md}) {
-    // max-width: 90%;
-  }
-`
-
-const StyledLogo = styled.img`
-  width: 100%;
-
-  height: auto;
-
-  @media (max-width: ${breakpoints.md}) {
-    max-width: 90%;
-  }
-
-  @media (min-width: ${breakpoints.l}) {
-    max-width: 700px;
-  }
-`
-
-const MobileDiamondLine = styled(DiamondLine)`
-  display: none;
-  margin-bottom: 20px;
-
-  @media (max-width: ${breakpoints.md}) {
-    display: flex;
-    margin-bottom: 5px;
-  }
-`
 
 export { Hero, StyledLogo, DiamondImage }
