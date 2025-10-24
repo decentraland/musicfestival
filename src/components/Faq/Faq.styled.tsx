@@ -184,7 +184,7 @@ const Title = styled.h2`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "Inter", sans-serif !important;
+  font-family: "Ethnocentric", sans-serif !important;
 `
 
 const QuestionContainer = styled.div`

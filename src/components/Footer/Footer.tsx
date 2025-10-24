@@ -79,8 +79,8 @@ const FooterLeft = styled.div`
 const FooterText = styled.a`
   color: #efefef;
   font-size: 12px;
-  font-weight: 700;
-  font-family: "InterMedium", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
   letter-spacing: 3px;
   text-decoration: none;
   text-transform: uppercase;
@@ -140,7 +140,7 @@ const LogoContainer = styled.a`
 `
 
 const LogoImage = styled.img`
-  height: 24px;
+  height: 40px;
   width: auto;
 `
 

@@ -1,21 +1,17 @@
 import { styled } from "styled-components"
 import bgHero2 from "../../img/music-festival/bg-hero-2.png"
 import DclBullet from "../../img/music-festival/dcl-bullet.png"
-import headerDclLogo from "../../img/music-festival/DMF24-Logo.png"
+import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
 import { DownloadLink } from "../DownloadButton"
 import { Faq } from "../Faq/Faq.styled"
 import { StyledLogo } from "../Hero/Hero"
-import { BannerMarquee } from "../Marquee/Marquee"
 
 const DCLMusicInfo = () => {
   return (
     <StyledHero id="about">
       <HeroContainer>
-        <MarqueeContainer>
-          <BannerMarquee />
-        </MarqueeContainer>
         <InfoContainer>
-          <StyledLogo src={headerDclLogo} />
+          <StyledLogo src={DMF25Logo} />
           <p>
             Enter Decentraland on 20-23 November and teleport to an <b>EDM</b>{" "}
             <b>festival</b> like no other:
@@ -80,20 +76,12 @@ const HeroContainer = styled.div`
   position: relative;
 `
 
-const MarqueeContainer = styled.div`
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-`
-
 const InfoContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
   margin-top: 100px;
   margin-bottom: 50px;
