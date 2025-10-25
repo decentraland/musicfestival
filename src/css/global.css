@@ -20,6 +20,7 @@
 
 *::selection {
   background: transparent;
+  backdrop-filter: blur(20px);
   background: transparent;
 }
 
