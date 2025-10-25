@@ -16,7 +16,7 @@ const Faq = () => {
 
   return (
     <FaqContainer id="faq">
-      <Title>Frequently Asked Questions</Title>
+      <Title>FAQs</Title>
       {[
         {
           question: "What is Decentraland?",
@@ -172,25 +172,30 @@ const Faq = () => {
 }
 
 const FaqContainer = styled.div`
-  margin-top: 120px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   width: 100%;
   color: white;
+  background: rgba(38, 6, 81, 0.9);
+  backdrop-filter: blur(20px);
 `
 
 const Title = styled.h2`
-  width: 30%;
   font-size: 42px;
   margin-bottom: 40px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;
+  text-align: center;
   font-family: "Ethnocentric", sans-serif !important;
 `
 
 const QuestionContainer = styled.div`
+  max-width: 1240px;
+  margin: 0 auto;
   margin-bottom: 20px;
   padding-block: 50px;
-  border-bottom: 1px solid #00bfff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `
 
 const Question = styled.div`
@@ -205,7 +210,7 @@ const Question = styled.div`
   p {
     font-family: "Inter", sans-serif !important;
     max-width: 500px;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;

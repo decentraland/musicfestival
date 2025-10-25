@@ -1,50 +1,71 @@
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 import { styled } from "styled-components"
-import bgHero from "../../img/hero/bg.jpg"
+import cyanArrowLeft from "../../img/hero/cyan-arrow-left.png"
+import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
 import lightstickImage from "../../img/hero/lightstick.png"
+import openLine from "../../img/hero/open-line.svg"
 import openToEveryoneIcon from "../../img/hero/open-to-everyone.svg"
+import separator from "../../img/hero/separator.svg"
+import starsBlurred from "../../img/hero/stars-blured.png"
+import stars from "../../img/hero/stars.png"
 import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
-import bgHeroMobile from "../../img/music-festival/hero-background-mobile.png"
 import { breakpoints } from "../../utils/theme"
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 768)
-    })
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   return (
     <StyledHero>
-      <BackgroundImage
-        src={isMobile ? bgHeroMobile : bgHero}
-        alt="background"
+      <CharacterImage
+        src={lightstickImage}
+        alt="Festival Character"
+        initial={{ opacity: 0, x: 100, scale: 0.9 }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          y: scrollY * 0.3,
+        }}
+        transition={{
+          opacity: { duration: 1, delay: 0.5 },
+          x: { duration: 1, delay: 0.5 },
+          scale: { duration: 1, delay: 0.5 },
+          y: { duration: 0, delay: 0 },
+        }}
       />
       <HeroContainer>
-        <TopRow>
-          <OpenToEveryone>
-            <OpenToEveryoneIcon
-              src={openToEveryoneIcon}
-              alt="DMF25 - Decentraland Music Festival 2025"
-            />
-            OPEN TO EVERYONE
-          </OpenToEveryone>
-          <DateBadge>
-            <ArrowBox>
-              <img src={dateArrow} alt="arrow" />
-            </ArrowBox>
-            <DateBox>DEC 3-6</DateBox>
-            <DateBox>2025</DateBox>
-          </DateBadge>
-        </TopRow>
-
         {/* Main Content Row - Two Columns */}
         <MainContentRow>
           {/* Left Column */}
           <LeftColumn>
+            <OpenToEveryone>
+              <OpenToEveryoneContent>
+                <OpenToEveryoneIcon
+                  src={openToEveryoneIcon}
+                  alt="DMF25 - Decentraland Music Festival 2025"
+                />
+                OPEN TO EVERYONE
+              </OpenToEveryoneContent>
+              <OpenLineWrapper>
+                <OpenLine src={openLine} alt="" />
+                <EndBox />
+              </OpenLineWrapper>
+            </OpenToEveryone>
+
             <LogoWrapper>
               <StyledLogo src={DMF25Logo} alt="Decentraland Music Festival" />
               <Tagline>
@@ -58,89 +79,150 @@ const Hero = () => {
               </Description>
             </LogoWrapper>
 
-            <FeaturesList>
-              <FeatureRow>
-                <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
-                <Separator>«««</Separator>
-                <FeatureItem>ICONIC STAGES</FeatureItem>
-                <Separator>»»»</Separator>
-                <FeatureItem>NO HEADSET NEEDED</FeatureItem>
-              </FeatureRow>
-              <FeatureRow>
-                <FeatureItem>NEW FAN EXPERIENCES</FeatureItem>
-                <Separator>«««</Separator>
-                <FeatureItem>FREE TO ENTER</FeatureItem>
-                <Separator>»»»</Separator>
-                <FeatureItem>OPEN TO EVERYONE</FeatureItem>
-              </FeatureRow>
-            </FeaturesList>
+            <BottomSection>
+              <FeaturesList>
+                <FeatureRow>
+                  <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
+                  <SeparatorIcon src={cyanArrowLeft} alt="" />
+                  <FeatureItem>ICONIC STAGES</FeatureItem>
+                  <SeparatorIcon src={cyanArrowRight} alt="" />
+                  <FeatureItem>NO HEADSET NEEDED</FeatureItem>
+                </FeatureRow>
+                <SeparatorLine src={separator} alt="" />
+                <FeatureRow>
+                  <FeatureItem>NEW FAN EXPERIENCES</FeatureItem>
+                  <SeparatorIcon src={cyanArrowLeft} alt="" />
+                  <FeatureItem>FREE TO ENTER</FeatureItem>
+                  <SeparatorIcon src={cyanArrowRight} alt="" />
+                  <FeatureItem>OPEN TO EVERYONE</FeatureItem>
+                </FeatureRow>
+              </FeaturesList>
 
-            <StarRow>
-              {[...Array(10)].map((_, i) => (
-                <Star key={i}>✦</Star>
-              ))}
-            </StarRow>
+              <StarsContainer>
+                <StarsBlurred src={starsBlurred} alt="" />
+                <StarsImage src={stars} alt="" />
+              </StarsContainer>
+            </BottomSection>
           </LeftColumn>
 
-          {/* Right Column - Character Image */}
+          {/* Right Column */}
           <RightColumn>
-            <CharacterImage src={lightstickImage} alt="Festival Character" />
+            <DateBadge>
+              <ArrowBox
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 1.3,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+              >
+                <img src={dateArrow} alt="arrow" />
+              </ArrowBox>
+              <DateBox>DEC 3-6</DateBox>
+              <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
+            </DateBadge>
           </RightColumn>
+          <SignupBox>
+            <SignupContent>
+              <SignupTitle>BE PART OF THE FESTIVAL</SignupTitle>
+              <SignupSubtitle>
+                Get updates, live event alerts and more.
+              </SignupSubtitle>
+            </SignupContent>
+            <SignupButton>SIGN UP NOW</SignupButton>
+          </SignupBox>
         </MainContentRow>
       </HeroContainer>
-      <SignupBox>
-        <SignupContent>
-          <SignupTitle>BE PART OF THE FESTIVAL</SignupTitle>
-          <SignupSubtitle>
-            Get updates, live event alerts and more.
-          </SignupSubtitle>
-        </SignupContent>
-        <SignupButton>SIGN UP NOW</SignupButton>
-      </SignupBox>
     </StyledHero>
   )
 }
 
-// Top Row Components
-const TopRow = styled.div`
+// Top Components
+const OpenToEveryone = styled(motion.div).attrs({
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] },
+})`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 40px;
-  position: relative;
-  z-index: 5;
+  gap: 0;
 
   @media (max-width: ${breakpoints.md}) {
-    padding: 15px 20px;
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-start;
+    gap: 10px;
   }
 `
 
-const OpenToEveryone = styled.div`
+const OpenToEveryoneContent = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
   font-family: "Ethnocentric", sans-serif;
   letter-spacing: -1px;
+  white-space: nowrap;
 
   @media (max-width: ${breakpoints.md}) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `
 
 const OpenToEveryoneIcon = styled.img`
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   object-fit: contain;
-  margin-right: 0.5rem;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 24px;
+    width: 24px;
+  }
 `
 
-const DateBadge = styled.div`
+const OpenLineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 20px;
+  gap: 0;
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 100%;
+    margin-left: 0;
+  }
+`
+
+const OpenLine = styled.img`
+  width: 100%;
+  height: 2px;
+  flex: 1;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 1.5px;
+  }
+`
+
+const EndBox = styled.div`
+  width: 8px;
+  height: 8px;
+  background: white;
+  flex-shrink: 0;
+
+  @media (max-width: ${breakpoints.md}) {
+    width: 6px;
+    height: 6px;
+  }
+`
+
+const DateBadge = styled(motion.div).attrs({
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
+})`
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -151,7 +233,7 @@ const DateBadge = styled.div`
   }
 `
 
-const ArrowBox = styled.div`
+const ArrowBox = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,9 +241,10 @@ const ArrowBox = styled.div`
   padding: 8px 16px;
   border: 1px solid white;
   border-right: none;
+  overflow: hidden;
 
   img {
-    height: 20px;
+    height: 28px;
     width: auto;
   }
 
@@ -169,7 +252,7 @@ const ArrowBox = styled.div`
     padding: 6px 12px;
 
     img {
-      height: 16px;
+      height: 28px;
     }
   }
 
@@ -177,24 +260,26 @@ const ArrowBox = styled.div`
     padding: 4px 8px;
 
     img {
-      height: 14px;
+      height: 28px;
     }
   }
 `
 
-const DateBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px;
+const DateBox = styled(motion.div)`
+  display: grid;
+  place-items: center;
+  font-family: "Ethnocentric", sans-serif;
+  line-height: 1;
+  letter-spacing: -1px;
+  padding: 10px 20px;
   border: 1px solid white;
   border-left: none;
   font-size: 32px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   font-weight: bold;
   background: transparent;
-  min-width: 100px;
+  min-width: 90px;
+  overflow: hidden;
 
   &:first-of-type {
     border-left: none;
@@ -202,14 +287,16 @@ const DateBox = styled.div`
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 18px;
-    padding: 6px 16px;
+    padding: 8px 16px;
     min-width: 80px;
+    transform: translateY(-1px);
   }
 
   @media (max-width: ${breakpoints.s}) {
     font-size: 14px;
-    padding: 4px 12px;
+    padding: 6px 12px;
     min-width: 70px;
+    transform: translateY(-1px);
   }
 `
 
@@ -217,10 +304,11 @@ const DateBox = styled.div`
 const MainContentRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
-  padding: 40px 60px;
+  padding: 40px 60px 80px 60px;
   gap: 60px;
+  flex: 1;
   z-index: 2;
 
   @media (max-width: ${breakpoints.md}) {
@@ -235,11 +323,10 @@ const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  gap: 25px;
 
   @media (max-width: ${breakpoints.md}) {
     max-width: 100%;
+    gap: 25px;
   }
 `
 
@@ -247,20 +334,29 @@ const RightColumn = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
 
   @media (max-width: ${breakpoints.md}) {
     width: 100%;
+    height: auto;
+    align-items: center;
   }
 `
 
-const LogoWrapper = styled.div`
+const LogoWrapper = styled(motion.div).attrs({
+  initial: { opacity: 0, scale: 0.9 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+})`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding-left: 3rem;
+  padding-left: 2rem;
+
+  @media (max-width: ${breakpoints.md}) {
+    padding-left: 1rem;
+  }
 `
 
 const Tagline = styled.h2`
@@ -270,6 +366,8 @@ const Tagline = styled.h2`
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -1px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 22px;
@@ -285,28 +383,47 @@ const Description = styled.p`
   line-height: 1.6;
   font-weight: 300;
   letter-spacing: -0.5px;
+  max-width: 500px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 14px;
   }
 `
 
+const BottomSection = styled(motion.div).attrs({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+})`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+
 const FeaturesList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  max-width: 600px;
+  gap: 8px;
+  align-items: flex-start;
 `
 
 const FeatureRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+
+  @media (max-width: ${breakpoints.s}) {
+    gap: 8px;
+  }
 `
 
 const FeatureItem = styled.span`
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.05em;
 
@@ -315,46 +432,89 @@ const FeatureItem = styled.span`
   }
 `
 
-const Separator = styled.span`
-  color: cyan;
-  font-size: 16px;
+const SeparatorIcon = styled.img`
+  height: 12px;
+  width: auto;
+  object-fit: contain;
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 12px;
+    height: 10px;
   }
 `
 
-const StarRow = styled.div`
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
+const SeparatorLine = styled.img`
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 4px 0;
 
   @media (max-width: ${breakpoints.s}) {
-    gap: 10px;
+    max-width: 100%;
   }
 `
 
-const Star = styled.span`
-  font-size: 24px;
-  color: white;
-  opacity: 0.8;
+const StarsContainer = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 40px;
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 18px;
+    max-width: 100%;
+    height: 32px;
   }
 `
 
-const CharacterImage = styled.img`
+const StarsBlurred = styled.img`
   position: absolute;
-  height: 90vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: left;
+`
+
+const StarsImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: left;
+  padding-left: 8px;
+  padding-right: 8px;
+`
+
+const CharacterImage = styled(motion.img)`
+  position: absolute;
+  height: 85vh;
   width: auto;
   bottom: 0;
-  right: 0;
-  z-index: 1;
+  right: 5%;
+  z-index: 3;
   object-fit: contain;
+  pointer-events: none;
+  will-change: transform;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 60vh;
+    right: 0;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 50vh;
+    right: -10%;
+  }
 `
 
-const SignupBox = styled.div`
+const SignupBox = styled(motion.div).attrs({
+  initial: { opacity: 0, y: 40, scale: 0.95 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  transition: { duration: 0.8, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+})`
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -362,7 +522,6 @@ const SignupBox = styled.div`
   gap: 20px;
   background: rgba(38, 6, 81, 0.3);
   backdrop-filter: blur(12px);
-  position: absolute;
   bottom: 40px;
   right: 40px;
   padding: 30px;
@@ -473,29 +632,26 @@ const StyledHero = styled.div`
   height: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   overflow: hidden;
-`
-
-const BackgroundImage = styled.img`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  z-index: 0;
+  padding-top: 72px;
+  background: transparent;
 `
 
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  flex: 1;
   max-width: 1600px;
   z-index: 4;
   padding: 0;
+  height: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
   @media (max-width: ${breakpoints.md}) {
     padding: 0;

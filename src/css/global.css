@@ -29,11 +29,19 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background-image: url("../img/hero/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 #root {
   overflow-x: hidden;
   overflow: hidden;
   color: white;
-  background: var(--main-bg-color);
+  background: transparent;
 }
 
 .full-width {
