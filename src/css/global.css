@@ -28,6 +28,8 @@ html {
   background: var(--main-bg-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
+  min-height: 100%;
+  border-radius: 0;
 }
 
 body {
@@ -36,6 +38,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #root {

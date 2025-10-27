@@ -12,7 +12,7 @@ const StyledBannerMarquee = styled(motion.div).attrs({})`
 const MarqueeContent = styled(motion.div).attrs({})`
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
   padding-inline: 10px;
   width: max-content;
 `
@@ -20,8 +20,8 @@ const MarqueeContent = styled(motion.div).attrs({})`
 const BoldText = styled(motion.span).attrs({})`
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 3px;
+  font-weight: 800;
+  letter-spacing: 1%;
   color: white;
 `
 

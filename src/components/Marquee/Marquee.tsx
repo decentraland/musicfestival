@@ -19,11 +19,13 @@ const BannerMarquee = ({ direction, delay }: BannerMarqueeProps) => {
       >
         {Array.from({ length: 5 }).map((_, index) => (
           <MarqueeContent key={index}>
-            <BoldText>NOVEMBER 20 - 23</BoldText>
-            <BoldText>FREE ENTRY</BoldText>
-            <BoldText>EXCLUSIVE SETS</BoldText>
-            <BoldText>EPIC GIVEAWAYS</BoldText>
-            <BoldText>LIVE VIP TALKS</BoldText>
+            <BoldText>FREE ACCESS</BoldText>
+            <BoldText>EXPLORE AS AVATARS</BoldText>
+            <BoldText>LIVE ART TOURS</BoldText>
+            <BoldText>INTRO WORKSHOPS</BoldText>
+            <BoldText>NO HEADSET NEEDED</BoldText>
+            <BoldText>LAUNCH YOUR FIRST VIRTUAL GALLERY</BoldText>
+            <BoldText>OPEN TO EVERYONE</BoldText>
           </MarqueeContent>
         ))}
       </Marquee>

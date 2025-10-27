@@ -5,9 +5,10 @@ import {
   LogoImage,
   Nav,
   SocialIcon,
+  SocialIconsWrapper,
   StyledFooter,
 } from "./styles"
-import decentralandLogo from "../../img/music-festival/logo.png"
+import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
 import { Discord } from "../icons/Vector-Discord.jsx"
 import { Instagram } from "../icons/Vector-Instagram.jsx"
 import { Twitter } from "../icons/Vector-Twitter.jsx"
@@ -22,7 +23,7 @@ const Footer = () => {
             rel="noreferrer"
           >
             <LogoContainer>
-              <LogoImage src={decentralandLogo} alt="DMF 2024 Logo" />
+              <LogoImage src={DMF25Logo} alt="DMF 2025 Logo" />
             </LogoContainer>
           </a>
           <FooterText
@@ -41,7 +42,7 @@ const Footer = () => {
           </FooterText>
         </FooterLeft>
 
-        <div>
+        <SocialIconsWrapper>
           <SocialIcon
             href="https://twitter.com/decentraland"
             target="_blank"
@@ -63,7 +64,7 @@ const Footer = () => {
           >
             <Discord />
           </SocialIcon>
-        </div>
+        </SocialIconsWrapper>
       </Nav>
     </StyledFooter>
   )

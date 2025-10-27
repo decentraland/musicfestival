@@ -6,25 +6,27 @@ const StyledFooter = styled(motion.section).attrs({})`
   position: relative;
   display: flex;
   justify-content: space-between;
-  background-color: #131313;
+  align-items: center;
+  background-color: rgba(10, 9, 43, 1);
 `
 
 const FooterLeft = styled(motion.div).attrs({})`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 72px;
   width: 50%;
 `
 
 const FooterText = styled(motion.a).attrs({})`
   color: #efefef;
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 3px;
   text-decoration: none;
   text-transform: uppercase;
+  max-width: 90px;
   cursor: pointer;
   width: fit-content;
 `
@@ -34,25 +36,21 @@ const SocialIcon = styled(motion.a).attrs({})`
   display: inline-block;
   padding: 8px;
   border-radius: 50%;
-  transition: transform 0.4s ease;
+  transition: opacity 0.4s ease;
 
   :hover {
-    transform: scale(1.1);
-    transition: transform 0.4s ease;
-    will-change: transform;
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+    will-change: opacity;
   }
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 
     path {
       fill: white;
       transition: fill 0.4s ease;
-    }
-
-    :hover path {
-      fill: black;
     }
   }
 `
@@ -60,7 +58,7 @@ const SocialIcon = styled(motion.a).attrs({})`
 const Nav = styled(motion.nav).attrs({})`
   width: 100%;
   display: flex;
-  padding: 24px 24px;
+  padding: 15px 40px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -70,7 +68,7 @@ const Nav = styled(motion.nav).attrs({})`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 62px;
+    padding: 16px 40px;
   }
 `
 
@@ -85,6 +83,12 @@ const LogoImage = styled(motion.img).attrs({})`
   width: auto;
 `
 
+const SocialIconsWrapper = styled(motion.div).attrs({})`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`
+
 export {
   StyledFooter,
   FooterLeft,
@@ -93,4 +97,5 @@ export {
   Nav,
   LogoContainer,
   LogoImage,
+  SocialIconsWrapper,
 }

@@ -7,12 +7,12 @@ const StyledHero = styled(motion.div).attrs({})`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 80px 20px;
+  padding: 120px 0px;
   background: rgba(26, 13, 62, 0.9);
   backdrop-filter: blur(20px);
 
   @media (max-width: 768px) {
-    padding: 40px 20px;
+    padding: 60px 16px;
   }
 `
 
