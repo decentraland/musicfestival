@@ -17,7 +17,7 @@ const StyledHero = styled(motion.div).attrs({})`
 `
 
 const HeroContainer = styled(motion.div).attrs({})`
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   position: relative;
 `
@@ -54,7 +54,8 @@ const RightContent = styled(motion.div).attrs({})`
   gap: 16px;
 
   @media (max-width: 768px) {
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 `
 
@@ -65,7 +66,7 @@ const RightImage = styled(motion.img).attrs({})`
   object-fit: contain;
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    max-width: 200px;
   }
 `
 
@@ -106,6 +107,10 @@ const BulletList = styled(motion.div).attrs({})`
   padding-left: 2rem;
   gap: 20px;
   margin-top: 12px;
+
+  @media (max-width: 768px) {
+    padding-left: 0.5rem;
+  }
 `
 
 const BulletItem = styled(motion.div).attrs({})`
@@ -131,7 +136,7 @@ const BulletText = styled(motion.p).attrs({})`
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0;
 
   @media (max-width: 768px) {
@@ -139,11 +144,20 @@ const BulletText = styled(motion.p).attrs({})`
   }
 `
 
+const TextGradient = styled(motion.span).attrs({})`
+  background: linear-gradient(90deg, #ffffff 0%, #0ff3f2 70.67%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline;
+`
+
 const RightBadge = styled(motion.div).attrs({})`
   align-self: flex-end;
 
   @media (max-width: 768px) {
-    align-self: center;
+    align-self: flex-start;
   }
 `
 
@@ -171,6 +185,7 @@ export {
   BulletItem,
   BulletIcon,
   BulletText,
+  TextGradient,
   RightBadge,
   BadgeContent,
 }

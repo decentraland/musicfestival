@@ -12,6 +12,7 @@ import {
   RightContent,
   RightImage,
   StyledHero,
+  TextGradient,
   Title,
 } from "./styles"
 import DclBullet from "../../img/about/bullet-icon.png"
@@ -39,32 +40,36 @@ const DCLMusicInfo = () => {
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  Discover headline sets from stream-native stars on the Main
-                  and Live stages.
+                  Discover <TextGradient>headline sets</TextGradient> from
+                  stream-native stars on the Main and Live stages.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  Catch 8 digital fashion drops from the sky—collectible
-                  Wearables released live in sync with epic light shows.
+                  Catch <TextGradient>8 digital fashion drops</TextGradient>{" "}
+                  from the sky—collectible Wearables released live in sync with
+                  epic light shows.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  Explore 12 immersive builds inspired by meme culture, fandoms,
-                  and the wild side of streaming.
+                  Explore <TextGradient>12 immersive builds</TextGradient>{" "}
+                  inspired by meme culture, fandoms, and the wild side of
+                  streaming.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  Party in vibrant creator-built venues, hosted by the
-                  internet&apos;s most innovative music communities.
+                  Party in{" "}
+                  <TextGradient>vibrant creator-built venues</TextGradient>,
+                  hosted by the internet&apos;s most innovative music
+                  communities.
                 </BulletText>
               </BulletItem>
             </BulletList>

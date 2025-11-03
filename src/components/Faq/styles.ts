@@ -11,7 +11,6 @@ const FaqContainer = styled(motion.div).attrs({})`
 `
 
 const Title = styled(motion.h2).attrs({})`
-arrow
   font-size: 42px;
   margin-bottom: 40px;
   letter-spacing: 0.1em;
@@ -22,11 +21,16 @@ arrow
 `
 
 const QuestionContainer = styled(motion.div).attrs({})`
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding-block: 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 900px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `
 
 const Question = styled(motion.div).attrs({})`
