@@ -41,7 +41,7 @@ const Faq = () => {
               "How do I access the SUB/STREAM Music Festival in Decentraland?",
             answer: () => (
               <p>
-                The SUB/STREAM Music Festival takes place November 19-22 inside
+                The SUB/STREAM Music Festival takes place December 3-6 inside
                 Decentraland. On those dates, a &lsquo;Jump In&rsquo; button
                 will appear on this page—just click it to enter, provided
                 you&apos;ve already downloaded Decentraland. Download ahead of
@@ -72,8 +72,8 @@ const Faq = () => {
             question: "When will the full lineup and schedule be available?",
             answer: () => (
               <p>
-                The full schedule will be released in early November, giving you
-                time to plan your festival experience.
+                The full schedule will be released in November, giving you time
+                to plan your festival experience.
               </p>
             ),
           },
@@ -89,10 +89,17 @@ const Faq = () => {
                 >
                   @Decentraland
                 </a>{" "}
-                and check out our own on Decentraland Events for live updates.
-                You can also subscribe to{" "}
+                on X and keep an eye on{" "}
                 <a
-                  href="https://decentraland.beehiiv.com/?utm_org=dcl&utm_source=decentraland&utm_medium=musiclanding&utm_campaign=musicfestival24"
+                  href="https://decentraland.org/events/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Decentraland Events
+                </a>{" "}
+                for live updates. You can also subscribe to{" "}
+                <a
+                  href="https://decentraland.beehiiv.com/"
                   target="_blank"
                   rel="noreferrer"
                 >

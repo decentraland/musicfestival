@@ -16,6 +16,13 @@ const FooterLeft = styled(motion.div).attrs({})`
   justify-content: flex-start;
   gap: 72px;
   width: 50%;
+
+  @media (max-width: ${breakpoints.md}) {
+    flex-direction: column;
+    gap: 42px;
+    align-items: flex-start;
+    width: 100%;
+  }
 `
 
 const FooterText = styled(motion.a).attrs({})`
@@ -29,6 +36,10 @@ const FooterText = styled(motion.a).attrs({})`
   max-width: 90px;
   cursor: pointer;
   width: fit-content;
+
+  @media (max-width: ${breakpoints.md}) {
+    max-width: 100%;
+  }
 `
 
 const SocialIcon = styled(motion.a).attrs({})`
@@ -58,11 +69,11 @@ const SocialIcon = styled(motion.a).attrs({})`
 const Nav = styled(motion.nav).attrs({})`
   width: 100%;
   display: flex;
-  padding: 15px 40px;
+  padding: 60px 24px 24px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: 72px;
 
   @media screen and (min-width: ${breakpoints.md}) {
     flex-direction: row;
@@ -81,6 +92,10 @@ const LogoContainer = styled(motion.a).attrs({})`
 const LogoImage = styled(motion.img).attrs({})`
   height: 40px;
   width: auto;
+
+  @media (max-width: ${breakpoints.md}) {
+    height: 72px;
+  }
 `
 
 const SocialIconsWrapper = styled(motion.div).attrs({})`

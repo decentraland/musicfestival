@@ -130,8 +130,9 @@ const CharacterImage = styled(motion.img).attrs({})`
   }
 
   @media (max-width: ${breakpoints.s}) {
-    height: 50vh;
-    right: -10%;
+    height: 60vh;
+    right: -5%;
+    display: none;
   }
 `
 
@@ -146,9 +147,9 @@ const MainContentRow = styled(motion.div).attrs({})`
   z-index: 2;
 
   @media (max-width: ${breakpoints.md}) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 20px;
-    gap: 30px;
+    gap: 14px;
   }
 `
 
@@ -173,6 +174,7 @@ const RightColumn = styled(motion.div).attrs({})`
   position: relative;
 
   @media (max-width: ${breakpoints.md}) {
+    flex: 0;
     width: 100%;
     height: auto;
     align-items: center;
@@ -272,7 +274,6 @@ const ArrowBox = styled(motion.div).attrs({})`
   background: white;
   padding: 8px 16px;
   border: 1px solid white;
-  border-right: none;
   overflow: hidden;
 
   img {
@@ -289,10 +290,11 @@ const ArrowBox = styled(motion.div).attrs({})`
   }
 
   @media (max-width: ${breakpoints.s}) {
-    padding: 4px 8px;
+    padding: 8px 16px;
+    transform: translateY(-1px);
 
     img {
-      height: 28px;
+      height: 20px;
     }
   }
 `
@@ -320,15 +322,16 @@ const DateBox = styled(motion.div).attrs({})`
   @media (max-width: ${breakpoints.md}) {
     font-size: 18px;
     padding: 8px 16px;
-    min-width: 80px;
+    min-width: 90px;
     transform: translateY(-1px);
   }
 
   @media (max-width: ${breakpoints.s}) {
     font-size: 14px;
     padding: 6px 12px;
-    min-width: 70px;
+    min-width: 90px;
     transform: translateY(-1px);
+    width: 100%;
   }
 `
 
@@ -347,7 +350,7 @@ const StyledLogo = styled(motion.img).attrs({})`
   }
 
   @media (max-width: ${breakpoints.s}) {
-    max-width: 300px;
+    max-width: 100%;
   }
 `
 
@@ -362,11 +365,11 @@ const Tagline = styled(motion.h2).attrs({})`
   margin-bottom: 0.5rem;
 
   @media (max-width: ${breakpoints.md}) {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 20px;
+    font-size: 24px;
   }
 `
 
@@ -378,7 +381,7 @@ const Description = styled(motion.p).attrs({})`
   max-width: 500px;
 
   @media (max-width: ${breakpoints.md}) {
-    font-size: 14px;
+    font-size: 18px;
   }
 `
 
@@ -414,6 +417,7 @@ const InlineSignup = styled(motion.form).attrs({})`
     border-radius: 20px;
     flex-direction: column;
     align-items: stretch;
+    margin: 0;
   }
 `
 
@@ -436,6 +440,8 @@ const SignupInput = styled(motion.input).attrs({ type: "email" })`
 
   @media (max-width: ${breakpoints.s}) {
     width: 100%;
+    font-size: 12px;
+    padding: 12px 8px;
   }
 `
 
@@ -479,6 +485,11 @@ const SubscribeButton = styled(motion.button).attrs({})`
   @media (max-width: ${breakpoints.s}) {
     height: 44px;
     border-radius: 12px;
+    border: none;
+
+    &::before {
+      display: none;
+    }
   }
 `
 
@@ -488,6 +499,11 @@ const FeaturesList = styled(motion.div).attrs({})`
   max-width: 600px;
   gap: 8px;
   align-items: flex-start;
+
+  @media (max-width: ${breakpoints.s}) {
+    max-width: 100%;
+    gap: 42px;
+  }
 `
 
 const FeatureRow = styled(motion.div).attrs({})`
@@ -499,7 +515,10 @@ const FeatureRow = styled(motion.div).attrs({})`
   justify-content: space-between;
 
   @media (max-width: ${breakpoints.s}) {
-    gap: 8px;
+    gap: 2px;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
   }
 `
 
@@ -520,7 +539,7 @@ const SeparatorIcon = styled(motion.img).attrs({})`
   object-fit: contain;
 
   @media (max-width: ${breakpoints.s}) {
-    height: 10px;
+    height: 8px;
   }
 `
 

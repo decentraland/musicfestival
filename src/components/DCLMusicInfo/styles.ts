@@ -33,7 +33,7 @@ const ContentWrapper = styled(motion.div).attrs({})`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 40px 30px;
+    padding: 40px 24px;
     gap: 40px;
   }
 `
@@ -127,8 +127,8 @@ const BulletIcon = styled(motion.img).attrs({})`
   margin-top: 4px;
 
   @media (max-width: 768px) {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
   }
 `
 
