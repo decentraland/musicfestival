@@ -1,13 +1,21 @@
 import { motion } from "framer-motion"
 import { styled } from "styled-components"
 
-const FaqContainer = styled(motion.div).attrs({})`
-  padding-top: 120px;
-  padding-bottom: 120px;
+const FaqSection = styled(motion.section).attrs({})`
   width: 100%;
-  color: white;
   background: rgba(38, 6, 81, 0.9);
   backdrop-filter: blur(20px);
+  padding: 120px 0;
+
+  @media (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+`
+
+const FaqContainer = styled(motion.div).attrs({})`
+  width: 100%;
+  color: white;
 `
 
 const Title = styled(motion.h2).attrs({})`
@@ -27,9 +35,8 @@ const QuestionContainer = styled(motion.div).attrs({})`
   padding-block: 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-  @media (max-width: 900px) {
-    padding-left: 24px;
-    padding-right: 24px;
+  @media (max-width: 768px) {
+    padding-block: 30px;
   }
 `
 
@@ -48,6 +55,12 @@ const Question = styled(motion.div).attrs({})`
     text-transform: uppercase;
     letter-spacing: 0;
     line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 12px;
+    }
   }
 `
 
@@ -85,4 +98,12 @@ const Arrow = styled(motion.img).attrs<{ $isActive: boolean }>({})<{
     props.$isActive ? "rotate(0deg)" : "rotate(180deg)"};
 `
 
-export { FaqContainer, Title, QuestionContainer, Question, Answer, Arrow }
+export {
+  FaqSection,
+  FaqContainer,
+  Title,
+  QuestionContainer,
+  Question,
+  Answer,
+  Arrow,
+}
