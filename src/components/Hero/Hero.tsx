@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 import {
   ArrowBox,
   BottomSection,
@@ -7,47 +8,38 @@ import {
   DateBox,
   Description,
   DiamondImage,
-  EndBox,
   FeatureItem,
   FeatureRow,
   FeaturesList,
+  HeroBackdropMasked,
+  HeroBlurOne,
+  HeroBlurTwo,
   HeroContainer,
+  InlineSignup,
   LeftColumn,
   LogoWrapper,
   MainContentRow,
-  OpenLine,
-  OpenLineWrapper,
-  OpenToEveryone,
-  OpenToEveryoneContent,
-  OpenToEveryoneIcon,
   RightColumn,
   SeparatorIcon,
-  SeparatorLine,
-  SignupBox,
-  SignupButton,
-  SignupContent,
-  SignupSubtitle,
-  SignupTitle,
-  StarsBlurred,
-  StarsContainer,
-  StarsImage,
+  SignupInput,
   StyledHero,
   StyledLogo,
+  SubscribeButton,
   Tagline,
 } from "./styles"
+import heroBlurTwoImage from "../../img/hero/blur-2.png"
+import heroBlurOneImage from "../../img/hero/blur.png"
 import cyanArrowLeft from "../../img/hero/cyan-arrow-left.png"
 import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
 import lightstickImage from "../../img/hero/lightstick.png"
-import openLine from "../../img/hero/open-line.svg"
-import openToEveryoneIcon from "../../img/hero/open-to-everyone.svg"
-import separator from "../../img/hero/separator.svg"
-import starsBlurred from "../../img/hero/stars-blured.png"
-import stars from "../../img/hero/stars.png"
 import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
+import { subscribeToNewsletter } from "../../modules/newsletter"
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0)
+  const [email, setEmail] = useState("")
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,8 +53,43 @@ const Hero = () => {
     }
   }, [])
 
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) {
+      toast.error("Email is required")
+      return
+    }
+    // Basic email regex; adequate for client-side validation
+    const emailRegex =
+      /^(?:[a-zA-Z0-9_'^&+-])+(?:\.(?:[a-zA-Z0-9_'^&+-])+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/
+    if (!emailRegex.test(trimmed)) {
+      toast.error("Please enter a valid email", {
+        duration: 10000,
+      })
+      return
+    }
+    try {
+      setSubmitting(true)
+      await subscribeToNewsletter(trimmed)
+      toast.success(
+        "Almost done! Check your inbox to confirm your subscription."
+      )
+      setEmail("")
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Subscription failed"
+      toast.error(message)
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <StyledHero>
+      {/* Backdrop blur applied only where the blur PNGs have alpha */}
+      <HeroBackdropMasked $mask={heroBlurOneImage} aria-hidden="true" />
+      <HeroBlurOne src={heroBlurOneImage} alt="" aria-hidden="true" />
+      <HeroBlurTwo src={heroBlurTwoImage} alt="" aria-hidden="true" />
       <CharacterImage
         src={lightstickImage}
         alt="Festival Character"
@@ -83,42 +110,16 @@ const Hero = () => {
         <MainContentRow>
           {/* Left Column */}
           <LeftColumn>
-            <OpenToEveryone
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-            >
-              <OpenToEveryoneContent>
-                <OpenToEveryoneIcon
-                  src={openToEveryoneIcon}
-                  alt="DMF25 - Decentraland Music Festival 2025"
-                />
-                OPEN TO EVERYONE
-              </OpenToEveryoneContent>
-              <OpenLineWrapper>
-                <OpenLine src={openLine} alt="" />
-                <EndBox />
-              </OpenLineWrapper>
-            </OpenToEveryone>
-
             <LogoWrapper
               initial={{ opacity: 0, scale: 0.9, filter: "blur(4px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <StyledLogo src={DMF25Logo} alt="Decentraland Music Festival" />
-              <Tagline>
-                WHERE THE STREAM HITS
-                <br />
-                THE MAIN STAGE
-              </Tagline>
+              <Tagline>WHERE THE STREAM HITS THE MAIN STAGE</Tagline>
               <Description>
-                A four-day festival celebrating music born on stream, where fans
-                and performers redefine &ldquo;going live.&rdquo;
+                A four-day festival where fans and performers redefine
+                &ldquo;going live.&rdquo;
               </Description>
             </LogoWrapper>
 
@@ -131,6 +132,21 @@ const Hero = () => {
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
             >
+              <InlineSignup
+                onSubmit={handleSubscribe}
+                aria-label="Notify signup"
+              >
+                <SignupInput
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  required
+                  disabled={submitting}
+                />
+                <SubscribeButton type="submit" disabled={submitting}>
+                  {submitting ? "Subscribing..." : "Subscribe"}
+                </SubscribeButton>
+              </InlineSignup>
               <FeaturesList>
                 <FeatureRow>
                   <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
@@ -139,20 +155,7 @@ const Hero = () => {
                   <SeparatorIcon src={cyanArrowRight} alt="" />
                   <FeatureItem>NO HEADSET NEEDED</FeatureItem>
                 </FeatureRow>
-                <SeparatorLine src={separator} alt="" />
-                <FeatureRow>
-                  <FeatureItem>NEW FAN EXPERIENCES</FeatureItem>
-                  <SeparatorIcon src={cyanArrowLeft} alt="" />
-                  <FeatureItem>FREE TO ENTER</FeatureItem>
-                  <SeparatorIcon src={cyanArrowRight} alt="" />
-                  <FeatureItem>OPEN TO EVERYONE</FeatureItem>
-                </FeatureRow>
               </FeaturesList>
-
-              <StarsContainer>
-                <StarsBlurred src={starsBlurred} alt="" />
-                <StarsImage src={stars} alt="" />
-              </StarsContainer>
             </BottomSection>
           </LeftColumn>
 
@@ -182,23 +185,6 @@ const Hero = () => {
               <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
             </DateBadge>
           </RightColumn>
-          <SignupBox
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 1,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            <SignupContent>
-              <SignupTitle>BE PART OF THE FESTIVAL</SignupTitle>
-              <SignupSubtitle>
-                Get updates, live event alerts and more.
-              </SignupSubtitle>
-            </SignupContent>
-            <SignupButton>SIGN UP NOW</SignupButton>
-          </SignupBox>
         </MainContentRow>
       </HeroContainer>
     </StyledHero>

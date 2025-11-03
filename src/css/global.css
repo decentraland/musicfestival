@@ -112,3 +112,12 @@ div {
 a {
   text-decoration: none !important;
 }
+
+[data-sonner-toast] {
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(8px);
+  border: none !important;
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 600;
+  color: white;
+}

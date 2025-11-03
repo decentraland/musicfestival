@@ -1,3 +1,4 @@
+import { Toaster } from "sonner"
 import { DCLMusicInfo } from "./components/DCLMusicInfo/DCLMusicInfo.tsx"
 import { Faq } from "./components/Faq/Faq.styled.tsx"
 import Footer from "./components/Footer/Footer.tsx"
@@ -23,6 +24,7 @@ const App = () => {
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <Faq />
         <Footer />
+        <Toaster />
       </main>
     </>
   )

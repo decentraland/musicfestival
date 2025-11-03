@@ -9,10 +9,13 @@ import {
   HeroContainer,
   LeftContent,
   RightBadge,
+  RightContent,
+  RightImage,
   StyledHero,
   Title,
 } from "./styles"
 import DclBullet from "../../img/about/bullet-icon.png"
+import SubstreamImage from "../../img/about/substream.png"
 
 const DCLMusicInfo = () => {
   return (
@@ -27,51 +30,52 @@ const DCLMusicInfo = () => {
             </Title>
 
             <Description>
-              This year&rsquo;s theme, SUB/STREAM celebrates the rise of
-              stream-native music. From VTubers and Twitch icons to
-              digital-first musicians and virtual bands, Decentraland&rsquo;s
-              Music Festival turns streaming into a full-scale performance
-              experience.
+              SUB/STREAM celebrates the rise of stream-native music, uniting
+              VTubers, Twitch icons, digital-first musicians, and virtual bands
+              in a full-scale performance experience.
             </Description>
 
             <BulletList>
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  DISCOVER HEADLINE SETS FROM STREAM-NATIVE STARS ON THE MAIN
-                  AND LIVE STAGES
+                  Discover headline sets from stream-native stars on the Main
+                  and Live stages.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  CATCH 8 DIGITAL FASHION DROPS FROM THE SKY—COLLECTIBLE
-                  WEARABLES RELEASED LIVE IN SYNC WITH EPIC LIGHT SHOWS.
+                  Catch 8 digital fashion drops from the sky—collectible
+                  Wearables released live in sync with epic light shows.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  EXPLORE 12 IMMERSIVE BUILDS INSPIRED BY MEME CULTURE, FANDOMS,
-                  AND THE WILD SIDE OF STREAMING.
+                  Explore 12 immersive builds inspired by meme culture, fandoms,
+                  and the wild side of streaming.
                 </BulletText>
               </BulletItem>
 
               <BulletItem>
                 <BulletIcon src={DclBullet} alt="" />
                 <BulletText>
-                  PARTY IN VIBRANT CREATOR-BUILT VENUES, HOSTED BY THE
-                  INTERNET&rsquo;S MOST INNOVATIVE MUSIC COMMUNITIES.
+                  Party in vibrant creator-built venues, hosted by the
+                  internet&apos;s most innovative music communities.
                 </BulletText>
               </BulletItem>
             </BulletList>
           </LeftContent>
 
-          <RightBadge>
-            <BadgeContent>SUB/STREAM</BadgeContent>
-          </RightBadge>
+          <RightContent>
+            <RightImage src={SubstreamImage} alt="Substream" />
+            <RightBadge>
+              <BadgeContent>SUB/STREAM</BadgeContent>
+            </RightBadge>
+          </RightContent>
         </ContentWrapper>
       </HeroContainer>
     </StyledHero>

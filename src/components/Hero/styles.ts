@@ -16,6 +16,86 @@ const StyledHero = styled(motion.div).attrs({})`
   background: transparent;
 `
 
+// Full-bleed background blur layers
+const HeroBlurGradient = styled(motion.div).attrs({})`
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  /* Approximate the right-side elliptical glow using layered radial-gradients */
+  background:
+    /* Inner ring/edge highlight with hollow center */
+    radial-gradient(
+      ellipse 38% 22% at 70% 55%,
+      rgba(255, 245, 200, 0) 46%,
+      rgba(255, 245, 200, 0.42) 52%,
+      rgba(255, 245, 200, 0.16) 60%,
+      rgba(255, 245, 200, 0) 72%
+    ),
+    /* Wide falloff that reaches the farthest screen corner */
+      radial-gradient(
+        ellipse farthest-corner at 70% 55%,
+        rgba(0, 0, 0, 0) 28%,
+        rgba(255, 234, 160, 0.08) 42%,
+        rgba(255, 234, 160, 0.14) 60%,
+        rgba(255, 234, 160, 0.18) 78%,
+        rgba(255, 234, 160, 0.22) 100%
+      );
+`
+
+const HeroBlurOne = styled(motion.img).attrs({})`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+`
+
+const HeroBlurTwo = styled(motion.img).attrs({})`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+`
+
+// Backdrop blur clipped by an alpha mask (PNG) so blur only shows where
+// the image has content (non-transparent). The mask source is provided via the
+// `$mask` prop to allow reuse for multiple shapes.
+const HeroBackdropMasked = styled(motion.div)<{ $mask: string }>`
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.001
+  ); /* ensure backdrop-filter renders on Safari */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Use the PNG alpha as a mask */
+  -webkit-mask-image: url(${(p) => p.$mask});
+  mask-image: url(${(p) => p.$mask});
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+`
+
 const HeroContainer = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
@@ -89,7 +169,7 @@ const RightColumn = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
 
   @media (max-width: ${breakpoints.md}) {
@@ -255,11 +335,6 @@ const DateBox = styled(motion.div).attrs({})`
 const LogoWrapper = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
-
-  @media (max-width: ${breakpoints.md}) {
-    padding-left: 1rem;
-  }
 `
 
 const StyledLogo = styled(motion.img).attrs({})`
@@ -277,7 +352,7 @@ const StyledLogo = styled(motion.img).attrs({})`
 `
 
 const Tagline = styled(motion.h2).attrs({})`
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   margin-top: 1rem;
   text-transform: uppercase;
@@ -296,7 +371,7 @@ const Tagline = styled(motion.h2).attrs({})`
 `
 
 const Description = styled(motion.p).attrs({})`
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.6;
   font-weight: 300;
   letter-spacing: -0.5px;
@@ -311,6 +386,100 @@ const BottomSection = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
   gap: 20px;
+`
+
+// Inline signup form shown under the description
+const InlineSignup = styled(motion.form).attrs({})`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+  max-width: 520px;
+  margin-left: 1rem;
+  height: 56px;
+  padding: 0 0 0 14px; /* space left of input */
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  @media (max-width: ${breakpoints.s}) {
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+`
+
+const SignupInput = styled(motion.input).attrs({ type: "email" })`
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  font-weight: 600;
+  caret-color: #ffffff;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    width: 100%;
+  }
+`
+
+const SubscribeButton = styled(motion.button).attrs({})`
+  height: 100%;
+  padding: 0 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    #13b3d3 -15.31%,
+    #2482e1 7.42%,
+    #4653d5 30.7%,
+    #642bcb 57.31%,
+    #7c09c2 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  position: relative;
+
+  /* left divider to mimic seam */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    mix-blend-mode: screen;
+  }
+
+  @media (max-width: ${breakpoints.s}) {
+    height: 44px;
+    border-radius: 12px;
+  }
 `
 
 const FeaturesList = styled(motion.div).attrs({})`
@@ -562,4 +731,11 @@ export {
   SignupSubtitle,
   SignupButton,
   DiamondImage,
+  HeroBlurGradient,
+  HeroBlurOne,
+  HeroBlurTwo,
+  HeroBackdropMasked,
+  InlineSignup,
+  SignupInput,
+  SubscribeButton,
 }

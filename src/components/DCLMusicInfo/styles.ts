@@ -25,7 +25,7 @@ const HeroContainer = styled(motion.div).attrs({})`
 const ContentWrapper = styled(motion.div).attrs({})`
   position: relative;
   display: flex;
-  gap: 60px;
+  gap: 72px;
   padding: 60px;
   background: rgba(26, 13, 62, 0.8);
   backdrop-filter: blur(20px);
@@ -45,9 +45,33 @@ const LeftContent = styled(motion.div).attrs({})`
   gap: 24px;
 `
 
+const RightContent = styled(motion.div).attrs({})`
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+`
+
+const RightImage = styled(motion.img).attrs({})`
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+`
+
 const Title = styled(motion.h2).attrs({})`
   font-family: "Ethnocentric", sans-serif;
-  font-size: 40px;
+  font-size: 42px;
   line-height: 1.2;
   letter-spacing: -1px;
   text-transform: uppercase;
@@ -64,7 +88,7 @@ const Title = styled(motion.h2).attrs({})`
 
 const Description = styled(motion.p).attrs({})`
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   font-weight: 300;
   margin: 0;
@@ -105,31 +129,22 @@ const BulletIcon = styled(motion.img).attrs({})`
 
 const BulletText = styled(motion.p).attrs({})`
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  text-transform: uppercase;
+  font-size: 14px;
   line-height: 1;
   font-weight: 400;
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `
 
 const RightBadge = styled(motion.div).attrs({})`
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  padding: 12px 32px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
+  align-self: flex-end;
 
   @media (max-width: 768px) {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    align-self: flex-end;
+    align-self: center;
   }
 `
 
@@ -149,6 +164,8 @@ export {
   HeroContainer,
   ContentWrapper,
   LeftContent,
+  RightContent,
+  RightImage,
   Title,
   Description,
   BulletList,
