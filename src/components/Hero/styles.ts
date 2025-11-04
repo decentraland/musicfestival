@@ -305,7 +305,7 @@ const DateBox = styled(motion.div).attrs({})`
   font-family: "Ethnocentric", sans-serif;
   line-height: 1;
   letter-spacing: -1px;
-  padding: 10px 20px;
+  padding: 10px 20px 3px;
   border: 1px solid white;
   border-left: none;
   font-size: 32px;
