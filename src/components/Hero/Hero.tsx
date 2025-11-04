@@ -144,7 +144,7 @@ const Hero = () => {
                   disabled={submitting}
                 />
                 <SubscribeButton type="submit" disabled={submitting}>
-                  {submitting ? "Subscribing..." : "Subscribe"}
+                  {submitting ? "Subscribing..." : "SIGN UP NOW"}
                 </SubscribeButton>
               </InlineSignup>
               <FeaturesList>
