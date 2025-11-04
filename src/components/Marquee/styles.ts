@@ -13,7 +13,7 @@ const MarqueeContent = styled(motion.div).attrs({})`
   display: flex;
   align-items: center;
   gap: 32px;
-  padding-inline: 10px;
+  padding-inline: 16px;
   width: max-content;
 `
 
