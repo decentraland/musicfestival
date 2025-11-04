@@ -27,12 +27,12 @@ import {
   SubscribeButton,
   Tagline,
 } from "./styles"
-import heroBlurTwoImage from "../../img/hero/blur-2.png"
-import heroBlurOneImage from "../../img/hero/blur.png"
-import cyanArrowLeft from "../../img/hero/cyan-arrow-left.png"
+import heroBlurTwoImage from "../../img/hero/blur-2.webp"
+import heroBlurOneImage from "../../img/hero/blur.webp"
+import cyanArrowLeft from "../../img/hero/cyan-arrow-left.webp"
 import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
-import lightstickImage from "../../img/hero/lightstick.png"
+import lightstickImage from "../../img/hero/lightstick.webp"
 import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 
