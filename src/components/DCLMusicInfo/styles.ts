@@ -136,7 +136,6 @@ const BulletText = styled(motion.p).attrs({})`
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 700;
   margin: 0;
 
   @media (max-width: 768px) {
