@@ -28,6 +28,15 @@ const Title = styled(motion.h2).attrs({})`
   font-family: "Ethnocentric", sans-serif !important;
 `
 
+const TextGradient = styled(motion.span).attrs({})`
+  background: linear-gradient(90deg, #ffffff 0%, #0ff3f2 70.67%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline;
+`
+
 const QuestionContainer = styled(motion.div).attrs({})`
   max-width: 900px;
   margin: 0 auto;
@@ -85,7 +94,12 @@ const Answer = styled(motion.div).attrs<{ $isActive: boolean }>({})<{
 
   a {
     text-decoration: underline !important;
-    color: #0000ff;
+    background: linear-gradient(90deg, #ffffff 0%, #0ff3f2 70.67%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline;
   }
 `
 
@@ -106,4 +120,5 @@ export {
   Question,
   Answer,
   Arrow,
+  TextGradient,
 }

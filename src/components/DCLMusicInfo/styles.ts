@@ -90,10 +90,11 @@ const Title = styled(motion.h2).attrs({})`
 const Description = styled(motion.p).attrs({})`
   font-family: "Inter", sans-serif;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.1;
   font-weight: 300;
   margin: 0;
   opacity: 0.95;
+  margin-top: -8px;
 
   @media (max-width: 768px) {
     font-size: 14px;
