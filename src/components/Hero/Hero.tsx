@@ -33,7 +33,7 @@ import cyanArrowLeft from "../../img/hero/cyan-arrow-left.webp"
 import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
 import lightstickImage from "../../img/hero/lightstick.webp"
-import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
+import DMF25Logo from "../../img/music-festival/DMF25-Logo.png"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 
 const Hero = () => {

@@ -12,7 +12,7 @@ import {
   SocialIconsContainer,
   StyledNavbar,
 } from "./styles"
-import DMF25Logo from "../../img/music-festival/DMF25-Logo.svg"
+import DMF25Logo from "../../img/music-festival/DMF25-Logo.png"
 import decentralandLogo from "../../img/music-festival/logo.png"
 import { Discord } from "../icons/Vector-Discord"
 import { Instagram } from "../icons/Vector-Instagram"
