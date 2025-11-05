@@ -157,7 +157,7 @@ const LeftColumn = styled(motion.div).attrs({})`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: ${breakpoints.md}) {
     max-width: 100%;
@@ -307,7 +307,7 @@ const DateBox = styled(motion.div).attrs({})`
   font-family: "Ethnocentric", sans-serif;
   line-height: 1;
   letter-spacing: -1px;
-  padding: 10px 20px 3px;
+  padding: 10px 20px 0px;
   border: 1px solid white;
   border-left: none;
   font-size: 32px;
@@ -338,7 +338,7 @@ const DateBox = styled(motion.div).attrs({})`
 `
 
 const DateCaption = styled(motion.div).attrs({})`
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -399,10 +399,11 @@ const Tagline = styled(motion.h2).attrs({})`
 `
 
 const Description = styled(motion.p).attrs({})`
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: -0.5px;
+  text-transform: uppercase;
   max-width: 500px;
 
   @media (max-width: ${breakpoints.md}) {
@@ -428,7 +429,6 @@ const InlineSignup = styled(motion.form).attrs({})`
   gap: 12px;
   width: 100%;
   max-width: 520px;
-  margin-left: 1rem;
   height: 56px;
   padding: 0 0 0 14px; /* space left of input */
   border-radius: 28px;
@@ -475,15 +475,14 @@ const SignupInput = styled(motion.input).attrs({ type: "email" })`
 
 const SignupLabel = styled.label`
   display: inline-block;
-  margin-left: 1rem;
-  margin-top: 16px;
-  font-size: 12px;
-  padding-left: 1.5rem;
+  margin-top: 42px;
+  font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #ffffff;
   opacity: 0.95;
+  margin-bottom: -8px;
 
   @media (max-width: ${breakpoints.s}) {
     margin-left: 0;
@@ -502,18 +501,11 @@ const SubscribeButton = styled(motion.button).attrs({})`
   font-weight: 800;
   font-size: 16px;
   letter-spacing: -0.5px;
-  color: #ffffff;
+  color: #111111;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    90deg,
-    #13b3d3 -15.31%,
-    #2482e1 7.42%,
-    #4653d5 30.7%,
-    #642bcb 57.31%,
-    #7c09c2 100%
-  );
+  background: #ffffff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
   position: relative;
 
@@ -537,6 +529,22 @@ const SubscribeButton = styled(motion.button).attrs({})`
     &::before {
       display: none;
     }
+  }
+
+  /* Gradient text inside the button */
+  span {
+    background: linear-gradient(
+      90deg,
+      #13b3d3 -15.31%,
+      #2482e1 7.42%,
+      #4653d5 30.7%,
+      #642bcb 57.31%,
+      #7c09c2 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 `
 

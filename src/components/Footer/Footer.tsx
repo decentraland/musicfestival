@@ -8,7 +8,7 @@ import {
   SocialIconsWrapper,
   StyledFooter,
 } from "./styles"
-import DMF25Logo from "../../img/music-festival/DMF25-Logo.png"
+import DMF25Logo from "../../img/music-festival/DMF25_Logo2.png"
 import { Discord } from "../icons/Vector-Discord.jsx"
 import { Instagram } from "../icons/Vector-Instagram.jsx"
 import { Twitter } from "../icons/Vector-Twitter.jsx"

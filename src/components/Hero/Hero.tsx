@@ -35,7 +35,7 @@ import cyanArrowLeft from "../../img/hero/cyan-arrow-left.webp"
 import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
 import lightstickImage from "../../img/hero/lightstick.webp"
-import DMF25Logo from "../../img/music-festival/DCL_LOGO_25.png"
+import DMF25Logo from "../../img/music-festival/DMF25_Logo2.png"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 
 const Hero = () => {
@@ -150,7 +150,7 @@ const Hero = () => {
                   disabled={submitting}
                 />
                 <SubscribeButton type="submit" disabled={submitting}>
-                  {submitting ? "Subscribing..." : "SIGN UP NOW"}
+                  <span>{submitting ? "Subscribing..." : "SIGN UP NOW"}</span>
                 </SubscribeButton>
               </InlineSignup>
               <FeaturesList>
