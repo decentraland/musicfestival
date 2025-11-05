@@ -338,7 +338,7 @@ const DateBox = styled(motion.div).attrs({})`
 `
 
 const DateCaption = styled(motion.div).attrs({})`
-  margin-top: 4px;
+  margin-top: 8px;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
