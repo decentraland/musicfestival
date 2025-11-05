@@ -6,6 +6,7 @@ import {
   CharacterImage,
   DateBadge,
   DateBox,
+  DateCaption,
   Description,
   DiamondImage,
   FeatureItem,
@@ -22,6 +23,7 @@ import {
   RightColumn,
   SeparatorIcon,
   SignupInput,
+  SignupLabel,
   StyledHero,
   StyledLogo,
   SubscribeButton,
@@ -33,7 +35,7 @@ import cyanArrowLeft from "../../img/hero/cyan-arrow-left.webp"
 import cyanArrowRight from "../../img/hero/cyan-arrow-right.svg"
 import dateArrow from "../../img/hero/date-arrow.svg"
 import lightstickImage from "../../img/hero/lightstick.webp"
-import DMF25Logo from "../../img/music-festival/DMF25-Logo.png"
+import DMF25Logo from "../../img/music-festival/DCL_LOGO_25.png"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 
 const Hero = () => {
@@ -132,11 +134,13 @@ const Hero = () => {
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
             >
+              <SignupLabel htmlFor="email-input">Join the festival</SignupLabel>
               <InlineSignup
                 onSubmit={handleSubscribe}
                 aria-label="Notify signup"
               >
                 <SignupInput
+                  id="email-input"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.currentTarget.value)}
@@ -184,6 +188,13 @@ const Hero = () => {
               <DateBox>DEC 3-6</DateBox>
               <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
             </DateBadge>
+            <DateCaption
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+            >
+              HOSTED BY DECENTRALAND, THE SOCIAL VIRTUAL WORLD
+            </DateCaption>
           </RightColumn>
         </MainContentRow>
       </HeroContainer>

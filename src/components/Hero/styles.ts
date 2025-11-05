@@ -272,7 +272,7 @@ const ArrowBox = styled(motion.div).attrs({})`
   align-items: center;
   justify-content: center;
   background: white;
-  padding: 8px 16px;
+  padding: 8px;
   border: 1px solid white;
   overflow: hidden;
 
@@ -283,6 +283,10 @@ const ArrowBox = styled(motion.div).attrs({})`
 
   @media (max-width: ${breakpoints.md}) {
     padding: 6px 12px;
+    text-align: center;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
     img {
       height: 28px;
@@ -321,17 +325,38 @@ const DateBox = styled(motion.div).attrs({})`
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 18px;
-    padding: 8px 16px;
+    padding: 8px 16px 3px;
     min-width: 90px;
     transform: translateY(-1px);
   }
 
   @media (max-width: ${breakpoints.s}) {
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 6px 12px 1px;
     min-width: 90px;
     transform: translateY(-1px);
     width: 100%;
+  }
+`
+
+const DateCaption = styled(motion.div).attrs({})`
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  align-self: flex-end;
+  opacity: 0.95;
+
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.45px;
+
+  @media (max-width: ${breakpoints.md}) {
+    font-size: 10px;
+    letter-spacing: 0.04em;
   }
 `
 
@@ -401,7 +426,6 @@ const InlineSignup = styled(motion.form).attrs({})`
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  margin-top: 16px;
   width: 100%;
   max-width: 520px;
   margin-left: 1rem;
@@ -446,6 +470,25 @@ const SignupInput = styled(motion.input).attrs({ type: "email" })`
     width: 100%;
     font-size: 12px;
     padding: 12px 8px;
+  }
+`
+
+const SignupLabel = styled.label`
+  display: inline-block;
+  margin-left: 1rem;
+  margin-top: 16px;
+  font-size: 12px;
+  padding-left: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  opacity: 0.95;
+
+  @media (max-width: ${breakpoints.s}) {
+    margin-left: 0;
+    font-size: 10px;
+    letter-spacing: 0.04em;
   }
 `
 
@@ -761,4 +804,6 @@ export {
   InlineSignup,
   SignupInput,
   SubscribeButton,
+  DateCaption,
+  SignupLabel,
 }
