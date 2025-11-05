@@ -350,7 +350,7 @@ const DateCaption = styled(motion.div).attrs({})`
   font-family: Inter;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0.19px;
+  letter-spacing: 0.14px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 9.3px;
