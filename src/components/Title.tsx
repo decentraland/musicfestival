@@ -16,7 +16,7 @@ const StyledTitle = styled.h2`
   letter-spacing: 4px;
   align-items: center;
   justify-content: center;
-  font-family: "Nasalization Rg", sans-serif !important;
+  font-family: "Ethnocentric", sans-serif !important;
   font-weight: 400;
 
   &::before,
