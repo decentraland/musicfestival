@@ -382,12 +382,12 @@ const StyledLogo = styled(motion.img).attrs({})`
 const Tagline = styled(motion.h2).attrs({})`
   font-size: 34px;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 42px;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -1px;
   margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 14px;
 
   @media (max-width: ${breakpoints.md}) {
     font-size: 28px;
@@ -415,7 +415,7 @@ const Description = styled(motion.p).attrs({})`
 const BottomSection = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 
   @media (max-width: ${breakpoints.s}) {
     flex-direction: column-reverse;
@@ -483,7 +483,6 @@ const SignupLabel = styled.label`
   letter-spacing: 0.06em;
   color: #ffffff;
   opacity: 0.95;
-  margin-bottom: -12px;
 
   @media (max-width: ${breakpoints.s}) {
     margin-left: 0;
