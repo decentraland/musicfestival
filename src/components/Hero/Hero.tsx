@@ -118,7 +118,9 @@ const Hero = () => {
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <StyledLogo src={DMF25Logo} alt="Decentraland Music Festival" />
-              <Tagline>WHERE THE STREAM HITS THE MAIN STAGE</Tagline>
+              <Tagline>
+                WHERE THE STREAM <br /> HITS THE MAIN STAGE
+              </Tagline>
               <Description>
                 A four-day festival where fans and performers redefine
                 &ldquo;going live.&rdquo;

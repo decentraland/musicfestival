@@ -285,8 +285,6 @@ const ArrowBox = styled(motion.div).attrs({})`
     padding: 6px 12px;
     text-align: center;
     font-size: 10px;
-    margin-left: auto;
-    margin-right: auto;
 
     img {
       height: 28px;
@@ -352,11 +350,13 @@ const DateCaption = styled(motion.div).attrs({})`
   font-family: Inter;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: -0.45px;
+  letter-spacing: 0.19px;
 
   @media (max-width: ${breakpoints.md}) {
-    font-size: 10px;
-    letter-spacing: 0.04em;
+    font-size: 9.3px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.22px;
   }
 `
 
