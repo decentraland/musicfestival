@@ -431,7 +431,6 @@ const InlineSignup = styled(motion.form).attrs({})`
   width: 100%;
   max-width: 520px;
   height: 56px;
-  padding: 0 0 0 14px; /* space left of input */
   border-radius: 28px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
@@ -477,13 +476,14 @@ const SignupInput = styled(motion.input).attrs({ type: "email" })`
 const SignupLabel = styled.label`
   display: inline-block;
   margin-top: 42px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   text-transform: uppercase;
+  font-family: "Ethnocentric", sans-serif;
   letter-spacing: 0.06em;
   color: #ffffff;
   opacity: 0.95;
-  margin-bottom: -8px;
+  margin-bottom: -12px;
 
   @media (max-width: ${breakpoints.s}) {
     margin-left: 0;
@@ -552,7 +552,7 @@ const SubscribeButton = styled(motion.button).attrs({})`
 const FeaturesList = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 520px;
   gap: 8px;
   align-items: flex-start;
 
@@ -565,7 +565,6 @@ const FeaturesList = styled(motion.div).attrs({})`
 const FeatureRow = styled(motion.div).attrs({})`
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
@@ -582,7 +581,6 @@ const FeatureItem = styled(motion.span).attrs({})`
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.05em;
 
   @media (max-width: ${breakpoints.s}) {
     font-size: 9px;
