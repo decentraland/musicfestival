@@ -401,9 +401,10 @@ const Tagline = styled(motion.h2).attrs({})`
 const Description = styled(motion.p).attrs({})`
   font-size: 16px;
   line-height: 1.6;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: 14px;
   text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   max-width: 500px;
 
   @media (max-width: ${breakpoints.md}) {
