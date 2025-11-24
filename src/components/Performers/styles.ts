@@ -25,6 +25,7 @@ const PerformersContent = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 50vh;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
