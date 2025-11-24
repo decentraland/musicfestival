@@ -170,7 +170,7 @@ const RightColumn = styled(motion.div).attrs({})`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: relative;
 
   @media (max-width: ${breakpoints.md}) {
@@ -178,6 +178,77 @@ const RightColumn = styled(motion.div).attrs({})`
     width: 100%;
     height: auto;
     align-items: center;
+  }
+`
+
+const CountdownRow = styled(motion.div).attrs({})`
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  align-items: flex-end;
+
+  @media (max-width: ${breakpoints.md}) {
+    margin-top: 16px;
+    align-self: center;
+  }
+`
+
+type CountdownVariant = "days" | "hours" | "minutes" | "seconds"
+
+const countdownGradientMap: Record<CountdownVariant, string> = {
+  days: "linear-gradient(90deg, rgba(19, 179, 211, 0.5) 0%, rgba(36, 130, 225, 0.5) 100%)",
+  hours:
+    "linear-gradient(90deg, rgba(36, 130, 225, 0.5) 0%, rgba(70, 83, 213, 0.5) 100%)",
+  minutes:
+    "linear-gradient(90deg, rgba(70, 83, 213, 0.5) 0%, rgba(100, 43, 203, 0.5) 100%)",
+  seconds:
+    "linear-gradient(90deg, rgba(100, 43, 203, 0.5) 0%, rgba(124, 9, 194, 0.5) 100%)",
+}
+
+const CountdownBox = styled(motion.div).attrs({})<{
+  $variant: CountdownVariant
+}>`
+  min-width: 70px;
+  padding: 32px 16px 16px 16px;
+  min-width: 100px;
+  border-radius: 16px;
+  background: ${({ $variant }) => countdownGradientMap[$variant]};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+
+  .countdown-value {
+    font-family: "Ethnocentric", sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+
+  .countdown-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    opacity: 0.7;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    min-width: 60px;
+
+    .countdown-value {
+      font-size: 20px;
+    }
+
+    .countdown-label {
+      font-size: 8px;
+    }
   }
 `
 
@@ -812,4 +883,6 @@ export {
   SubscribeButton,
   DateCaption,
   SignupLabel,
+  CountdownRow,
+  CountdownBox,
 }
