@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer.tsx"
 import { Hero } from "./components/Hero/Hero.tsx"
 import { BannerMarquee } from "./components/Marquee/Marquee.tsx"
 import { Navbar } from "./components/Navbar/Navbar.tsx"
+import { Performers } from "./components/Performers"
 import { VideoSection } from "./components/VideoSection/VideoSection.tsx"
 import "./css/fonts.css"
 import "./css/global.css"
@@ -22,8 +23,12 @@ const App = () => {
         {/* <MapComponent /> */}
         {/* <LineUp />
         <LiveTalks />
-        <Exhibitors /> */}
+         */}
+        {/* <LineUp /> */}
+        {/* <Exhibitors /> */}
         <DCLMusicInfo />
+        <BannerMarquee noBorderBottom={false} noBorderTop={false} />
+        <Performers />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <CreditList />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
