@@ -89,7 +89,7 @@ const scheduleData: DaySchedule = {
         startTimeBA: "09:00am",
         endTimeBA: "10:00",
         startTimeEST: "07.00am",
-        endTimeEST: null,
+        endTimeEST: "08:00",
         hasWearable: false,
       },
       {
