@@ -38,7 +38,7 @@ const TextGradient = styled(motion.span).attrs({})`
 `
 
 const QuestionContainer = styled(motion.div).attrs({})`
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding-block: 50px;

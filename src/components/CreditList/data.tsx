@@ -1,0 +1,42 @@
+const artistsAndCurators = [
+  "OfficeDrummer",
+  "Vlouue",
+  "OhhClaire",
+  "Sarah Coponat",
+  "Thug Shells",
+  "MiaMakesMusic",
+  "Steve Sai",
+  "Stoney Eye",
+  "MEMBA",
+  "Henny",
+  "DJ aKIDcalledMAKE",
+  "Coppola",
+  "NaNa The Ape",
+  "Dr. Jaffle aka Billyteacoin",
+  "Borg Music",
+  "MetaDJ",
+  "Dúo Dø",
+  "Bully Meow",
+  "YangMusic",
+  "Crypt0m1notaur",
+  "Austin De Chêne",
+  "Silvio De Candia",
+  "Dario Lotti & Sandro Sax",
+  "Mike Russi",
+]
+
+const studios = [
+  "Nikki Fuego",
+  "Cansy",
+  "DappCraft",
+  "Imagine to Create",
+  "OVA",
+  "Carlos Mu",
+  "PepeGawd",
+  "The Coding Cave",
+  "Rizk",
+  "Vegas City",
+  "Jeunissemble",
+]
+
+export { artistsAndCurators, studios }
