@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import { styled } from "styled-components"
+import decoratorLeft from "../../img/maps/left-decorator.svg"
 import mapMobile from "../../img/maps/map-mobile.webp"
 import mapDesktop from "../../img/maps/map-web.webp"
+import decoratorRight from "../../img/maps/right-decorator.svg"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 import { InlineSignup, SignupInput, SubscribeButton } from "../Hero/styles"
 
@@ -49,13 +51,17 @@ const MapComponent = () => {
 
   return (
     <MapContainer id="map">
-      <TitleWrapper>
-        <Title>FIND YOUR WAY</Title>
-        <Description>
-          Navigate Decentraland’s Music Festival with ease—see where every
-          performance and experience is happening.
-        </Description>
-      </TitleWrapper>
+      <HeaderWrapper>
+        <Decorator src={decoratorLeft} alt="Decorator" />
+        <TitleWrapper>
+          <Title>FIND YOUR WAY</Title>
+          <Description>
+            Navigate Decentraland’s Music Festival with ease—see where every
+            performance and experience is happening.
+          </Description>
+        </TitleWrapper>
+        <Decorator src={decoratorRight} alt="Decorator" />
+      </HeaderWrapper>
       <ContentWrapper>
         <MapImage src={isMobile ? mapMobile : mapDesktop} alt="Map" />
       </ContentWrapper>
@@ -104,8 +110,31 @@ const ContentWrapper = styled.div`
   }
 `
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+`
+
+const Decorator = styled.img`
+  height: 44px;
+  width: auto;
+`
+
 const TitleWrapper = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
