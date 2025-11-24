@@ -25,7 +25,7 @@ const PerformersContent = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 55vh;
+  min-height: 60vh;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -54,6 +54,7 @@ const LeftContentTitleSection = styled.div`
 
   @media (max-width: 768px) {
     align-items: center;
+    margin: 0 auto;
   }
 `
 
