@@ -4,6 +4,7 @@ import { DCLMusicInfo } from "./components/DCLMusicInfo/DCLMusicInfo.tsx"
 import { Faq } from "./components/Faq/Faq.styled.tsx"
 import Footer from "./components/Footer/Footer.tsx"
 import { Hero } from "./components/Hero/Hero.tsx"
+import { MapComponent } from "./components/MapComponent/MapComponent.tsx"
 import { BannerMarquee } from "./components/Marquee/Marquee.tsx"
 import { Navbar } from "./components/Navbar/Navbar.tsx"
 import { Performers } from "./components/Performers"
@@ -20,7 +21,6 @@ const App = () => {
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <VideoSection />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
-        {/* <MapComponent /> */}
         {/* <LineUp />
         <LiveTalks />
          */}
@@ -29,6 +29,8 @@ const App = () => {
         <DCLMusicInfo />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <Performers />
+        <BannerMarquee noBorderBottom={false} noBorderTop={false} />
+        <MapComponent />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <CreditList />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
