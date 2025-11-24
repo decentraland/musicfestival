@@ -96,7 +96,7 @@ const ColumnsContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 8px;
   }
 `
 
