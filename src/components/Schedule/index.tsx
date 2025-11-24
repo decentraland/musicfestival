@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { GoPin } from "react-icons/go"
 import {
   ScheduleEvent,
   convertToPST,
@@ -19,85 +20,6 @@ import {
   StageLabel,
   TimezoneHeader,
 } from "./schedule.styled"
-
-const getEventIcon = (type: string) => {
-  switch (type) {
-    case "X Space":
-      return (
-        <svg
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clipPath="url(#clip0_936_1565)">
-            <path
-              d="M15.9997 8.51567C11.7083 8.77447 8.27427 12.2087 8.01547 16.5H7.98413C7.72533 12.2087 4.29127 8.77447 0 8.51567V8.48433C4.29127 8.22553 7.72533 4.79146 7.98413 0.5H8.01547C8.27427 4.79146 11.7083 8.22553 15.9997 8.48433V8.51567Z"
-              fill="#43404A"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_936_1565">
-              <rect
-                width="16"
-                height="16"
-                fill="white"
-                transform="translate(0 0.5)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-      )
-    case "Workshop":
-      return (
-        <svg
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8.85909 4.64205L12.1519 2.08099C12.4173 1.87457 12.7948 1.89808 13.0326 2.13582L15.0287 4.13195C15.2665 4.36969 15.29 4.74725 15.0836 5.01265L12.5232 8.30457C12.7186 9.09677 12.7224 9.94811 12.4963 10.792C11.8976 13.0265 9.87615 14.4991 7.66775 14.4991C5.33335 14.4991 2.33335 13.4978 0.666687 12.4978C3.31987 10.4978 2.69817 9.29104 3.00002 8.16451C3.70564 5.53109 6.22818 3.99294 8.85909 4.64205ZM11.1344 5.89445C11.1782 5.93675 11.2213 5.9798 11.2635 6.02359L12.0198 6.77993L13.6698 4.65861L12.506 3.49477L10.3846 5.14469L11.1344 5.89445Z"
-            fill="#43404A"
-          />
-        </svg>
-      )
-    case "Tour":
-      return (
-        <svg
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8.00071 3.51902C9.56671 2.11333 11.9867 2.16 13.4951 3.67157C15.0036 5.18315 15.0554 7.59133 13.6524 9.162L7.99997 14.8233L2.34763 9.162C0.944739 7.59133 0.99718 5.17934 2.50495 3.67157C4.01442 2.1621 6.43017 2.11125 8.00071 3.51902Z"
-            fill="#43404A"
-          />
-        </svg>
-      )
-    case "Party":
-      return (
-        <svg
-          width="16"
-          height="17"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.33337 15.1666C1.33337 12.2211 3.72119 9.83329 6.66671 9.83329C9.61224 9.83329 12 12.2211 12 15.1666H1.33337ZM6.66671 9.16663C4.45671 9.16663 2.66671 7.37663 2.66671 5.16663C2.66671 2.95663 4.45671 1.16663 6.66671 1.16663C8.87671 1.16663 10.6667 2.95663 10.6667 5.16663C10.6667 7.37663 8.87671 9.16663 6.66671 9.16663ZM11.5752 10.6554C13.6322 11.1811 15.1786 12.9823 15.3224 15.1666H13.3334C13.3334 13.4268 12.6668 11.8426 11.5752 10.6554ZM10.2268 9.13789C11.3152 8.16143 12 6.74401 12 5.16663C12 4.22173 11.7543 3.33423 11.3233 2.56454C12.8502 2.86927 14 4.21639 14 5.83329C14 7.67496 12.5084 9.16663 10.6667 9.16663C10.5176 9.16663 10.3707 9.15683 10.2268 9.13789Z"
-            fill="#43404A"
-          />
-        </svg>
-      )
-    default:
-      return null
-  }
-}
 
 const getTimeIcon = () => (
   <svg
@@ -281,16 +203,30 @@ const Schedule = () => {
               </div>
               <div className="event-details">
                 <div className="event-type">
-                  <div className="type-icon">{getEventIcon(event.type)}</div>
-                  <div className="type-text">{event.type}</div>
+                  <div className="type-icon">
+                    <GoPin size={16} />
+                  </div>
+                  <div className="type-text">{event.stage}</div>
                 </div>
                 <div className="event-time">
                   <div className="time-icon">{getTimeIcon()}</div>
                   <div className="time-text">
-                    <div className="time-line">UTC: {event.startTime}</div>
-                    <div className="time-line">
-                      PST: {convertToPST(event.startTime)}
-                    </div>
+                    {selectedTimezone === "UTC" ? (
+                      <>
+                        {" "}
+                        <div className="time-line">
+                          UTC: {event.startTime} - {event.endTime}
+                        </div>{" "}
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <div className="time-line">
+                          PST: {convertToPST(event.startTime)} -{" "}
+                          {convertToPST(event.endTime)}
+                        </div>{" "}
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

@@ -33,7 +33,9 @@ const Navbar = () => {
             </LogoContainer>
 
             <NavLinks>
-              <NavLink href="#about">About</NavLink>
+              <NavLink href="#lineup">Lineup</NavLink>
+              <NavLink href="#schedule">Schedule</NavLink>
+              <NavLink href="#map">Map</NavLink>
               <NavLink href="#faq">FAQs</NavLink>
             </NavLinks>
           </LeftSection>

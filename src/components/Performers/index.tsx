@@ -54,7 +54,7 @@ export const Performers = () => {
     offset += size
   })
   return (
-    <PerformersContainer>
+    <PerformersContainer id="lineup">
       <PerformersContent>
         <LeftContent>
           <LeftContentTitleSection>

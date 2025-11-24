@@ -478,6 +478,10 @@ const EventSlot = styled.div<{ width?: number }>`
           width: 14px;
           height: 14px;
           flex-shrink: 0;
+          margin-right: 4px;
+          svg {
+            fill: #43404a;
+          }
         }
 
         .type-text {
