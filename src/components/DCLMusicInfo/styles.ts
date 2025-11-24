@@ -94,7 +94,7 @@ const TitleWrapper = styled(motion.div).attrs({})`
   width: 100%;
   max-width: 100%;
   flex-wrap: nowrap;
-  overflow: auto;
+  overflow: visible;
 `
 
 const TitleLightStick = styled(motion.img).attrs({})`
