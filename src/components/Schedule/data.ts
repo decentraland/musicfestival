@@ -11,6 +11,13 @@ interface ScheduleEvent {
   duration: number
   startTimePST: string
   endTimePST: string
+  startTimeCET: string
+  endTimeCET: string
+  startTimeBA: string
+  endTimeBA: string
+  startTimeEST: string
+  endTimeEST: string
+  hasWearable: boolean
 }
 
 interface StageSchedule {
