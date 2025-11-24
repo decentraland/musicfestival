@@ -105,7 +105,7 @@ const Installations = () => {
           <div className="top">
             <img src={activeArtist?.image} alt={activeArtist?.name} />
             <h2>{activeArtist?.name}</h2>
-            <p>{activeArtist?.artworkTitle}</p>
+            {/* <p>{activeArtist?.artworkTitle}</p> */}
           </div>
           <div className="middle">
             <p>{activeArtist?.description || "No description available"}</p>

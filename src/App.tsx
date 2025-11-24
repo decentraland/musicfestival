@@ -9,6 +9,7 @@ import { MapComponent } from "./components/MapComponent/MapComponent.tsx"
 import { BannerMarquee } from "./components/Marquee/Marquee.tsx"
 import { Navbar } from "./components/Navbar/Navbar.tsx"
 import { Performers } from "./components/Performers"
+import { Schedule } from "./components/Schedule"
 import { VideoSection } from "./components/VideoSection/VideoSection.tsx"
 import "./css/fonts.css"
 import "./css/global.css"
@@ -22,12 +23,9 @@ const App = () => {
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <VideoSection />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
-        {/* <LineUp />
-        <LiveTalks />
-         */}
-        {/* <LineUp /> */}
-        {/* <Exhibitors /> */}
         <DCLMusicInfo />
+        <BannerMarquee noBorderBottom={false} noBorderTop={false} />
+        <Schedule />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <Performers />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />

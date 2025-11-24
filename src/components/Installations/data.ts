@@ -102,7 +102,7 @@ const artists = [
   },
   {
     id: 12,
-    name: "Alan Howick",
+    name: "Pennies in Purgatory",
     artworkTitle: "Pennies in Purgatory",
     description:
       "Inspired by the stream of history, Pennies In Purgatory is a multi-platform art project and interactive journey for Decentraland Music Festival. Exploring the beauty emerging from the interaction between copper and humanity, the experience begins as a stark, jet-black monolith. Once inside, visitors are guided through dark, narrow corridors lit by colorful, psychedelic pennies, creating a feeling of drifting through space as they follow a restricted path complemented by subtle audio and text fragments. The journey culminates as the space opens into a gallery for reflection and exploration, full of larger coin pieces and quiet electronica, before finally releasing onto the rooftop, echoing the experience of being swept along by, and ultimately emerging from, the flow of time.",
@@ -116,7 +116,7 @@ const artists = [
   },
   {
     id: 13,
-    name: "BosqueGracias ",
+    name: "The Bosque Tower",
     artworkTitle: "The Bosque Tower",
     description:
       "BosqueGracias is an artistic community from Patagonia exploring the intersection of nature, art, and tech through immersive web3 experiences and IRL art residencies. For over ten years, they have integrated traditional crafts (like textiles and natural dyes) with digital tools and blockchain technology, emphasizing sustainability and the repurposing of obsolete tech in their collaborative processes. Their venue, the Bosque Tower, will host live meditations and DJ sessions, bringing cross-disciplinary dialogue between the forest and the digital world. Featured artists include NikoAlerce, Glitchrama, and Rocío Mio, who share insights from their Patagonian residencies.",
@@ -130,7 +130,7 @@ const artists = [
   },
   {
     id: 10,
-    name: "Salawaki",
+    name: "Chat, Is This Real?",
     artworkTitle: "Chat, Is This Real?",
     description:
       '"Chat, Is This Real?" takes its name from a phrase and meme streamers often use, serving as a poetic nod to the feeling of being inside a live stream: the ecstasy of floating in attention, the adoration of fans, and the blurred closeness between streamer and audience. This project explores the shared intensity, both surreal and real, that defines digital fandom today. Float on platforms as if carried by the stream itself, add a rain of emojis and find the Wearable at the heart. ',
@@ -144,7 +144,7 @@ const artists = [
   },
   {
     id: 11,
-    name: "Psychofuturist",
+    name: "Psyche-Stream",
     artworkTitle: "Psyche-Stream",
     description:
       "Psyche-Stream is a place for music and emotions. Express your emotion about the music around you by pushing the emoji buttons, and see them transformed into the piece. Your feelings build the experience itself.",

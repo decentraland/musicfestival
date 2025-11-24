@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
-import styled from "styled-components"
+import { styled } from "styled-components"
 // assets
-import bgLineUp from "../../../img/lineup/bg.png"
-import imgDesktop from "../../../img/lineup/lineup-desktop.png"
-import imgMobile from "../../../img/lineup/lineup-mobile.png"
-import { DownloadLink } from "../../DownloadButton"
+// import bgLineUp from "../../../img/lineup/bg.png"
+// import imgDesktop from "../../../img/lineup/lineup-desktop.png"
+// import imgMobile from "../../../img/lineup/lineup-mobile.png"
+// import { DownloadLink } from "../../DownloadButton"
 
 const LineUpList = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  console.log(isMobile)
   useEffect(() => {
     window.addEventListener("resize", () => {
       setIsMobile(window.innerWidth <= 768)
@@ -16,13 +17,13 @@ const LineUpList = () => {
 
   return (
     <ListContainer>
-      <Background src={bgLineUp} />
+      {/* <Background src={bgLineUp} /> */}
       <img
         className="lineup-img"
-        src={isMobile ? imgMobile : imgDesktop}
+        // src={isMobile ? imgMobile : imgDesktop}
         alt="lineup"
       />
-      <DownloadLink useJump />
+      {/* <DownloadLink useJump /> */}
     </ListContainer>
   )
 }
@@ -49,14 +50,14 @@ const ListContainer = styled.div`
   }
 `
 
-const Background = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-`
+// const Background = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 0;
+// `
 
 export { LineUpList }
