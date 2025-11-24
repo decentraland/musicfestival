@@ -1,9 +1,6 @@
 import { useState } from "react"
 import { Artist, schedule } from "./data"
 import { LineUpList } from "./partials/LineUpList"
-import rightDiamond from "../../img/music-festival/right-diamond.png"
-import { Modal } from "../Modal/Index"
-import { Title } from "../Title"
 import {
   ArtistCard,
   ArtistColumn,
@@ -29,6 +26,9 @@ import {
   Timeline,
   TimelineLine,
 } from "./styles"
+import rightDiamond from "../../img/music-festival/right-diamond.png"
+import { Modal } from "../Modal/Modal.tsx"
+import { Title } from "../Title"
 
 enum DayHighlight {
   FULL = "FULL",

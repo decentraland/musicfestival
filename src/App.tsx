@@ -4,6 +4,7 @@ import { DCLMusicInfo } from "./components/DCLMusicInfo/DCLMusicInfo.tsx"
 import { Faq } from "./components/Faq/Faq.styled.tsx"
 import Footer from "./components/Footer/Footer.tsx"
 import { Hero } from "./components/Hero/Hero.tsx"
+import { Installations } from "./components/Installations/index.tsx"
 import { MapComponent } from "./components/MapComponent/MapComponent.tsx"
 import { BannerMarquee } from "./components/Marquee/Marquee.tsx"
 import { Navbar } from "./components/Navbar/Navbar.tsx"
@@ -29,6 +30,8 @@ const App = () => {
         <DCLMusicInfo />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <Performers />
+        <BannerMarquee noBorderBottom={false} noBorderTop={false} />
+        <Installations />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
         <MapComponent />
         <BannerMarquee noBorderBottom={false} noBorderTop={false} />
