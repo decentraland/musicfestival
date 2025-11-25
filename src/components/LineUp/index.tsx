@@ -2,9 +2,6 @@ import { useState } from "react"
 import { styled } from "styled-components"
 import { Artist, schedule } from "./data"
 import { LineUpList } from "./partials/LineUpList"
-// import rightDiamond from "../../img/music-festival/right-diamond.png"
-import { Modal } from "../Modal/Modal"
-// import { Title } from "../Title"
 
 enum DayHighlight {
   FULL = "FULL",
@@ -179,12 +176,12 @@ function LineUp() {
       </Container>
       <LineUpList />
       <div>
-        {modalOpen && (
+        {/* {modalOpen && (
           <Modal
             onClose={() => setModalOpen(false)}
             artist={selectedArtist as Artist}
           />
-        )}
+        )} */}
       </div>
     </SectionWrapper>
   )
