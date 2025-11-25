@@ -4,7 +4,10 @@ import { GoArrowUpRight } from "react-icons/go"
 import { IoMdClose } from "react-icons/io"
 import { MdOutlineSearch } from "react-icons/md"
 import { RiLink } from "react-icons/ri"
+import { toast } from "sonner"
 import { artists } from "./data"
+import { subscribeToNewsletter } from "../../modules/newsletter"
+import { InlineSignup, SignupInput, SubscribeButton } from "../Hero/styles"
 import { Modal } from "../Modal/Modal.tsx"
 import {
   ArtistModalContainer,
@@ -31,6 +34,8 @@ const Installations = () => {
     }
   } | null>(null)
   console.log(isInView)
+  const [email, setEmail] = useState("")
+  const [submitting, setSubmitting] = useState(false)
 
   const allInstallations = [...artists]
 
@@ -41,6 +46,36 @@ const Installations = () => {
           item.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
   console.log(allInstallations, "allInstallations")
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) {
+      toast.error("Email is required")
+      return
+    }
+    const emailRegex =
+      /^(?:[a-zA-Z0-9_'^&+-])+(?:\.(?:[a-zA-Z0-9_'^&+-])+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/
+    if (!emailRegex.test(trimmed)) {
+      toast.error("Please enter a valid email", {
+        duration: 10000,
+      })
+      return
+    }
+    try {
+      setSubmitting(true)
+      await subscribeToNewsletter(trimmed)
+      toast.success(
+        "Almost done! Check your inbox to confirm your subscription."
+      )
+      setEmail("")
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Subscription failed"
+      toast.error(message)
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   return (
     <InstallationsContainer id="installations">
@@ -100,6 +135,23 @@ const Installations = () => {
           </div>
         )}
       </div>
+      <InlineSignup
+        onSubmit={handleSubscribe}
+        aria-label="Notify signup (installations)"
+        style={{ marginTop: "42px" }}
+      >
+        <SignupInput
+          id="installations-email-input"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          required
+          disabled={submitting}
+        />
+        <SubscribeButton type="submit" disabled={submitting}>
+          <span>{submitting ? "Subscribing..." : "SIGN UP NOW"}</span>
+        </SubscribeButton>
+      </InlineSignup>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ArtistModalContainer>
           <div className="top">

@@ -169,7 +169,7 @@ const Hero = () => {
                 WHERE THE STREAM <br /> HITS THE MAIN STAGE
               </Tagline>
               <Description>
-                A four-day festival where fans and performers redefine
+                A four-day festival where fans and streamers redefine
                 &ldquo;going live.&rdquo;
               </Description>
             </LogoWrapper>
@@ -202,11 +202,11 @@ const Hero = () => {
               </InlineSignup>
               <FeaturesList>
                 <FeatureRow>
-                  <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
+                  <FeatureItem>FREE TO ENTER</FeatureItem>
                   <SeparatorIcon src={cyanArrowLeft} alt="" />
-                  <FeatureItem>ICONIC STAGES</FeatureItem>
-                  <SeparatorIcon src={cyanArrowRight} alt="" />
                   <FeatureItem>NO HEADSET NEEDED</FeatureItem>
+                  <SeparatorIcon src={cyanArrowRight} alt="" />
+                  <FeatureItem>NEW FAN EXPERIENCES</FeatureItem>
                 </FeatureRow>
               </FeaturesList>
             </BottomSection>
