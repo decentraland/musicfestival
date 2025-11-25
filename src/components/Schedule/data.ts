@@ -1,3 +1,24 @@
+import aKIDcalledMAKEImage from "../../img/artists/pictures/aKIDcalledMAKE.webp"
+import BorgMusicImage from "../../img/artists/pictures/Borg Music.webp"
+import BullyMellowImage from "../../img/artists/pictures/Bully Mellow.webp"
+import CoppolaImage from "../../img/artists/pictures/Coppola.webp"
+import Crypt0m1notaurImage from "../../img/artists/pictures/Crypt0m1notaur.webp"
+import DarioLottiImage from "../../img/artists/pictures/Dario Lotti.webp"
+import DoD1DoDImage from "../../img/artists/pictures/duo.webp"
+import HennyImage from "../../img/artists/pictures/Henny.webp"
+import MetaDJImage from "../../img/artists/pictures/Meta DJ.webp"
+import MiaMakesMusicImage from "../../img/artists/pictures/MiaMakesMusic.webp"
+import MikeRussiImage from "../../img/artists/pictures/Mike Russi.webp"
+import NaNaTheApeImage from "../../img/artists/pictures/NaNa The Ape.webp"
+import OfficeDrummerImage from "../../img/artists/pictures/OfficeDrummer.webp"
+import OhhClaireImage from "../../img/artists/pictures/OhhClaire.webp"
+import SarahCoponatImage from "../../img/artists/pictures/Sarah Coponat.webp"
+import SteveSaiImage from "../../img/artists/pictures/Steve Sai.webp"
+import StoneyEyeImage from "../../img/artists/pictures/Stoney Eye.webp"
+import ThugShellsImage from "../../img/artists/pictures/Thug Shells.webp"
+import VlouueImage from "../../img/artists/pictures/Vlouue.webp"
+import YangMusicImage from "../../img/artists/pictures/YangMusic.webp"
+
 interface ScheduleEvent {
   id: number
   title: string
@@ -15,9 +36,20 @@ interface ScheduleEvent {
   endTimeCET: string
   startTimeBA: string
   endTimeBA: string
-  startTimeEST: string
-  endTimeEST: string
+  startTimeEST: string | null
+  endTimeEST: string | null
   hasWearable: boolean
+  artist?: {
+    name: string
+    bio: string
+    image?: string | null
+    socials: {
+      twitter?: string | null
+      instagram?: string | null
+      twitch?: string | null
+      website?: string | null
+    }
+  }
 }
 
 interface StageSchedule {
@@ -89,7 +121,7 @@ const scheduleData: DaySchedule = {
         startTimeBA: "09:00am",
         endTimeBA: "10:00",
         startTimeEST: "07.00am",
-        endTimeEST: "08:00",
+        endTimeEST: null,
         hasWearable: false,
       },
       {
@@ -154,6 +186,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "11:00am",
         endTimeEST: "12:00",
         hasWearable: false,
+        artist: {
+          name: "Dario Lotti & Sandro Sax",
+          bio: "Dario Lotti started his career as a DJ way back in 1982. His main genre is house music, a love that has accompanied him for many, many years. His name is directly linked to one of Italy's cult venues, Guendalina in Lecce, which hosts the best international DJs every summer. Everyone at Guendalina is captivated by the wonderful natural setting: a true open-air arena with breathtaking acoustics.\n\nDario has had the opportunity to play alongside names of the calibre of Luciano, Loco Dice, Ritchie Hawtin, Carl Cox, Marco Carola, Little Louie Vega, Deep Dish, T. Humphries, D. Morales, F. Knuckles, Satoshi Tomie, R. Sanchez, E. Morillo, Hector Romero, Tedd Patterson, Kenny Carpenter, Ricky Morrison, Paul Trouble Anderson, Seamus Haji, Xpress 2, Steve Lawler, Nic Fanciulli, Dj Ralf, etc.\n\nDario Lotti boasts numerous appearances as a special guest in foreign cult clubs such as, in the United States: Velvet (San Diego), Motor Lounge (Detroit), Club 128 (Toledo), Nikki Beach (Miami), Club 320 (Miami), Sagamore (Miami), Elevations (Miami). In Switzerland, Dario has played at Q Club/Station Club (Zurich), Diams Club (Sion), D!Club (Lausanne), Mad Club (Lausanne), while in Spain he played at Tito's.\n\nHe also has collaborations with the best Italian clubs/organizations, including: Plastic/Amnesia/Just Cavalli (Milan), Nobody's Perfect@Tenax (Florence), Prince, Pascià, Matis, Kinki, Chalet delle Rose, Angels of Love, Divinae Follie, etc.\n\nBesides being a DJ, Dario Lotti is also a producer and boasts releases on vinyl and compilations from 1993 to the present day. His prominent labels include: Junior Boy's Own, Strictly Rhythm, Defected.",
+          socials: {
+            twitter: "https://x.com/PiZzArteItaly",
+            instagram: "https://www.instagram.com/dariolottidj/",
+            twitch: null,
+            website: null,
+          },
+          image: DarioLottiImage,
+        },
       },
       {
         id: 5,
@@ -217,6 +260,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "04:00pm",
         endTimeEST: "17:00",
         hasWearable: true,
+        artist: {
+          name: "Coppola",
+          bio: "Coppolas journey into electronic music began at just 12 years old, experimenting with Virtual DJ and inspired by a neighbor's\nCDo 1005. By 13, he had acquired his tinst Do controller, and a year later, he ventured into music production.\nAt 15, his talent caught the attention of the Plus talent agency, and by 16, after becoming legally emancipated, h e made his\ndebut a t s\u00e3o Paulo's iconic D-edge, marking the official start of his career. A key collaboration with Gui Boratto further refined\nhis artistry.\nAt 19, Coppola gained national recognition with his track Kings and Queens, leading to performances at Brazil's top clubs and\nfestivals. Always seeking to push creative boundaries, he expanded internationally, captivating audiences in New York,\nBarcelona, and beyond. His work has been embraced by major artists and labels,resulting in releases on prestigious\nplatforms like Diynamic Music, Kompakt Records, Tomorrowland Music, and DOC Records.\nWith an upcoming release on Black Book Records and collaborations alongside Mochakk, Vintage Culture, Rafael Cerato,\nShermanology, Gui Boratto, and Meca, Coppola's future is filled with potential chart-toppers.\nNow 24, Coppola is a rising star in Brazilian electronic music, making waves on the global stage",
+          socials: {
+            twitter: null,
+            instagram: "https://instagram.com/coppoladj",
+            twitch: null,
+            website: null,
+          },
+          image: CoppolaImage,
+        },
       },
       {
         id: 8,
@@ -238,6 +292,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "05:00pm",
         endTimeEST: "18:00",
         hasWearable: false,
+        artist: {
+          name: "Henny",
+          bio: "Henny is a self-taught bedroom DJ who takes pride in pressing buttons & turning knobs. With over 10 years of experience as a studio dancer, she's performed in competitions and exhibitions, connecting with dancers from all walks of life. Her dream is to one day open her own dance studio in her hometown, catered towards the lower to middle class demographic. Henny's love for music & community has naturally evolved into her DJ career, where she continues to share her passion and spread the craft. You can find her DJing in the internet realm via Twitch or at various Decentraland venues!",
+          socials: {
+            twitter: "https://x.com/hennywubs",
+            instagram: "https://instagram.com/hennywubs",
+            twitch: "https://www.twitch.tv/henny",
+            website: null,
+          },
+          image: HennyImage,
+        },
       },
       {
         id: 9,
@@ -259,6 +324,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "06:00pm",
         endTimeEST: "19:00",
         hasWearable: true,
+        artist: {
+          name: "Vlouue",
+          bio: "Vlouue is a Canadian DJ (online and IRL) from Montreal. Over the years she has performed festivals and nightclubs but her residency is on Twitch. She plays various EDM genres but her specialty is Techno and Hard Techno. No matter the techno sub genre from dark and melodic to acid and heavy, she will guide you trough a journey in your darkside.",
+          socials: {
+            twitter: null,
+            instagram: "https://instagram.com/Vlouue",
+            twitch: "https://www.twitch.tv/vlouue",
+            website: null,
+          },
+          image: VlouueImage,
+        },
       },
       {
         id: 10,
@@ -280,6 +356,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "07:00pm",
         endTimeEST: "20:00",
         hasWearable: false,
+        artist: {
+          name: "Borg Music",
+          bio: "Borg Music is a creator team based in Japan. Borg Music’s tracks have charted globally, reaching #7 in Canada, #14 in Japan, and #28 in Kyrgyzstan. Borg Music is honored to perform at the Decentraland Music Festival 2025 and looks forward to sharing the joy of music and dance with all the amazing people in this wonderful community!",
+          socials: {
+            twitter: "https://x.com/borg169",
+            instagram: null,
+            twitch: null,
+            website: null,
+          },
+          image: BorgMusicImage,
+        },
       },
     ],
   },
@@ -305,6 +392,16 @@ const scheduleData: DaySchedule = {
         startTimeEST: "08:00pm",
         endTimeEST: "21:00",
         hasWearable: false,
+        artist: {
+          name: "MEMBA",
+          bio: "Will decide on Nov 15",
+          socials: {
+            twitter: null,
+            instagram: null,
+            twitch: null,
+            website: null,
+          },
+        },
       },
       {
         id: 12,
@@ -410,6 +507,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "11:00am",
         endTimeEST: "12:00",
         hasWearable: false,
+        artist: {
+          name: "Mike Russi",
+          bio: "Mike Russi started his career as a house DJ in 1999, and went on to become a producer. He is currently busy with his new project, Moolycash",
+          socials: {
+            twitter: "https://x.com/PiZzArteItaly",
+            instagram: null,
+            twitch: null,
+            website: "https://www.facebook.com/djmaik2",
+          },
+          image: MikeRussiImage,
+        },
       },
       {
         id: 17,
@@ -515,6 +623,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "04:00pm",
         endTimeEST: "17:00",
         hasWearable: true,
+        artist: {
+          name: "Sarah Coponat",
+          bio: "French pianist, composer, and renowned improviser Sarah Coponat transforms emotion into sound. She creates soul-grasping music through a fusion of classical piano and electronic elements. Her ethereal vocals seem to come from beyond, building complex soundscapes. Sarah’s improvisation sessions are broadcast weekly on Twitch from the CoponatRecordsStudio. She has captivated audiences worldwide, performing in some of the world’s most prestigious venues. Her latest piano album PARIS, premiered at the renowned Salle Cortot - Paris, reaffirming her status as a unique and powerful voice in modern neoclassical music.",
+          socials: {
+            twitter: "https://x.com/SarahCoponat",
+            instagram: "https://www.instagram.com/sarahcoponat",
+            twitch: "https://www.twitch.tv/sarahcoponat/about",
+            website: "youtube  https://www.youtube.com/sarahcoponat",
+          },
+          image: SarahCoponatImage,
+        },
       },
       {
         id: 22,
@@ -536,6 +655,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "05:00pm",
         endTimeEST: "18:00",
         hasWearable: false,
+        artist: {
+          name: "OhhClaire",
+          bio: "Claire, a talented German-British DJ and producer, has made a significant impact on the techno music scene in the past years. Currently based in Brunswick, Germany, she quickly gained prominence during the Covid pandemic as one of the most prominent Techno Streamers (also known as OhhClaire) on Twitch. In an astonishingly short span of just one year, Claire captivated audiences worldwide with her unique sound, blending dark and progressive elements with innovative techno influences.",
+          socials: {
+            twitter: null,
+            instagram: "https://www.instagram.com/ohhclaire_/",
+            twitch: "https://www.twitch.tv/ohhclaire",
+            website: "https://linktr.ee/ohhclaire",
+          },
+          image: OhhClaireImage,
+        },
       },
       {
         id: 23,
@@ -557,6 +687,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "06:00pm",
         endTimeEST: "19:00",
         hasWearable: false,
+        artist: {
+          name: "Bully Meow",
+          bio: "Bully Meow brings high-energy live guitar and vocals to stages from the metaverse to the real world. A native Web3 performer since 2020, Bully played 56 live shows on TokenSmart during the 2021-22 bull run, blending rock, blues, metal, Latin, and downtempo into an electrifying mix. With 11 Music NFT collections and 2,000+ collectors, Bully bridges digital and live performance culture like few others. Fans may also hold one of 1,800 rare TokenSmart POAPs celebrating his shows. Expect soulful slide guitar, soaring hooks, and a truly interactive experience every time Bully Meow plugs in and turns it up.",
+          socials: {
+            twitter: "https://twitter.com/bullymeow",
+            instagram: "https://instagram.com/bullymeowmusic",
+            twitch: null,
+            website: "https://bullymeow.com",
+          },
+          image: BullyMellowImage,
+        },
       },
     ],
   },
@@ -582,6 +723,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "07:00pm",
         endTimeEST: "20:00",
         hasWearable: true,
+        artist: {
+          name: "Stoney Eye",
+          bio: "Stoney Eye is a live dub remixer, DJ, and multi-instrumentalist blending reggae, hip-hop, and electronic beats into immersive performances. Known across Decentraland for MoFyah Monday, one of the metaverse’s longest-running residencies, Stoney Eye brings a fresh, high-energy vibe to every set. As a collaborative force, he’s a key member of the MetaTribe and House of Yeba communities, creating a space where culture and beats collide. For DCLMF25, expect deep basslines, live instrumentation, and the signature Stoney Eye sound that moves the crowd.",
+          socials: {
+            twitter: "https://x.com/stoneyeye",
+            instagram: "https://instagram.com/stoneyeye",
+            twitch: null,
+            website: "https://stoneyeye.com/",
+          },
+          image: StoneyEyeImage,
+        },
       },
       {
         id: 25,
@@ -603,6 +755,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "08:00pm",
         endTimeEST: "21:00",
         hasWearable: true,
+        artist: {
+          name: "DJ aKIDcalledMAKE",
+          bio: "aKIDcalledMAKE is the founder of the aKIDcalledBEAST project, a 3D digital collectible at the intersection of art, culture, fashion, and music. aKIDcalledBEAST is a unique AR-enabled 3D avatar for the metaverse, VR, and gaming environments. MAKE, a web3 builder for the last four years, also has a background in music as a DJ/producer for over 15 years. Having played in clubs across Europe and Canada, as well as multiple metaverse music festivals, he is well-versed in the electronic dance music scene.",
+          socials: {
+            twitter: "https://x.com/makeanft",
+            instagram: "https://instagram.com/makeanft",
+            twitch: "https://www.twitch.tv/makeanft",
+            website: null,
+          },
+          image: aKIDcalledMAKEImage,
+        },
       },
       {
         id: 26,
@@ -688,6 +851,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "09:00am",
         endTimeEST: "10:00",
         hasWearable: false,
+        artist: {
+          name: "YangMusic",
+          bio: "Yang is a multi-instrumentalist producer who blends jazz, R&B, and soul with electronic elements to create a unique Lo-Fi sound. Since starting his journey in Decentraland in late 2021, Yang has performed at major metaverse events like Metaverse Fashion Week and Art Week, while also hosting a weekly residency at the Stronghold. A familiar name in the Web3 music scene, Yang is also part of the duo 'Butter' with Kornél Kovács. At DCLMF25, he’ll be showcasing his new live set—bringing fresh beats and soulful vibes to the virtual stage.",
+          socials: {
+            twitter: "https://x.com/yangmusic7",
+            instagram: "https://instagram.com/yangmusic7",
+            twitch: null,
+            website: "https://distrokid.com/hyperfollow/yang5/dclmf-2023-mix",
+          },
+          image: YangMusicImage,
+        },
       },
       {
         id: 30,
@@ -835,6 +1009,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "04:00pm",
         endTimeEST: "17:00",
         hasWearable: true,
+        artist: {
+          name: "Thug Shells",
+          bio: "When Thug Shells hops on the decks, expect freestyle rap fuego mixed with banging beats! Known for her infectious positivity and gangster adorability, prepare for a set full of bass, bars, and big smiles - you're definitely gonna join the cult after you hear her throw down on the digital dancefloor!",
+          socials: {
+            twitter: "https://x.com/thugshells",
+            instagram: "https://www.instagram.com/thugshells",
+            twitch: "https://www.twitch.tv/thugshells",
+            website: null,
+          },
+          image: ThugShellsImage,
+        },
       },
       {
         id: 37,
@@ -856,6 +1041,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "05:00pm",
         endTimeEST: "18:00",
         hasWearable: false,
+        artist: {
+          name: "MiaMakesMusic",
+          bio: "Mia is an indie-pop artist who plays the piano and ukulele. She has been creating content for over 10 years, starting on YouTube and eventually moving to Twitch where she has built an amazing community. Mia's goal is to create a safe, comfy, and cozy space for everyone who stops by her streams and to help put a smile on people's faces. She hopes to make people happy with her music!",
+          socials: {
+            twitter: "https://x.com/miamakesmusic",
+            instagram: "https://instagram.com/miamakesmusic",
+            twitch: "https://www.twitch.tv/miamakesmusic",
+            website: "https://miamakesmusic.com",
+          },
+          image: MiaMakesMusicImage,
+        },
       },
       {
         id: 38,
@@ -877,6 +1073,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "06:00pm",
         endTimeEST: "19:00",
         hasWearable: true,
+        artist: {
+          name: "OfficeDrummer",
+          bio: "OfficeDrummer is a twitch sensation, playing drums all over the world & having multiple high level collaborations. He is known for his high energy and positivity, along with a knack for degeneracy,",
+          socials: {
+            twitter: "https://x.com/officedrummer",
+            instagram: "https://instagram.com/officedrummer",
+            twitch: "https://www.twitch.tv/officedrummer",
+            website: null,
+          },
+          image: OfficeDrummerImage,
+        },
       },
     ],
   },
@@ -923,6 +1130,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "08:00pm",
         endTimeEST: "21:00",
         hasWearable: false,
+        artist: {
+          name: "MetaDJ",
+          bio: "MetaDJ is a decentralized community of music enthusiasts, performers, and visual artists dedicated to bringing live music events to the Metaverse. Since its inception in 2021, MetaDJ has empowered up-and-coming artists by providing them with a platform to showcase their talent in the virtual world. With a focus on diverse genres and interactive experiences, MetaDJ is redefining how we experience live music in the digital age.",
+          socials: {
+            twitter: "https://x.com/MetaDJ_DCL",
+            instagram: null,
+            twitch: null,
+            website: null,
+          },
+          image: MetaDJImage,
+        },
       },
       {
         id: 41,
@@ -945,6 +1163,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "09:00pm",
         endTimeEST: "22:00",
         hasWearable: false,
+        artist: {
+          name: "Crypt0m1notaur",
+          bio: "Beast hood DJ / 3D Artist",
+          socials: {
+            twitter: "https://x.com/Crypt0m1notaur",
+            instagram: null,
+            twitch: null,
+            website: null,
+          },
+          image: Crypt0m1notaurImage,
+        },
       },
       {
         id: 42,
@@ -1113,6 +1342,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "05:00pm",
         endTimeEST: "18:00",
         hasWearable: true,
+        artist: {
+          name: "Dúo Dø",
+          bio: "Formed in late 2023 in Buenos Aires, Dúo Dø is an electronic music project blending Deep, Tech, Melodic, and Progressive House with Organic House and Ethnic Deep/Afro influences. Composed of J.W. (Julián Waisbord, DJ) and C.M. (Carlos Munuce, electric bass), the duo creates immersive soundscapes by merging DJing with live instrumental improvisation. J.W. sets the rhythmic and atmospheric foundation, while C.M. adds groove and texture with live basslines, bringing a unique, dynamic energy to their sets.",
+          socials: {
+            twitter: "https://x.com/duododcl",
+            instagram: "https://instagram.com/duododcl",
+            twitch: null,
+            website: null,
+          },
+          image: DoD1DoDImage,
+        },
       },
       {
         id: 50,
@@ -1134,6 +1374,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "06:00pm",
         endTimeEST: "19:00",
         hasWearable: false,
+        artist: {
+          name: "NaNa The Ape",
+          bio: "NaNa the Ape is a multi-talented virtual artist, singer-songwriter, and DJ, known for her deep, soulful vocals and genre-blending sound that fuses R&B, Afrobeats, and EDM. As a prominent figure in the metaverse music scene, she has performed at major virtual festivals, bringing an electrifying energy to every set. With a passion for pushing creative boundaries, NaNa continues to captivate global audiences, bridging the gap between digital culture and live performance.",
+          socials: {
+            twitter: "https://x.com/nanatheape",
+            instagram: "https://instagram.com/nanatheape",
+            twitch: null,
+            website: null,
+          },
+          image: NaNaTheApeImage,
+        },
       },
       {
         id: 51,
@@ -1155,6 +1406,17 @@ const scheduleData: DaySchedule = {
         startTimeEST: "07:00pm",
         endTimeEST: "20:00",
         hasWearable: false,
+        artist: {
+          name: "Steve Sai",
+          bio: "Steve Sai is a pioneering electronic music artist and DJ with a career spanning over two decades. Known for his deep, hypnotic techno soundscapes and intricate melodic layers, he has been a key figure in the underground music scene. With releases on top-tier labels and performances at major festivals and clubs, Steve Sai masterfully blends analog warmth with digital precision. Constantly evolving, he continues to push the boundaries of electronic music, delivering immersive sonic experiences that resonate on both physical and virtual dancefloors.",
+          socials: {
+            twitter: "https://x.com/stevesai_music",
+            instagram: "https://instagram.com/steve_sai_official",
+            twitch: null,
+            website: "https://stevesai.com",
+          },
+          image: SteveSaiImage,
+        },
       },
       {
         id: 52,

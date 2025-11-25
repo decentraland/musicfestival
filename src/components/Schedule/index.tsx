@@ -1,6 +1,12 @@
 import { useRef, useState } from "react"
 import { GoPin } from "react-icons/go"
 import {
+  RiGlobeLine,
+  RiInstagramFill,
+  RiTwitchFill,
+  RiTwitterXLine,
+} from "react-icons/ri"
+import {
   ScheduleEvent,
   convertToPST,
   dateOptions,
@@ -8,6 +14,8 @@ import {
   stages,
   timeSlots,
 } from "./data"
+import { ArtistModalContainer } from "../Installations/Installations.styled"
+import { Modal } from "../Modal/Modal"
 import {
   DateButton,
   DatePickerContainer,
@@ -60,6 +68,13 @@ type DateOption = {
   label: string
 }
 
+type ArtistSocialType = "twitter" | "instagram" | "twitch" | "website"
+
+type ArtistSocialLink = {
+  type: ArtistSocialType
+  url: string
+}
+
 const Schedule = () => {
   const [activeDate, setActiveDate] = useState(getDefaultDate())
   const [selectedTimezone, setSelectedTimezone] = useState<"UTC" | "PST">("UTC")
@@ -67,6 +82,7 @@ const Schedule = () => {
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, scrollLeft: 0 })
   const animationFrameRef = useRef<number | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<ScheduleEvent | null>(null)
 
   // PST time slots (UTC - 8 hours) - generated dynamically
   const timeSlotsPST: string[] = timeSlots.map((slot: string) =>
@@ -164,6 +180,48 @@ const Schedule = () => {
     return 200 * duration
   }
 
+  const handleEventClick = (event: ScheduleEvent) => {
+    setSelectedEvent(event)
+  }
+
+  const getArtistSocialLinks = (
+    event: ScheduleEvent | null
+  ): ArtistSocialLink[] => {
+    if (!event?.artist?.socials) return []
+    const { socials } = event.artist
+    const links: ArtistSocialLink[] = []
+
+    if (socials.twitter) {
+      links.push({ type: "twitter", url: socials.twitter })
+    }
+    if (socials.instagram) {
+      links.push({ type: "instagram", url: socials.instagram })
+    }
+    if (socials.twitch) {
+      links.push({ type: "twitch", url: socials.twitch })
+    }
+    if (socials.website) {
+      links.push({ type: "website", url: socials.website })
+    }
+
+    return links
+  }
+
+  const getSocialIcon = (type: ArtistSocialType) => {
+    switch (type) {
+      case "instagram":
+        return <RiInstagramFill size={20} />
+      case "twitter":
+        return <RiTwitterXLine size={20} />
+      case "twitch":
+        return <RiTwitchFill size={20} />
+      case "website":
+        return <RiGlobeLine size={20} />
+      default:
+        return <RiGlobeLine />
+    }
+  }
+
   // Create grid layout for a specific stage
   const renderStageRow = (stageName: string) => {
     const stageEvents = scheduleData[activeDate]?.[stageName] || []
@@ -193,13 +251,24 @@ const Schedule = () => {
       if (item) {
         const event = item as ScheduleEvent
         const cellWidth = calculateCellWidth(event.duration)
+        const hasArtist = Boolean(event.artist)
 
         return (
-          <EventSlot key={`event-${event.id}`} width={cellWidth}>
+          <EventSlot
+            key={`event-${event.id}`}
+            width={cellWidth}
+            onClick={hasArtist ? () => handleEventClick(event) : undefined}
+            style={{
+              cursor: hasArtist ? "pointer" : "default",
+              opacity: hasArtist ? 1 : 0.9,
+            }}
+          >
             <div className="event-content">
               <div className="event-info">
                 <div className="event-title">{event.title}</div>
-                <div className="event-speaker">{event.speaker}</div>
+                <div className="event-speaker">
+                  {event.artist?.name ?? event.speaker}
+                </div>
               </div>
               <div className="event-details">
                 <div className="event-type">
@@ -324,6 +393,42 @@ const Schedule = () => {
           </ScheduleGrid>
         </ScheduleDisplayContainer>
       </div>
+      {selectedEvent && (
+        <Modal isOpen={!!selectedEvent} onClose={() => setSelectedEvent(null)}>
+          <ArtistModalContainer>
+            <div className="top">
+              {selectedEvent.artist?.image && (
+                <img
+                  src={selectedEvent.artist.image}
+                  alt={selectedEvent.artist.name}
+                />
+              )}
+              <h2>{selectedEvent.artist?.name ?? selectedEvent.title}</h2>
+            </div>
+            <div className="middle">
+              {selectedEvent.artist?.bio && <p>{selectedEvent.artist.bio}</p>}
+              {getArtistSocialLinks(selectedEvent).length > 0 && (
+                <div
+                  className="social-links"
+                  style={{ display: "flex", gap: "12px", marginTop: "12px" }}
+                >
+                  {getArtistSocialLinks(selectedEvent).map((link) => (
+                    <a
+                      key={link.type}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.type}
+                    >
+                      {getSocialIcon(link.type)}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </ArtistModalContainer>
+        </Modal>
+      )}
     </ScheduleContainer>
   )
 }
