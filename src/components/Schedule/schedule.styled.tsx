@@ -461,6 +461,36 @@ const EventSlot = styled.div<{ width?: number }>`
         letter-spacing: -0.5px;
         opacity: 0.8;
       }
+
+      .event-wearable {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 4px 10px;
+        margin-top: 4px;
+        border-radius: 999px;
+        background: #d5dde7;
+        box-shadow:
+          0 0 0 1px rgba(24, 35, 53, 0.15),
+          0 1px 2px rgba(10, 16, 28, 0.15);
+      }
+
+      .wearable-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #182335;
+      }
+
+      .wearable-text {
+        color: #182335;
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: -0.25px;
+        white-space: nowrap;
+      }
     }
 
     .event-details {

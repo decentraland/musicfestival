@@ -6,6 +6,7 @@ import {
   RiTwitchFill,
   RiTwitterXLine,
 } from "react-icons/ri"
+import { TbShirt } from "react-icons/tb"
 import {
   ScheduleEvent,
   convertToPST,
@@ -267,6 +268,17 @@ const Schedule = () => {
               <div className="event-info">
                 <div className="event-title">{event.title}</div>
                 <div className="event-speaker">{event.subtitle}</div>
+                {event.hasWearable && (
+                  <div className="event-wearable">
+                    <div className="wearable-icon">
+                      <TbShirt
+                        size={16}
+                        style={{ fill: "#435475", stroke: "transparent" }}
+                      />
+                    </div>
+                    <div className="wearable-text">Merch Drop</div>
+                  </div>
+                )}
               </div>
               <div className="event-details">
                 <div className="event-type">
