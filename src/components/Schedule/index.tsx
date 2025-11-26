@@ -255,7 +255,7 @@ const Schedule = () => {
 
         return (
           <EventSlot
-            key={`event-${event.id}`}
+            key={`event-${event.id}-${event.startTime}-${event.endTime}`}
             width={cellWidth}
             onClick={hasArtist ? () => handleEventClick(event) : undefined}
             style={{
@@ -266,9 +266,7 @@ const Schedule = () => {
             <div className="event-content">
               <div className="event-info">
                 <div className="event-title">{event.title}</div>
-                <div className="event-speaker">
-                  {event.artist?.name ?? event.speaker}
-                </div>
+                <div className="event-speaker">{event.subtitle}</div>
               </div>
               <div className="event-details">
                 <div className="event-type">
@@ -406,7 +404,9 @@ const Schedule = () => {
               <h2>{selectedEvent.artist?.name ?? selectedEvent.title}</h2>
             </div>
             <div className="middle">
-              {selectedEvent.artist?.bio && <p>{selectedEvent.artist.bio}</p>}
+              {selectedEvent.artist?.bio && (
+                <p className="bio">{selectedEvent.artist.bio}</p>
+              )}
               {getArtistSocialLinks(selectedEvent).length > 0 && (
                 <div
                   className="social-links"

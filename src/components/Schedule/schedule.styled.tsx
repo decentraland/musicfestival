@@ -546,6 +546,7 @@ const EmptySlot = styled.div`
   border-bottom: 0.75px solid #203455;
   flex-shrink: 0;
   background-color: #fff;
+  opacity: 0.5;
   transition: all 0.3s ease;
   cursor: pointer;
 `

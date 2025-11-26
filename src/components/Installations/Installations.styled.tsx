@@ -208,8 +208,13 @@ const ArtistModalContainer = styled.div`
     justify-content: flex-start;
     gap: 12px;
 
+    .bio {
+    }
+
     p {
       font-size: 1rem;
+      max-height: 35vh;
+      overflow-y: auto;
       font-weight: 400;
       line-height: 1.5;
     }
