@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { GoArrowUpRight } from "react-icons/go"
 import { IoMdClose } from "react-icons/io"
-import { MdOutlineSearch } from "react-icons/md"
 import { RiLink } from "react-icons/ri"
 import { toast } from "sonner"
 import { artists } from "./data"
@@ -16,7 +15,7 @@ import {
 // import { GoArrowUpRight } from "react-icons/go"
 
 const Installations = () => {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm] = useState("")
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -87,7 +86,7 @@ const Installations = () => {
             inspired by internet and stream culture.
           </div>
 
-          <div className="installations__filters__search">
+          {/* <div className="installations__filters__search">
             <input
               type="text"
               placeholder="Search..."
@@ -96,7 +95,7 @@ const Installations = () => {
               aria-label="Search installations"
             />
             <MdOutlineSearch className="search-icon" />
-          </div>
+          </div> */}
         </div>
 
         <div className="installations__grid">
