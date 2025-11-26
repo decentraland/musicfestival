@@ -345,8 +345,8 @@ const Schedule = () => {
         <div>
           <h2>Plan Your Festival </h2>
           <p>
-            These are the streamers, musicians, and virtual artists who are
-            taking SUB/STREAM from the screen to the stage.
+            See who’s playing each day, when the drops happen, and where to
+            explore next.
           </p>
         </div>
 
