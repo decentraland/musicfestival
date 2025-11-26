@@ -189,7 +189,7 @@ const TimezoneHeader = styled.div`
   align-items: flex-start;
   gap: 48px;
   width: 100%;
-  min-width: calc(106px + 200px * 17);
+  min-width: calc(106px + 200px * 24);
   border-top: 1px solid #203455;
   border: 1px solid #fff;
   position: relative;
