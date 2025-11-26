@@ -95,6 +95,9 @@ linear-gradient(180deg, #DC5DD2 0%, rgba(205, 110, 223, 0.6) 100%);
   transition: all 0.3s ease;
   border: 1px solid #fff;
   opacity: ${(props) => (props.$isActive ? 1 : 0.7)};
+  &:hover {
+    opacity: .9 !important;
+  }
 
   }
 
