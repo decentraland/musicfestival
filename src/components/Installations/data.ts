@@ -105,7 +105,7 @@ const artists = [
     name: "Pennies in Purgatory",
     artworkTitle: "Pennies in Purgatory",
     description:
-      "Inspired by the stream of history, Pennies In Purgatory is a multi-platform art project and interactive journey for Decentraland Music Festival. Exploring the beauty emerging from the interaction between copper and humanity, the experience begins as a stark, jet-black monolith. Once inside, visitors are guided through dark, narrow corridors lit by colorful, psychedelic pennies, creating a feeling of drifting through space as they follow a restricted path complemented by subtle audio and text fragments. The journey culminates as the space opens into a gallery for reflection and exploration, full of larger coin pieces and quiet electronica, before finally releasing onto the rooftop, echoing the experience of being swept along by, and ultimately emerging from, the flow of time.",
+      "Inspired by the stream of history, Pennies In Purgatory by Alan Howick is a multi-platform art project and interactive journey for Decentraland Music Festival. Exploring the beauty emerging from the interaction between copper and humanity, the experience begins as a stark, jet-black monolith. Once inside, visitors are guided through dark, narrow corridors lit by colorful, psychedelic pennies, creating a feeling of drifting through space as they follow a restricted path complemented by subtle audio and text fragments. The journey culminates as the space opens into a gallery for reflection and exploration, full of larger coin pieces and quiet electronica, before finally releasing onto the rooftop, echoing the experience of being swept along by, and ultimately emerging from, the flow of time.",
     image: AlanHowickImage,
     link: "https://www.instagram.com/penniesinpurgatory",
     studio: "PepeGawd",
@@ -133,7 +133,7 @@ const artists = [
     name: "Chat, Is This Real?",
     artworkTitle: "Chat, Is This Real?",
     description:
-      '"Chat, Is This Real?" takes its name from a phrase and meme streamers often use, serving as a poetic nod to the feeling of being inside a live stream: the ecstasy of floating in attention, the adoration of fans, and the blurred closeness between streamer and audience. This project explores the shared intensity, both surreal and real, that defines digital fandom today. Float on platforms as if carried by the stream itself, add a rain of emojis and find the Wearable at the heart. ',
+      '"Chat, Is This Real?" by Salawaki takes its name from a phrase and meme streamers often use, serving as a poetic nod to the feeling of being inside a live stream: the ecstasy of floating in attention, the adoration of fans, and the blurred closeness between streamer and audience. This project explores the shared intensity, both surreal and real, that defines digital fandom today. Float on platforms as if carried by the stream itself, add a rain of emojis and find the Wearable at the heart.',
     image: SalawakiImage,
     link: "https://www.instagram.com/salawakii/",
     studio: "Rizk",
@@ -147,7 +147,7 @@ const artists = [
     name: "Psyche-Stream",
     artworkTitle: "Psyche-Stream",
     description:
-      "Psyche-Stream is a place for music and emotions. Express your emotion about the music around you by pushing the emoji buttons, and see them transformed into the piece. Your feelings build the experience itself.",
+      "Psyche-Stream by Psychofuturist is a place for music and emotions. Express your emotion about the music around you by pushing the emoji buttons, and see them transformed into the piece. Your feelings build the experience itself.",
     image: PsychofuturistImage,
     link: "https://x.com/psychofuturist",
     studio: "Vegas City",
@@ -175,7 +175,7 @@ const artists = [
     name: "Crystal Cortex",
     artworkTitle: "Crystal Cortex",
     description:
-      "Explore Crystal Cortex, an interactive sculpture garden and soundscape that explores the theme of rebirth and regeneration through the transformation of glitch. Artist Micah Alhadeff uses 3D programming and glitch processing to explore the digital body and the limits of fantasy. His work was featured in Sotheby’s “Glitch: Beyond Binary” auction, where he sold the first ever GLB auctioned by Sotheby’s.\n\nIn Crystal Cortex you’ll be drawn into Micah’s world, where glitch has the power to transform our surroundings both sonically and visually. You’ll experience how glitch processing techniques can “peel back the 4th wall of the computer in hopes of creating new ways of experiencing the digital worlds we inhabit”. First exhibited at DCLMF 2023. ",
+      "Explore Crystal Cortex, an interactive sculpture garden and soundscape by Micah Alhadeff that explores the theme of rebirth and regeneration through the transformation of glitch. Artist Micah Alhadeff uses 3D programming and glitch processing to explore the digital body and the limits of fantasy. His work was featured in Sotheby’s “Glitch: Beyond Binary” auction, where he sold the first ever GLB auctioned by Sotheby’s. In Crystal Cortex you’ll be drawn into Micah’s world, where glitch has the power to transform our surroundings both sonically and visually. You’ll experience how glitch processing techniques can “peel back the 4th wall of the computer in hopes of creating new ways of experiencing the digital worlds we inhabit”. First exhibited at DCLMF",
     image: MicahAlhadeffImage,
     link: "https://www.instagram.com/micah_alhadeff/",
     studio: "-",
@@ -189,7 +189,7 @@ const artists = [
     name: "Space Elevation Parkour",
     artworkTitle: "Space Elevation Parkour",
     description:
-      "Prepare to ascend into orbit with this thrilling vertical parkour! Starting at the Space Elevator Launch Facility, journey through Mission Control, navigating maze-like rooms and challenges. Hop into the Passenger Capsule and ascend to the Midway Station, where more obstacles await before you board a final capsule to reach the pinnacle—the Space Station itself. The view at the top is breathtaking, with clouds below and stars stretching into the distance! Featuring timed airlocks, moving platforms, and jump puzzles, Space Elevation is a near-future experience, expertly designed to keep you on your toes.",
+      "Prepare to ascend into orbit with this thrilling vertical parkour by Stom. Starting at the Space Elevator Launch Facility, journey through Mission Control, navigating maze-like rooms and challenges. Hop into the Passenger Capsule and ascend to the Midway Station, where more obstacles await before you board a final capsule to reach the pinnacle—the Space Station itself. The view at the top is breathtaking, with clouds below and stars stretching into the distance! Featuring timed airlocks, moving platforms, and jump puzzles, Space Elevation is a near-future experience, expertly designed to keep you on your toes.",
     image: StomImage,
     link: "https://x.com/stom66",
     studio: "-",
@@ -203,7 +203,7 @@ const artists = [
     name: "Crash Site Parkour",
     artworkTitle: "Crash Site Parkour",
     description:
-      "Venture through the wreckage of a crashed alien spacecraft, complete with tentacles that still entangle the hull! Climb through the mysterious interior and scale the ship’s tilted exterior, facing animated challenges that add to the intensity. This derelict ship once explored the metaverse—now, it’s your turn to conquer its chaotic remains. With detailed animations and moving parts, Crash Site invites you to brave a haunting yet exhilarating climb up to its highest point.",
+      "Venture through the wreckage of a crashed alien spacecraft, complete with tentacles that still entangle the hull! Climb through the mysterious interior and scale the ship’s tilted exterior, facing animated challenges that add to the intensity. This derelict by PepeGawd ship once explored the metaverse—now, it's your turn to conquer its chaotic remains. With detailed animations and moving parts, Crash Site invites you to brave a haunting yet exhilarating climb up to its highest point.",
     image: PepeGawdImage,
     link: "https://x.com/PepeGawd",
     studio: "-",
