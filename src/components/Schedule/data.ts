@@ -458,6 +458,7 @@ const scheduleData: DaySchedule = {
       {
         id: 3,
         title: "Hape Party",
+        subtitle: "DJs at the Hape Party Pad",
         stage: "Hape Party Pad",
         startTime: "14:00",
         endTime: "16:00",
