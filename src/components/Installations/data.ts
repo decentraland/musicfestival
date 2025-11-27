@@ -46,7 +46,7 @@ const artists = [
   },
   {
     id: 6,
-    name: "Rad.Live",
+    name: "Rad TV",
     artworkTitle: "Rad TV",
     description:
       "Rad TV’s Live Feed is a three-day, open-genre music video showcase built for creators that want to connect with other artists and their fans! From December 3rd–5th, artists from around the world will stream their creations from Rad TV into Decentraland, turning Rad TV’s Party Pad into a personal stage for discovery, connection, and live creative energy.",

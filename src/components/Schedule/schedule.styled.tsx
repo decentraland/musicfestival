@@ -152,6 +152,7 @@ const ScheduleDisplayContainer = styled.div`
   width: 100vw;
   background: #fff;
   overflow-x: auto;
+  overflow-y: hidden;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   user-select: none; /* Prevent text selection during drag */
@@ -163,17 +164,30 @@ const ScheduleDisplayContainer = styled.div`
     #e74d6d 75%,
     #f4764f 100%
   );
+  padding-bottom: 16px;
 
-  /* Hide scrollbar completely */
+  /* Keep space for scrollbar so it doesn't overlap content */
+  scrollbar-gutter: stable;
+
+  /* Custom horizontal scrollbar */
   &::-webkit-scrollbar {
-    display: none;
+    height: 10px;
   }
 
-  /* Hide scrollbar for Firefox */
-  scrollbar-width: none;
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    margin: 0 106px;
+  }
 
-  /* Hide scrollbar for IE and Edge */
-  -ms-overflow-style: none;
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 999px;
+  }
+
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff rgba(255, 255, 255, 0.2);
 
   /* Remove smooth scrolling for better drag performance */
   scroll-behavior: auto;

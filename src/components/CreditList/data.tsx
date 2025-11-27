@@ -23,6 +23,11 @@ const artistsAndCurators = [
   "Silvio De Candia",
   "Dario Lotti & Sandro Sax",
   "Mike Russi",
+  "Salawaki",
+  "Psychofuturist",
+  "BIIMO",
+  "Alan Howick",
+  "Micah Alhadeff",
 ]
 
 const studios = [
@@ -37,6 +42,7 @@ const studios = [
   "Rizk",
   "Vegas City",
   "Jeunissemble",
+  "Stom",
 ]
 
 export { artistsAndCurators, studios }

@@ -45,51 +45,7 @@ const InstallationsContainer = styled.section`
 
       > div:is(:first-child) {
         width: 100%;
-        max-width: 400px;
-      }
-
-      div:is(:last-child) {
-        width: 100%;
-        max-width: 200px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 20px;
-
-        &.installations__filters__search {
-          position: relative;
-        }
-
-        input {
-          width: 100%;
-          background-color: rgba(255, 255, 255, 0.3);
-          color: ${theme.white};
-          border: none;
-          padding: 10px 16px;
-          font-size: 14px;
-          border-radius: 12px;
-          outline: none;
-          color: ${theme.white};
-
-          &::placeholder {
-            color: ${theme.white};
-            opacity: 1;
-          }
-        }
-
-        .search-icon {
-          position: absolute;
-          right: 10px;
-          top: 50%;
-          font-size: 20px;
-          transform: translateY(-50%);
-          fill: ${theme.white};
-        }
-
-        @media (min-width: ${breakpoints.md}) {
-          justify-content: flex-end;
-        }
+        max-width: 650px;
       }
     }
 

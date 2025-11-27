@@ -160,7 +160,7 @@ const CreditList = () => {
         <Section>
           <ColumnsContainer>
             <Column>
-              <SectionTitle>Artists & Curators</SectionTitle>
+              <SectionTitle>Performers & Artists</SectionTitle>
             </Column>
             <Column>
               {artistsColumn1.map((name, index) => (
