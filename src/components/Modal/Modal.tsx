@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { styled } from "styled-components"
 import modalBg from "../../img/music-festival/modal.png"
 import { breakpoints } from "../../utils/theme"
@@ -15,10 +16,38 @@ const Modal = ({
   children,
   isDownloadModal = false,
 }: ModalProps) => {
+  const handleWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+
+  const handleTouchMove: React.TouchEventHandler<HTMLDivElement> = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+
+  useEffect(() => {
+    if (typeof document === "undefined") return
+
+    if (!isOpen) return
+
+    const originalOverflow = document.body.style.overflow
+
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+    }
+  }, [isOpen])
+
   if (!isOpen) return null
 
   return (
-    <ModalBackdrop onClick={onClose}>
+    <ModalBackdrop
+      onClick={onClose}
+      onWheel={handleWheel}
+      onTouchMove={handleTouchMove}
+    >
       <ModalContent
         onClick={(e) => e.stopPropagation()}
         isDownloadModal={isDownloadModal}
@@ -42,6 +71,9 @@ const ModalBackdrop = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  scroll-behavior: none;
+  pointer-events: auto;
+  touch-action: none;
 `
 
 const ModalContent = styled.div<{ isDownloadModal?: boolean }>`

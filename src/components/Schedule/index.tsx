@@ -77,6 +77,10 @@ type ArtistSocialLink = {
 }
 
 const Schedule = () => {
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0)
+
   const [activeDate, setActiveDate] = useState(getDefaultDate())
   const [selectedTimezone, setSelectedTimezone] = useState<"UTC" | "PST">("UTC")
   const scheduleContainerRef = useRef<HTMLDivElement>(null)
@@ -148,31 +152,6 @@ const Schedule = () => {
     }
     if (scheduleContainerRef.current) {
       scheduleContainerRef.current.style.cursor = "grab"
-    }
-  }
-
-  // Touch support for mobile devices
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scheduleContainerRef.current) return
-    setIsDragging(true)
-    setDragStart({
-      x: e.touches[0].pageX - scheduleContainerRef.current.offsetLeft,
-      scrollLeft: scheduleContainerRef.current.scrollLeft,
-    })
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scheduleContainerRef.current) return
-    const x = e.touches[0].pageX - scheduleContainerRef.current.offsetLeft
-    const walk = (x - dragStart.x) * 12 // Reduced scroll speed multiplier for smoothness
-    scheduleContainerRef.current.scrollLeft = dragStart.scrollLeft - walk
-  }
-
-  const handleTouchEnd = () => {
-    setIsDragging(false)
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current)
-      animationFrameRef.current = null
     }
   }
 
@@ -379,13 +358,10 @@ const Schedule = () => {
         {/* Component 2: Schedule Display */}
         <ScheduleDisplayContainer
           ref={scheduleContainerRef}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          onMouseDown={isTouchDevice ? undefined : handleMouseDown}
+          onMouseMove={isTouchDevice ? undefined : handleMouseMove}
+          onMouseUp={isTouchDevice ? undefined : handleMouseUp}
+          onMouseLeave={isTouchDevice ? undefined : handleMouseLeave}
           style={{ cursor: isDragging ? "grabbing" : "grab" }}
         >
           <TimezoneHeader>
