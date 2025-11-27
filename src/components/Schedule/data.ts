@@ -407,11 +407,11 @@ const timeSlots: string[] = [
   "09:00",
 ]
 
-const stages = ["MainStage"] as const
+const stages = ["Main Stage"] as const
 
 const scheduleData: DaySchedule = {
   "dec-3": {
-    MainStage: [
+    "Main Stage": [
       {
         id: 1,
         title: "Music Meditation",
@@ -478,7 +478,7 @@ const scheduleData: DaySchedule = {
       {
         id: 4,
         title: "Pure House Sax Live @ The Bunker",
-        subtitle: "Dario Lotti & Sandro Sax live at The Bunker",
+        subtitle: "Dario Lotti & Sandro Sax live at The Bunker (-94,83)",
         stage: "The Bunker",
         startTime: "16:00",
         endTime: "18:00",
@@ -519,7 +519,7 @@ const scheduleData: DaySchedule = {
       },
       {
         id: 6,
-        title: "Live Tour - with Psychofuturist & Alan Howick",
+        title: "Live Tour",
         subtitle: "Festival tour with Psychofuturist & Alan Howick",
         stage: "Live Stage",
         startTime: "20:00",
@@ -686,7 +686,7 @@ const scheduleData: DaySchedule = {
       {
         id: 10,
         title: "Meta Tribe Afterparty",
-        subtitle: "MetaDJ live at Meta Tribe Plaza",
+        subtitle: "MetaDJ live at Meta Tribe Plaza (109,50)",
         stage: "Meta Tribe Plaza",
         startTime: "05:00",
         endTime: "07:00",
@@ -726,7 +726,7 @@ const scheduleData: DaySchedule = {
     ],
   },
   "dec-4": {
-    MainStage: [
+    "Main Stage": [
       {
         id: 1222,
         title: "Interval",
@@ -750,7 +750,7 @@ const scheduleData: DaySchedule = {
       {
         id: 12,
         title: "Retro Partea Pad",
-        subtitle: "Facemoon Gallery warmup with DJ Abillitea",
+        subtitle: "Facemoon Gallery warmup with DJ Abillitea (-117,71)",
         stage: "Facemoon Gallery",
         startTime: "11:00",
         endTime: "Midday",
@@ -770,7 +770,7 @@ const scheduleData: DaySchedule = {
       {
         id: 12,
         title: "Interval",
-        subtitle: "FaHunt the 19 gifts hidden in the Music Festival Plaza",
+        subtitle: "Hunt the 19 gifts hidden in the Music Festival Plaza",
         stage: "Gift Shop",
         startTime: "Midday",
         endTime: "13:00",
@@ -790,7 +790,7 @@ const scheduleData: DaySchedule = {
       {
         id: 13,
         title: "BosqueGracias Art Residency",
-        subtitle: "Live music by Glitchrama, RocioMio & NikoAlerce",
+        subtitle: "Rocío Mio talks artist residencies in Argentine Patagonia",
         stage: "Bosque Tower",
         startTime: "13:00",
         endTime: "14:00",
@@ -806,6 +806,7 @@ const scheduleData: DaySchedule = {
         startTimeEST: "08:00am",
         endTimeEST: "09:00",
         hasWearable: false,
+        artist: Artists["Bosque Gracias"],
       },
       {
         id: 14,
@@ -834,12 +835,12 @@ const scheduleData: DaySchedule = {
         subtitle: "Mike Russi spins 2 hours of house at Bunker (-94,83)",
         stage: "Bunker",
         startTime: "16:00",
-        endTime: "17:00",
+        endTime: "18:00",
         timeSlotStart: 6,
         timeSlotEnd: 6,
         duration: 1,
         startTimePST: "09:00",
-        endTimePST: "10:00",
+        endTimePST: "11:00",
         startTimeCET: "05:00pm",
         endTimeCET: "18:00",
         startTimeBA: "01:00pm",
@@ -853,7 +854,7 @@ const scheduleData: DaySchedule = {
         id: 17,
         title: "Rad TV Live Feed",
         subtitle: "Music videos from the Rad TV community",
-        stage: "MainStage",
+        stage: "Main Stage",
         startTime: "17:00",
         endTime: "18:00",
         timeSlotStart: 7,
@@ -868,6 +869,7 @@ const scheduleData: DaySchedule = {
         startTimeEST: "Midday",
         endTimeEST: "13:00",
         hasWearable: false,
+        artist: Artists["Rad.Live"],
       },
       {
         id: 18,
@@ -991,7 +993,7 @@ const scheduleData: DaySchedule = {
         endTimeBA: "22:00",
         startTimeEST: "07:00pm",
         endTimeEST: "20:00",
-        hasWearable: true,
+        hasWearable: false,
         artist: Artists["Stoney Eye"],
       },
       {
@@ -1100,7 +1102,7 @@ const scheduleData: DaySchedule = {
     ],
   },
   "dec-5": {
-    MainStage: [
+    "Main Stage": [
       {
         id: 27,
         title: "Interval",
@@ -1124,7 +1126,7 @@ const scheduleData: DaySchedule = {
       {
         id: 27,
         title: "Retro Partea Pad",
-        subtitle: "Facemoon Gallery warmup with DJ Abillitea",
+        subtitle: "Facemoon Gallery warmup with DJ Abillitea (-117,71)",
         stage: "Facemoon Gallery",
         startTime: "11:00",
         endTime: "Midday",
@@ -1185,7 +1187,7 @@ const scheduleData: DaySchedule = {
         id: 29,
         title: "YangMusic",
         subtitle: "Main Stage set",
-        stage: "Mainstage",
+        stage: "Main Stage",
         startTime: "14:00",
         endTime: "15:00",
         timeSlotStart: 4,
@@ -1311,7 +1313,7 @@ const scheduleData: DaySchedule = {
         id: 38,
         title: "OfficeDrummer",
         subtitle: "Main Stage set with merch",
-        stage: "Mainstage",
+        stage: "Main Stage",
         startTime: "23:00",
         endTime: "Midnight",
         timeSlotStart: 13,
@@ -1414,7 +1416,7 @@ const scheduleData: DaySchedule = {
       {
         id: 43,
         title: "Meta Tribe Afterparty",
-        subtitle: "Keep partying at Meta Tribe Plaza",
+        subtitle: "Keep partying at Meta Tribe Plaza (109,50)",
         stage: "Meta Tribe Plaza",
         startTime: "07:00",
         endTime: "09:00",
@@ -1454,7 +1456,7 @@ const scheduleData: DaySchedule = {
     ],
   },
   "dec-6": {
-    MainStage: [
+    "Main Stage": [
       {
         id: 44,
         title: "Interval",
@@ -1616,7 +1618,7 @@ const scheduleData: DaySchedule = {
         endTimeBA: "21:00",
         startTimeEST: "06:00pm",
         endTimeEST: "19:00",
-        hasWearable: false,
+        hasWearable: true,
         artist: {
           name: "NaNa The Ape",
           bio: "NaNa the Ape is a multi-talented virtual artist, singer-songwriter, and DJ, known for her deep, soulful vocals and genre-blending sound that fuses R&B, Afrobeats, and EDM. As a prominent figure in the metaverse music scene, she has performed at major virtual festivals, bringing an electrifying energy to every set. With a passion for pushing creative boundaries, NaNa continues to captivate global audiences, bridging the gap between digital culture and live performance.",
@@ -1647,14 +1649,14 @@ const scheduleData: DaySchedule = {
         endTimeBA: "22:00",
         startTimeEST: "07:00pm",
         endTimeEST: "20:00",
-        hasWearable: false,
+        hasWearable: true,
         artist: Artists["Steve Sai"],
       },
       {
         id: 52,
         title: "Newtro Live AV Sessions",
         subtitle: "Live sessions at the Newtro Arts Party Pad",
-        stage: "Newtro Art Party Pad",
+        stage: "Newtro Arts Party Pad",
         startTime: "01:00",
         endTime: "03:00",
         timeSlotStart: 15,
@@ -1673,7 +1675,7 @@ const scheduleData: DaySchedule = {
       {
         id: 53,
         title: "AFTER-HOURS",
-        subtitle: "Epic 6-hour afterparty at the 4RC Night Club",
+        subtitle: "Epic 6-hour afterparty at the 4RC Night Club (40,55)",
         stage: "4RC Night Club",
         startTime: "03:00",
         endTime: "09:00",
