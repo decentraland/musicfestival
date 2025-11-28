@@ -4,6 +4,8 @@ import {
   ArrowBox,
   BottomSection,
   CharacterImage,
+  CountdownBox,
+  CountdownRow,
   DateBadge,
   DateBox,
   DateCaption,
@@ -38,10 +40,24 @@ import lightstickImage from "../../img/hero/lightstick.webp"
 import DMF25Logo from "../../img/music-festival/DMF25_Logo2.png"
 import { subscribeToNewsletter } from "../../modules/newsletter"
 
+type Countdown = {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
+
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0)
   const [email, setEmail] = useState("")
   const [submitting, setSubmitting] = useState(false)
+  const [countdown, setCountdown] = useState<Countdown>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  const [showCountdown, setShowCountdown] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +70,37 @@ const Hero = () => {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  // Basic countdown timer to Dec 3rd, 12:00 UTC
+  useEffect(() => {
+    const targetUtc = new Date(Date.UTC(2025, 11, 3, 12, 0, 0)) // month is 0-based; 11 = December
+
+    const updateCountdown = () => {
+      const now = new Date()
+      const diff = targetUtc.getTime() - now.getTime()
+
+      if (diff <= 0) {
+        setShowCountdown(false)
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        return
+      }
+
+      const totalSeconds = Math.floor(diff / 1000)
+      const days = Math.floor(totalSeconds / (60 * 60 * 24))
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60))
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60)
+      const seconds = totalSeconds % 60
+
+      setShowCountdown(true)
+      setCountdown({ days, hours, minutes, seconds })
+    }
+
+    updateCountdown()
+    const interval = setInterval(updateCountdown, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const pad = (value: number) => value.toString().padStart(2, "0")
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -122,7 +169,7 @@ const Hero = () => {
                 WHERE THE STREAM <br /> HITS THE MAIN STAGE
               </Tagline>
               <Description>
-                A four-day festival where fans and performers redefine
+                A four-day festival where fans and streamers redefine
                 &ldquo;going live.&rdquo;
               </Description>
             </LogoWrapper>
@@ -155,11 +202,11 @@ const Hero = () => {
               </InlineSignup>
               <FeaturesList>
                 <FeatureRow>
-                  <FeatureItem>STREAM-NATIVE LINEUP</FeatureItem>
+                  <FeatureItem>FREE TO ENTER</FeatureItem>
                   <SeparatorIcon src={cyanArrowLeft} alt="" />
-                  <FeatureItem>ICONIC STAGES</FeatureItem>
-                  <SeparatorIcon src={cyanArrowRight} alt="" />
                   <FeatureItem>NO HEADSET NEEDED</FeatureItem>
+                  <SeparatorIcon src={cyanArrowRight} alt="" />
+                  <FeatureItem>NEW FAN EXPERIENCES</FeatureItem>
                 </FeatureRow>
               </FeaturesList>
             </BottomSection>
@@ -167,36 +214,66 @@ const Hero = () => {
 
           {/* Right Column */}
           <RightColumn>
-            <DateBadge
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.3,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-            >
-              <ArrowBox
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+            <div className="countdown-container">
+              <DateBadge
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{
-                  duration: 0.6,
-                  delay: 1.3,
+                  duration: 0.8,
+                  delay: 0.3,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
               >
-                <img src={dateArrow} alt="arrow" />
-              </ArrowBox>
-              <DateBox>DEC 3-6</DateBox>
-              <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
-            </DateBadge>
-            <DateCaption
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-            >
-              HOSTED BY DECENTRALAND, THE SOCIAL VIRTUAL WORLD
-            </DateCaption>
+                <ArrowBox
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 1.3,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  <img src={dateArrow} alt="arrow" />
+                </ArrowBox>
+                <DateBox>DEC 3-6</DateBox>
+                <DateBox>2025 {/* TODO: Add the year dynamically */}</DateBox>
+              </DateBadge>
+              <DateCaption
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+              >
+                HOSTED BY DECENTRALAND, THE SOCIAL VIRTUAL WORLD
+              </DateCaption>
+            </div>
+            {showCountdown && (
+              <CountdownRow
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+              >
+                <CountdownBox $variant="days">
+                  <div className="countdown-value">{pad(countdown.days)}</div>
+                  <div className="countdown-label">DAYS</div>
+                </CountdownBox>
+                <CountdownBox $variant="hours">
+                  <div className="countdown-value">{pad(countdown.hours)}</div>
+                  <div className="countdown-label">HOURS</div>
+                </CountdownBox>
+                <CountdownBox $variant="minutes">
+                  <div className="countdown-value">
+                    {pad(countdown.minutes)}
+                  </div>
+                  <div className="countdown-label">MINUTES</div>
+                </CountdownBox>
+                <CountdownBox $variant="seconds">
+                  <div className="countdown-value">
+                    {pad(countdown.seconds)}
+                  </div>
+                  <div className="countdown-label">SECONDS</div>
+                </CountdownBox>
+              </CountdownRow>
+            )}
           </RightColumn>
         </MainContentRow>
       </HeroContainer>

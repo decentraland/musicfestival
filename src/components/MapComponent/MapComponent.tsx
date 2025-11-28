@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 import { styled } from "styled-components"
-import mapMobile from "../../img/maps/map-mobile.jpg"
-import mapDesktop from "../../img/maps/map-web.jpg"
-import { DownloadLink } from "../DownloadButton"
-import { Title } from "../Title"
+import decoratorLeft from "../../img/maps/left-decorator.svg"
+import mapMobile from "../../img/maps/map-mobile.webp"
+import mapDesktop from "../../img/maps/map-web.webp"
+import decoratorRight from "../../img/maps/right-decorator.svg"
+import { subscribeToNewsletter } from "../../modules/newsletter"
+import { InlineSignup, SignupInput, SubscribeButton } from "../Hero/styles"
 
 const MapComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [email, setEmail] = useState("")
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -14,13 +19,65 @@ const MapComponent = () => {
     })
   }, [])
 
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) {
+      toast.error("Email is required")
+      return
+    }
+    const emailRegex =
+      /^(?:[a-zA-Z0-9_'^&+-])+(?:\.(?:[a-zA-Z0-9_'^&+-])+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/
+    if (!emailRegex.test(trimmed)) {
+      toast.error("Please enter a valid email", {
+        duration: 10000,
+      })
+      return
+    }
+    try {
+      setSubmitting(true)
+      await subscribeToNewsletter(trimmed)
+      toast.success(
+        "Almost done! Check your inbox to confirm your subscription."
+      )
+      setEmail("")
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Subscription failed"
+      toast.error(message)
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <MapContainer id="map">
-      <Title>MAP</Title>
+      <HeaderWrapper>
+        <Decorator src={decoratorLeft} alt="Decorator" />
+        <TitleWrapper>
+          <Title>FIND YOUR WAY</Title>
+          <Description>
+            Navigate Decentraland’s Music Festival with ease—see where every
+            performance and experience is happening.
+          </Description>
+        </TitleWrapper>
+        <Decorator src={decoratorRight} alt="Decorator" />
+      </HeaderWrapper>
       <ContentWrapper>
         <MapImage src={isMobile ? mapMobile : mapDesktop} alt="Map" />
       </ContentWrapper>
-      <DownloadLink useJump />
+      <InlineSignup onSubmit={handleSubscribe} aria-label="Notify signup (map)">
+        <SignupInput
+          id="map-email-input"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          required
+          disabled={submitting}
+        />
+        <SubscribeButton type="submit" disabled={submitting}>
+          <span>{submitting ? "Subscribing..." : "SIGN UP NOW"}</span>
+        </SubscribeButton>
+      </InlineSignup>
     </MapContainer>
   )
 }
@@ -29,12 +86,12 @@ const MapContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
-  padding: 40px;
+  background-color: rgba(10, 9, 43, 1);
+  padding: 72px 16px;
   gap: 20px;
 
   @media (max-width: 600px) {
-    padding: 20px;
+    padding: 60px 16px;
   }
 `
 
@@ -44,21 +101,77 @@ const ContentWrapper = styled.div`
   align-items: stretch;
   justify-content: center;
   gap: 40px;
-  max-width: 1040px;
+  max-width: 1200px;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
+`
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+`
+
+const Decorator = styled.img`
+  height: 44px;
+  width: auto;
+`
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+`
+
+const Title = styled.h2`
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 8px;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.4),
+    0 0 12px rgba(255, 255, 255, 0.3),
+    0 0 24px rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+`
+
+const Description = styled.p`
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 400px;
+  margin: 0;
+  text-align: center;
 `
 
 const MapImage = styled.img`
   width: 100%;
   height: 100%;
   margin-bottom: 20px;
-  border: 4px solid;
-  border-image: linear-gradient(90deg, #00bfff, #ff00ff) 1;
-  box-shadow: 0 0 15px #c445a0;
 `
 
 export { MapComponent }
