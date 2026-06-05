@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/decentraland/musicfestival.git"
+    "url": "https://github.com/decentraland/musicfestival.git"
   },
   "author": "Decentraland",
   "license": "Apache-2.0",
@@ -29,8 +29,8 @@
   },
   "homepage": "",
   "engines": {
-    "node": "20.*",
-    "npm": "8.* || 9.*"
+    "node": ">=20",
+    "npm": ">=8"
   },
   "dependencies": {
     "@dcl/ui-env": "^1.4.0",
