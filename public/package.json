@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/decentraland/musicfestival.git"
+    "url": "https://github.com/decentraland/musicfestival.git"
   },
   "homepage": ""
 }
