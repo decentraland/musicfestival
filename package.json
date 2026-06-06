@@ -33,7 +33,7 @@
     "npm": ">=8"
   },
   "dependencies": {
-    "@dcl/ui-env": "^1.4.0",
+    "@dcl/ui-env": "^2.0.0",
     "decentraland-ui2": "^0.0.2",
     "feather-icons": "^4.29.2",
     "framer-motion": "^12.23.24",
